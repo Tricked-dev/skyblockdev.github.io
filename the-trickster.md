@@ -11,3 +11,5 @@ my goal is to keep the bot online for a s long as possible and improve it overti
 * Commands: [here](https://skyblockdev.github.io/website/the-trickster-commands)
 
 * Main website: [here](https://skyblockdev.github.io/website/)
+
+* The Trickster github: [here](https://github.com/SkyBlockDev/The-trickster)
