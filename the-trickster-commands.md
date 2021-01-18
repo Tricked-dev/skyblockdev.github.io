@@ -1,5 +1,5 @@
 # The Trickster's commands 
-
+* go back? [here](https://skyblockdev.github.io/website/the-trickster)
 ### fun
 **8ball > 8ball\
 bully > bully someone\
