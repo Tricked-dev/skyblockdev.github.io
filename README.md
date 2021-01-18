@@ -1,4 +1,6 @@
 # SkyblockDev website
+Hello this a website with some cool stuff ive made
+
 
 ## info
 projects: [The Trickster](https://skyblockdev.github.io/website/the-trickster), [Malil](https://skyblockdev.github.io/website/the-trickster)\
