@@ -4,7 +4,9 @@
 ### Fun
 **8ball   :  Ask your question\
 IQ        : uses rng to decide your iq\
-UWU       : uwufy's some text**
+UWU       : uwufy's some text
+Mock      : mOcK WhEn lIfE LeTs yOu dOwN
+Clap      : 👏clap👏**
 ### general
 **Avatar    : Sends the avatar of a user\
 Help      : Sends the help command\
