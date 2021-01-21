@@ -1,6 +1,7 @@
 ### the trickster
 
-[![CodeFactor](https://www.codefactor.io/repository/github/skyblockdev/the-trickster/badge)](https://www.codefactor.io/repository/github/skyblockdev/the-trickster)
+[![CodeFactor](https://www.codefactor.io/repository/github/skyblockdev/the-trickster/badge)](https://www.codefactor.io/repository/github/skyblockdev/the-trickster)[![Discord Bots](https://top.gg/api/widget/status/748985087420399717.svg)](https://top.gg/bot/748985087420399717)[![Discord Bots](https://top.gg/api/widget/servers/748985087420399717.svg?noavatar=true)](https://top.gg/bot/748985087420399717)[![Discord Bots](https://top.gg/api/widget/upvotes/748985087420399717.svg?noavatar=true)](https://top.gg/bot/748985087420399717)[![Discord Bots](https://top.gg/api/widget/lib/748985087420399717.svg?noavatar=true)](https://top.gg/bot/748985087420399717)[![Discord Bots](https://top.gg/api/widget/owner/748985087420399717.svg?noavatar=true)](https://top.gg/bot/748985087420399717)
+
 
 The trickster is a bot made by me to learn javascript/djs and coding overall\
 fully made in visual studio code\

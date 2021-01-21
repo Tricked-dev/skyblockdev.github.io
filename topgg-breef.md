@@ -1,0 +1,1 @@
+Malil is a all in one bot with alot of usefull commands including but not limited to slowmode
