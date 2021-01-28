@@ -5,9 +5,10 @@
 ### Fun
 **8ball   :  Ask your question\
 IQ        : uses rng to decide your iq\
-UWU       : uwufy's some text
-Mock      : mOcK WhEn lIfE LeTs yOu dOwN
-Clap      : 👏clap👏**
+UWU       : uwufy's some text  
+Mock      : mOcK WhEn lIfE LeTs yOu dOwN  
+Clap      : 👏clap👏  
+Pp        : shows you rpp size**  
 ### general
 **Avatar    : Sends the avatar of a user\
 Help      : Sends the help command\
@@ -22,7 +23,12 @@ Userinfo  : Shows some info about a user**
 Kick      : kick someone\
 Nick      : give someone a nick\
 Slowmode  : Set slowmode\
-Unban     : unban someone**
+Unban     : unban someone  
+autoquote : makes the bot autoquote**
 ### utility
-**Emoji     : Yoink a emoji doesnt work on discord's default emojis\
-Poll      : hold a poll**
+**Emoji   : Yoink a emoji doesnt work on discord's default emojis  
+Poll      : hold a poll  
+Snipe     : Snipe the latest deleted message in a channel  
+Prefix    : change the prefix  
+Encode    : encode some text  
+Decode    : decode some text**
