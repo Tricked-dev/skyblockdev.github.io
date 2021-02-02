@@ -9,8 +9,8 @@ my goal is to keep the bot online for a s long as possible and improve it overti
 
 * Invite link: [here](https://discord.com/oauth2/authorize?client_id=748985087420399717&scope=bot&permissions=67120320)
 
-* Commands: [here](https://skyblockdev.github.io/website/the-trickster-commands)
+* Commands: [here](https://skyblockdev.github.io/the-trickster-commands)
 
-* Main website: [here](https://skyblockdev.github.io/website/)
+* Main website: [here](https://skyblockdev.github.io/)
 
 * The Trickster github: [here](https://github.com/SkyBlockDev/The-trickster)

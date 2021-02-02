@@ -1,6 +1,6 @@
 # malil commands
 * malil's prefix is ! or mention him
-* go back? [here](https://skyblockdev.github.io/website/)
+* go back? [here](https://skyblockdev.github.io/)
 ### Fun
 **8ball   :  Ask your question\
 IQ        : uses rng to decide your iq\
