@@ -1,6 +1,6 @@
 # malil
 
-[![Discord Bots](https://top.gg/api/widget/status/749020331187896410.svg)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/servers/749020331187896410.svg?noavatar=true)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/upvotes/749020331187896410.svg?noavatar=true)](https://top.gg/bot/749020331187896410)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/owner/749020331187896410.svg?noavatar=true)](https://top.gg/bot/749020331187896410)
+[![Discord Bots](https://top.gg/api/widget/status/749020331187896410.svg)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/servers/749020331187896410.svg)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/upvotes/749020331187896410.svg)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/owner/749020331187896410.svg)](https://top.gg/bot/749020331187896410)
 
 
 malil is [The Trickster](https://skyblockdev.github.io/the-trickster) but with a better name and better made in typescript to get the best possible bot its also using the akairo framework giving it lots of customizability
