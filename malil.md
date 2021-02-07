@@ -10,5 +10,3 @@ malil is [The Trickster](https://skyblockdev.github.io/the-trickster) but with a
 * Invite: [here](https://discord.com/oauth2/authorize?client_id=749020331187896410&scope=bot&permissions=0)
 
 * Main website: [here](https://skyblockdev.github.io/)
-
-* Malil github: [here!](https://github.com/SkyBlockDev/malil-akairo)
