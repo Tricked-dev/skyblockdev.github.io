@@ -14,7 +14,7 @@ Pp        : shows you rpp size**
 Help      : Sends the help command\
 Ping      : Sends the current ping\
 Server    : Shows some server details\
-Uptime    : Sends the time the bot has been online\
+github    : Stalk a github repo and wait for releases\
 Userinfo  : Shows some info about a user**
 ### info 
 **Stats     : Sends some interesting info about the bot**
@@ -23,12 +23,14 @@ Userinfo  : Shows some info about a user**
 Kick      : kick someone\
 Nick      : give someone a nick\
 Slowmode  : Set slowmode\
-Unban     : unban someone  
+Unban     : unban someone
+rules     : Get some cool instant rules\
 autoquote : makes the bot autoquote**
 ### utility
 **Emoji   : Yoink a emoji doesnt work on discord's default emojis  
 Poll      : hold a poll  
 Snipe     : Snipe the latest deleted message in a channel  
 Prefix    : change the prefix  
+Invite    : Invite the bot to your server    
 Encode    : encode some text  
 Decode    : decode some text**
