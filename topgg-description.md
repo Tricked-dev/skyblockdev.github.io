@@ -44,7 +44,7 @@
 ### **[utility](https://tricked-dev.gitbook.io/malil/cmds/utility)**
 
 **[Emoji](https://tricked-dev.gitbook.io/malil/cmds/utility#emoji) : Yoink a emoji doesnt work on discord's default emojis  
-[quote](https://tricked-dev.gitbook.io/malil/cmds/utility#quote) : quotes a message by creating a webhook and making it say what the quoted message said  
+[quote](https://tricked-dev.gitbook.io/malil/cmds/utility#quote) : quotes a message by creating a webhook and making it say what the message said  
 [Poll](https://tricked-dev.gitbook.io/malil/cmds/utility#poll) : hold a poll  
 [Prefix](https://tricked-dev.gitbook.io/malil/cmds/utility#prefix) : change the prefix  
 [Invite](https://tricked-dev.gitbook.io/malil/cmds/utility#invite) : Invite the bot to your server  
