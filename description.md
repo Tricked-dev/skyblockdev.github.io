@@ -1,3 +1,5 @@
+[![Discord Bots](https://top.gg/api/widget/status/749020331187896410.svg?noavatar=true)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/servers/749020331187896410.svg?noavatar=true)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/upvotes/749020331187896410.svg?noavatar=true)](https://top.gg/bot/749020331187896410)[![Discord Bots](https://top.gg/api/widget/owner/749020331187896410.svg?noavatar=true)](https://top.gg/bot/749020331187896410)[![Discord](https://discord.com/api/guilds/748956745409232945/embed.png)](https://discord.gg/mY8zTARu4g)
+
 ### Malil is a all in one bot with alot usefull commands its prefix is ! or mention him
 
 - please note for the moderation commands to work it will need those permissions
