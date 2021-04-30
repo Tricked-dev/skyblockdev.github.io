@@ -12,6 +12,10 @@ fastify.get('/', (req, res) => {
 	const bufferIndexHtml = readFileSync(join(__dirname, '..', 'index.html'));
 	res.type('text/html').send(bufferIndexHtml);
 });
+fastify.get('/projects', (req, res) => {
+	const bufferIndexHtml = readFileSync(join(__dirname, '..', 'projects.html'));
+	res.type('text/html').send(bufferIndexHtml);
+});
 
 console.time(green(`http://localhost:${port} `));
 fastify.listen(port, '0.0.0.0', () =>
