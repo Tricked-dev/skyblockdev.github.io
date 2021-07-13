@@ -4,4 +4,5 @@ language = "en"
 multilingual = false
 src = "src"
 title = "SkyBlockDev"
-default-theme = "Ayu"
+default-theme = "Rust"
+git-repository-url = "https://github.com/SkyBlockDev/skyblockdev.github.io"
