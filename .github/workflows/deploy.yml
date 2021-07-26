@@ -6,14 +6,11 @@ jobs:
     steps:
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
       - uses: actions/checkout@v1
       - uses: c-hive/gha-yarn-cache@v2
-      - name: Install JS dependencies
-         run: yarn install
-      - name: Build the website
-         run: yarn export
-      
+      - run: yarn install
+      - run: yarn export
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
