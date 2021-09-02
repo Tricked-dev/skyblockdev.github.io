@@ -5,9 +5,9 @@ description: This is my linux setup
 
 # My linux setup
 
-- laptop
+- Laptop
   - Popos
-    - applications
+    - Applications
       - Visual studio code
       - Firefox and Brave for testing
       - Konsole terminal emulator
