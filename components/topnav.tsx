@@ -67,7 +67,6 @@ export default function NavTabs({ active = 0 }: any) {
         <Tabs variant="fullWidth" value={value} aria-label="nav tabs example">
           <LinkTab label="Main Page" href={"/"} />
           <LinkTab label="Posts" href={"/posts"} />
-          {/* <LinkTab label="Page Three" href={"/spam"} /> */}
         </Tabs>
       </AppBar>
     </div>

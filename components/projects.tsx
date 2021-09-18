@@ -1,3 +1,7 @@
+import * as React from "react";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -5,17 +9,10 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import Slider from "react-slick";
 import Paper from "@material-ui/core/Paper";
 import TopNav from "../components/topnav";
-import Slideshow from "../components/projects";
-import Link from "next/link";
-import Contacting from "../components/contacting";
-import Tools from "../components/tools";
-import { getAllPosts } from "../api/index";
-import Container from "../components/container";
+import Carousel from "react-material-ui-carousel";
 const useStyles = makeStyles({
   media: {
     height: "260px",
@@ -28,6 +25,7 @@ const useStyles = makeStyles({
   grid: {
     padding: "4px 4px 4px",
   },
+
   root: {
     alignItems: "center",
     maxWidth: "800px",
@@ -51,6 +49,8 @@ interface Project {
   link?: string;
 }
 
+const colors = ["#0088FE", "#00C49F", "#FFBB28"];
+const delay = 2500;
 const projects: Project[] = [
   {
     image: "/images/aethor.png",
@@ -123,66 +123,62 @@ const projects: Project[] = [
   },
 ];
 
-export default function Home({ posts }: any) {
+export default function Slideshow() {
   const classes = useStyles();
+
   return (
-    <Container>
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <main className={classes.root}>
-          <Typography component="h1" variant="h1" style={{ fontSize: "4rem" }} className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-            Tricked.pro
-          </Typography>
-          <Typography component="h2" variant="h2" style={{ fontSize: "2rem" }} className="prose text-gray-600 dark:text-gray-400 mb-16">
-            These are some projects i have made
-          </Typography>
-
-          <Paper className={classes.center}>
-            <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center" className={classes.grid}>
-              <Grid item xs={12} sm={12}>
-                <br />
-                <Slideshow />
-              </Grid>
-              <Grid item xs={12} sm={12}>
-                <br />
-                <Tools />
-              </Grid>
-              <Grid item xs={12} sm={12}>
-                <br />
-                <Contacting />
-              </Grid>
-              <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center" className={classes.grid}>
-                {posts.map((x: any, s: any) => {
-                  return (
-                    <Grid item key={s.toString() + "_CARD"} xs={12} sm={6} className={classes.card}>
-                      <Card>
-                        <Link href={`posts/${x.slug}`} passHref>
-                          <CardActionArea>
-                            <CardContent>
-                              <Typography gutterBottom variant="h5" component="h2">
-                                {x.title || x.slug}
-                              </Typography>
-                              <Typography variant="body2" color="textSecondary" component="p" style={{ height: "2rem" }}>
-                                {x.description}
-                              </Typography>
-                            </CardContent>
-                          </CardActionArea>
-                        </Link>
-                      </Card>
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            </Grid>
-          </Paper>
-        </main>
-      </div>
-    </Container>
+    <Carousel>
+      {projects.map((x, s) => {
+        return (
+          <div className={classes.card} key={s}>
+            <Card>
+              <CardActionArea>
+                <CardMedia className={classes.media} image={x.image} title={x.image.split("/")[3]} />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {x.name}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p" style={{ minHeight: "4rem" }}>
+                    {x.description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                {x.repository ? (
+                  <Button
+                    size="small"
+                    color="secondary"
+                    variant="contained"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = x.repository as string;
+                    }}
+                  >
+                    Repository
+                  </Button>
+                ) : (
+                  ""
+                )}
+                {x.link ? (
+                  <Button
+                    size="small"
+                    variant="contained"
+                    color="primary"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = x.link as string;
+                    }}
+                  >
+                    Website
+                  </Button>
+                ) : (
+                  ""
+                )}
+              </CardActions>
+            </Card>
+          </div>
+        );
+      })}
+    </Carousel>
   );
-}
-
-export async function getStaticProps(context: any) {
-  let paths: any = await getAllPosts();
-  return {
-    props: { posts: paths },
-  };
 }
