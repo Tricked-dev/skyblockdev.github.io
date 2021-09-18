@@ -47,7 +47,7 @@
 // };
 
 // export default Nav;
-import { Box, Flex, HStack, IconButton, useColorMode, Button, useDisclosure, Stack, Container } from "@chakra-ui/react";
+import { Box, Flex, HStack, IconButton, Button, useColorMode, Text, useDisclosure, Stack, Container } from "@chakra-ui/react";
 import Link from "./Link";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
@@ -58,12 +58,12 @@ const Links = [
     route: "/",
   },
   {
-    name: "Posts",
-    route: "/#posts",
-  },
-  {
     name: "Projects",
     route: "/#projects",
+  },
+  {
+    name: "Posts",
+    route: "/#posts",
   },
 ];
 
@@ -104,6 +104,10 @@ const Navbar = () => {
             <IconButton size={"md"} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={"Open Menu"} display={{ md: !isOpen ? "none" : "inherit" }} onClick={isOpen ? onClose : onOpen} />
             <HStack spacing={8} alignItems={"center"}>
               <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
+                <Text>
+                  <b>Tricked.pro</b>
+                </Text>
+
                 {navigationItem}
               </HStack>
             </HStack>
@@ -113,6 +117,7 @@ const Navbar = () => {
               </Button>
             </Flex>
           </Flex>
+
           {isOpen ? (
             <Box pb={4} mt={3}>
               <Stack as={"nav"} spacing={4}>

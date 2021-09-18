@@ -1,5 +1,5 @@
 import { Box, Text, Grid, GridItem } from "@chakra-ui/react";
-// import Slideshow from "../components/projects";
+import Slideshow from "../components/projects";
 import Link from "next/link";
 import Contacting from "../components/contacting";
 import Tools from "../components/tools";
@@ -95,7 +95,7 @@ export default function Home({ posts }: any) {
         <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
           <GridItem item xs={12} sm={12} id="projects">
             <br />
-            {/* <Slideshow /> */}
+            <Slideshow />
           </GridItem>
           <GridItem item xs={12} sm={12}>
             <br />
