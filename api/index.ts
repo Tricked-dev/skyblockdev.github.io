@@ -40,7 +40,6 @@ export async function getPostBySlug(slug: any) {
   const meta = matter(fileContent);
 
   const content = marked(meta.content);
-
   return {
     ...meta.data,
     title: meta.data.title,

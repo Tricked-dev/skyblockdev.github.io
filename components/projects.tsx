@@ -85,7 +85,7 @@ export default function Slideshow() {
             {x.name}
           </Text>
         </Box>
-        <Image src={x.image} width="40rem" height="24rem" />
+        <Image src={x.image} width="40rem" height="24rem" alt={x.name} />
         <Box minH="3rem">
           <Text>{x.description}</Text>
         </Box>
