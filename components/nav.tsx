@@ -1,60 +1,130 @@
-import * as React from "react";
+// import * as React from "react";
+// import { useRouter } from "next/router";
+// import { Box, Text, Wrap, WrapItem } from "@chakra-ui/react";
+// import Link from "next/link";
+// import SkipNavLink from "./skipNavLink";
+// import Logo from "./logo";
+// import ColorModeToggle from "./colorModeToggle";
+
+// const NavLink = ({ href, ...props }: any) => (
+//   <Link href={href} passHref>
+//     <Link {...props} />
+//   </Link>
+// );
+
+// const Nav = ({ ...props }) => {
+//   const { pathname } = useRouter();
+
+//   return (
+//     <div className="container max-w-4xl mx-auto">
+//       <Box as="nav" className="z-10 flex justify-between mt-8 mb-2 md:mb-4 lg:mb-6">
+//         <div className="flex flex-row items-center" id="nav-content">
+//           <Text>Tricked.pro</Text>
+
+//           <Box className="menu-btn-lg cursor-pointer">
+//             <NavLink href="/" aria-current={pathname === "/" ? "page" : null} mr={[1, 2]}>
+//               Home
+//             </NavLink>
+//           </Box>
+
+//           <Box className="menu-btn-lg cursor-pointer">
+//             <NavLink href="#projects" aria-current={pathname.includes("/#projects") ? "page" : null} mr={[1, 2]}>
+//               Projects
+//             </NavLink>
+//           </Box>
+
+//           <Box className="menu-btn-lg cursor-pointer">
+//             <NavLink href="#posts" aria-current={pathname.includes("/#posts") ? "page" : null}>
+//               Blog
+//             </NavLink>
+//           </Box>
+//         </div>
+
+//         <ColorModeToggle ml={[2, 3]} className="w-10 h-10 p-3 ml-4 bg-gray-100 rounded-lg dark:bg-gray-50" />
+//       </Box>
+//     </div>
+//   );
+// };
+
+// export default Nav;
+import { Box, Flex, HStack, IconButton, useColorMode, Button, useDisclosure, Stack, Container } from "@chakra-ui/react";
+import Link from "./Link";
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
-import { Box, Flex, Container } from "@chakra-ui/react";
-import Link from "next/link";
-import SkipNavLink from "./skipNavLink";
-import Logo from "./logo";
-import ColorModeToggle from "./colorModeToggle";
 
-const NavLink = ({ href, ...props }: any) => (
-  <Link href={href} passHref>
-    <Link {...props} />
-  </Link>
-);
+const Links = [
+  {
+    name: "Home",
+    route: "/",
+  },
+  {
+    name: "About Me",
+    route: "/about",
+  },
+  {
+    name: "Bookmarks",
+    route: "/bookmarks",
+  },
+];
 
-const Nav = ({ ...props }) => {
-  const { pathname } = useRouter();
+const extraLinks = [
+  {
+    name: "Books",
+    route: "/books",
+  },
+  {
+    name: "Blog",
+    route: "/blog",
+  },
+];
+
+const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  let router = useRouter();
+  let { asPath } = router;
+
+  const navigationItem = (
+    <>
+      {Links.map((link) => (
+        <Link href={link.route} key={link.name} p={2} rounded={"md"} currentPath={asPath}>
+          {link.name}
+        </Link>
+      ))}
+      {/* <DropdownMenu currentPath={asPath} extraLinks={extraLinks} /> */}
+    </>
+  );
 
   return (
-    <Box as="nav" className="bg-white dark:bg-black shadow-lg">
-      <Container
-        sx={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        {/* <SkipNavLink className="flex items-center py-4 px-2" /> */}
-
-        {/* <Logo className="flex items-center py-4 px-2" /> */}
-
-        <Flex sx={{ alignItems: "center" }}>
-          <Flex as="ul">
-            <li>
-              <NavLink href="/" aria-current={pathname === "/" ? "page" : null} mr={[1, 2]}>
-                Home
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink href="#projects" aria-current={pathname.includes("/projects") ? "page" : null} mr={[1, 2]}>
-                Projects
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink href="#posts" aria-current={pathname.includes("/blog") ? "page" : null}>
-                Blog
-              </NavLink>
-            </li>
+    <>
+      <Box py={5} borderTop="2px" borderTopColor="green.500">
+        <Container maxW="container.lg">
+          <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+            <IconButton size={"md"} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={"Open Menu"} display={{ md: !isOpen ? "none" : "inherit" }} onClick={isOpen ? onClose : onOpen} />
+            <HStack spacing={8} alignItems={"center"}>
+              <Box>{/* <Logo /> */}</Box>
+              <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
+                {navigationItem}
+              </HStack>
+            </HStack>
+            <Flex alignItems={"center"}>
+              <Button aria-label="Switch Theme" onClick={toggleColorMode}>
+                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              </Button>
+            </Flex>
           </Flex>
-
-          <ColorModeToggle ml={[2, 3]} />
-        </Flex>
-      </Container>
-    </Box>
+          {isOpen ? (
+            <Box pb={4} mt={3}>
+              <Stack as={"nav"} spacing={4}>
+                {navigationItem}
+              </Stack>
+            </Box>
+          ) : null}
+        </Container>
+      </Box>
+    </>
   );
 };
 
-export default Nav;
+export default Navbar;

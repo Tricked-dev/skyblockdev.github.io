@@ -9,6 +9,10 @@ body {
   margin-left: 1px;
 }
 
+li:not(:first-child) {
+  margin-left: 4rem;
+}
+
 ul {
   margin-left: 10px;
 }
