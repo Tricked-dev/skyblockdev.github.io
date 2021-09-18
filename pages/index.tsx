@@ -1,5 +1,5 @@
 import { Box, Text, Grid, GridItem } from "@chakra-ui/react";
-import Slideshow from "../components/projects";
+// import Slideshow from "../components/projects";
 import Link from "next/link";
 import Contacting from "../components/contacting";
 import Tools from "../components/tools";
@@ -91,15 +91,11 @@ export default function Home({ posts }: any) {
     <Container>
       {/* <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16"> */}
 
-      <Text component="h1" variant="h1" style={{ fontSize: "4rem" }} className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-        Tricked.pro
-      </Text>
-
       <Box>
         <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
           <GridItem item xs={12} sm={12} id="projects">
             <br />
-            <Slideshow />
+            {/* <Slideshow /> */}
           </GridItem>
           <GridItem item xs={12} sm={12}>
             <br />
@@ -110,12 +106,12 @@ export default function Home({ posts }: any) {
             <Contacting />
           </GridItem>
           <GridItem id="posts">
-            <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center" id="blog">
+            <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center" padding="10px 10px 10px">
               <Text fontSize="2xl">Recent posts</Text>
               {posts.map((x: any, s: any) => {
                 return (
-                  <GridItem item key={s.toString() + "_CARD"} xs={12} sm={6}>
-                    <Box>
+                  <GridItem item key={s.toString() + "_CARD"}>
+                    <Box bg="blue.900" border="4px" rounded="md" borderColor="blackAlpha.200">
                       <Link href={`posts/${x.slug}`} passHref>
                         <Box>
                           <Box>

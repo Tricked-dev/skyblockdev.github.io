@@ -58,37 +58,37 @@ const Links = [
     route: "/",
   },
   {
-    name: "About Me",
-    route: "/about",
+    name: "Posts",
+    route: "/#posts",
   },
   {
-    name: "Bookmarks",
-    route: "/bookmarks",
+    name: "Projects",
+    route: "/#projects",
   },
 ];
 
-const extraLinks = [
-  {
-    name: "Books",
-    route: "/books",
-  },
-  {
-    name: "Blog",
-    route: "/blog",
-  },
-];
+// const extraLinks = [
+//   {
+//     name: "Books",
+//     route: "/books",
+//   },
+//   {
+//     name: "Blog",
+//     route: "/blog",
+//   },
+// ];
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
-  let router = useRouter();
-  let { asPath } = router;
+  //   let router = useRouter();
+  //   let { asPath } = router;
 
   const navigationItem = (
     <>
       {Links.map((link) => (
-        <Link href={link.route} key={link.name} p={2} rounded={"md"} currentPath={asPath}>
+        <Link href={link.route} key={link.name} p={2} rounded={"md"}>
           {link.name}
         </Link>
       ))}
@@ -103,7 +103,6 @@ const Navbar = () => {
           <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
             <IconButton size={"md"} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={"Open Menu"} display={{ md: !isOpen ? "none" : "inherit" }} onClick={isOpen ? onClose : onOpen} />
             <HStack spacing={8} alignItems={"center"}>
-              <Box>{/* <Logo /> */}</Box>
               <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
                 {navigationItem}
               </HStack>

@@ -6,7 +6,7 @@ body {
 }
 
 .posts ul > li {
-  margin-left: 1px;
+  margin-left: 15px;
 }
 
 li:not(:first-child) {

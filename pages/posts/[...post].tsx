@@ -1,54 +1,26 @@
 import { getPostBySlug, getAllPosts } from "../../api/index";
-import Paper from "@material-ui/core/Paper";
 import Head from "next/head";
-import { makeStyles } from "@material-ui/styles";
-import TopNav from "../../components/topnav";
-const useStyles = makeStyles({
-  media: {
-    height: "260px",
-  },
-  card: {
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-  },
-  grid: {
-    padding: "4px 4px 4px",
-  },
-  root: {
-    alignItems: "center",
-    width: "80%",
-    justify: "center",
-    maxWidth: "90%",
-    margin: "auto",
-    padding: "2px 20px",
-  },
-  center: {
-    display: "block",
-    alignItems: "center",
-    textAlign: "center",
-  },
-});
+import Container from "../../components/container";
+import { Box } from "@chakra-ui/react";
 function Cursed({ input }: any) {
-  return <div dangerouslySetInnerHTML={{ __html: input }} />;
+  return <Box dangerouslySetInnerHTML={{ __html: input }} />;
 }
 export default function Post({ title, content, description }: any) {
-  const classes = useStyles();
   return (
-    <div>
-      <TopNav active={null} />
-      <Paper className={classes.root} variant={"elevation"}>
+    <Container>
+      <Box variant={"elevation"} shadow="md">
         <Head>
-          <title>{title} | Tricked</title>
+          <title>{title} | Tricked.pro</title>
           <meta name="description" content={description} />
         </Head>
         <main>
-          <div>
+          <Box margin="auto" justifyContent="center" marginRight="auto" marginLeft="auto" maxW="60rem" className="posts">
             <Cursed input={content} />
-          </div>
+          </Box>
+          <br />
         </main>
-      </Paper>
-    </div>
+      </Box>
+    </Container>
   );
 }
 
