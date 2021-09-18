@@ -1,6 +1,7 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Text, Image } from "@chakra-ui/react";
+import * as icons from "@chakra-ui/icons";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { useState } from "react";
 const projects = [
   {
@@ -76,18 +77,86 @@ const projects = [
 
 export default function Slideshow() {
   let [page, setPage] = useState(0);
-  let comps = projects.map((x) => {
+  let createPreview = (x: any) => {
     return (
-      <Box>
+      <Box background="blackAlpha.500" border="8px" borderColor="blackAlpha.500" rounded="md" width="xl">
         <Box>
-          <Text variant="h2">{x.name}</Text>
+          <Text variant="h2" textShadow="2xl" fontSize="2xl">
+            {x.name}
+          </Text>
         </Box>
-        <img src={x.image} />
-        <Box>
+        <Image src={x.image} width="40rem" height="24rem" />
+        <Box minH="3rem">
           <Text>{x.description}</Text>
+        </Box>
+        <Box>
+          {x.repository && (
+            <Button>
+              <Link href={x.repository}>Repository</Link>
+            </Button>
+          )}
+          {x.link && (
+            <Button>
+              <Link href={x.link}>Goto</Link>
+            </Button>
+          )}
         </Box>
       </Box>
     );
-  });
-  return comps[page];
+  };
+  // setInterval(upOne, 2500);
+  // let comps = projects.map((x) => {
+  //   return (
+  //     <Box background="blackAlpha.500" border="8px" borderColor="blackAlpha.500" rounded="md" width="xl">
+  //       <Box>
+  //         <Text variant="h2" textShadow="2xl" fontSize="2xl">
+  //           {x.name}
+  //         </Text>
+  //       </Box>
+  //       <Image src={x.image} width="40rem" height="24rem" />
+  //       <Box minH="3rem">
+  //         <Text>{x.description}</Text>
+  //       </Box>
+  //       <Box>
+  //         {x.repository && (
+  //           <Button>
+  //             <Link href={x.repository}>Repository</Link>
+  //           </Button>
+  //         )}
+  //         {x.link && (
+  //           <Button>
+  //             <Link href={x.link}>Goto</Link>
+  //           </Button>
+  //         )}
+  //       </Box>
+  //     </Box>
+  //   );
+  // });
+  const upOne = () => {
+    setPage(page++);
+    if (page == projects.length - 1) setPage(0);
+  };
+  return (
+    <>
+      {createPreview(projects[page])}
+
+      <Box className="">
+        <Button
+          leftIcon={<icons.ArrowLeftIcon />}
+          onClick={() => {
+            upOne();
+          }}
+        />
+
+        <Button
+          leftIcon={<icons.ArrowRightIcon />}
+          className=""
+          onClick={() => {
+            setPage(page--);
+            if (page == -1) setPage(projects.length - 1);
+          }}
+        />
+      </Box>
+    </>
+  );
 }
