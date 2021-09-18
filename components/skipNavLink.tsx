@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Link } from "@chakra-ui/react";
 
-const SkipNavLink: React.FC = () => (
+const SkipNavLink: React.FC = ({ className }: any) => (
   <Link
+    className={className}
     variant="ui"
     href="#main-content"
     sx={{

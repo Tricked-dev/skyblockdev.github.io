@@ -1,11 +1,12 @@
 import React from "react";
-import { makeStyles, Theme } from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
+// import Typography from "@material-ui/core/Typography";
+// import Box from "@material-ui/core/Box";
 import Link from "next/link";
+import { Text, Box } from "@chakra-ui/react";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: any;
@@ -19,7 +20,7 @@ function TabPanel(props: TabPanelProps) {
     <div role="tabpanel" hidden={value !== index} id={`nav-tabpanel-${index}`} aria-labelledby={`nav-tab-${index}`} {...other}>
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <Text>{children}</Text>
         </Box>
       )}
     </div>
@@ -50,19 +51,11 @@ function LinkTab(props: LinkTabProps) {
   );
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
-
 export default function NavTabs({ active = 0 }: any) {
-  const classes = useStyles();
   const [value, setValue] = React.useState(active);
 
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static">
         <Tabs variant="fullWidth" value={value} aria-label="nav tabs example">
           <LinkTab label="Main Page" href={"/"} />

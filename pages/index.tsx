@@ -1,15 +1,6 @@
 import Head from "next/head";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
-import TopNav from "../components/topnav";
+import { makeStyles } from "@material-ui/styles";
+import { Box, Text, Grid, GridItem } from "@chakra-ui/react";
 import Slideshow from "../components/projects";
 import Link from "next/link";
 import Contacting from "../components/contacting";
@@ -129,14 +120,14 @@ export default function Home({ posts }: any) {
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <main className={classes.root}>
-          <Typography component="h1" variant="h1" style={{ fontSize: "4rem" }} className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+          <Text component="h1" variant="h1" style={{ fontSize: "4rem" }} className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
             Tricked.pro
-          </Typography>
-          <Typography component="h2" variant="h2" style={{ fontSize: "2rem" }} className="prose text-gray-600 dark:text-gray-400 mb-16">
+          </Text>
+          <Text component="h2" variant="h2" style={{ fontSize: "2rem" }} className="prose text-gray-600 dark:text-gray-400 mb-16">
             These are some projects i have made
-          </Typography>
+          </Text>
 
-          <Paper className={classes.center}>
+          <Box className={classes.center}>
             <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center" className={classes.grid}>
               <Grid item xs={12} sm={12}>
                 <br />
@@ -154,26 +145,26 @@ export default function Home({ posts }: any) {
                 {posts.map((x: any, s: any) => {
                   return (
                     <Grid item key={s.toString() + "_CARD"} xs={12} sm={6} className={classes.card}>
-                      <Card>
+                      <Box>
                         <Link href={`posts/${x.slug}`} passHref>
-                          <CardActionArea>
-                            <CardContent>
-                              <Typography gutterBottom variant="h5" component="h2">
+                          <Box>
+                            <Box>
+                              <Text gutterBottom variant="h5" component="h2">
                                 {x.title || x.slug}
-                              </Typography>
-                              <Typography variant="body2" color="textSecondary" component="p" style={{ height: "2rem" }}>
+                              </Text>
+                              <Text variant="body2" color="textSecondary" component="p" style={{ height: "2rem" }}>
                                 {x.description}
-                              </Typography>
-                            </CardContent>
-                          </CardActionArea>
+                              </Text>
+                            </Box>
+                          </Box>
                         </Link>
-                      </Card>
+                      </Box>
                     </Grid>
                   );
                 })}
               </Grid>
             </Grid>
-          </Paper>
+          </Box>
         </main>
       </div>
     </Container>

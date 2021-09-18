@@ -1,33 +1,22 @@
 import * as React from "react";
 import { useRouter } from "next/router";
-import { default as NextLink } from "next/link";
 import { Box, Flex, Container } from "@chakra-ui/react";
 import Link from "next/link";
-
 import SkipNavLink from "./skipNavLink";
 import Logo from "./logo";
 import ColorModeToggle from "./colorModeToggle";
 
 const NavLink = ({ href, ...props }: any) => (
-  <NextLink href={href} passHref>
+  <Link href={href} passHref>
     <Link {...props} />
-  </NextLink>
+  </Link>
 );
 
-const Nav = ({ sx, ...props }) => {
+const Nav = ({ ...props }) => {
   const { pathname } = useRouter();
 
   return (
-    <Box
-      as="nav"
-      sx={{
-        borderTop: 4,
-        borderColor: "primary",
-        paddingTop: [4, null, 5],
-        ...sx,
-      }}
-      {...props}
-    >
+    <Box as="nav" className="bg-white dark:bg-black shadow-lg">
       <Container
         sx={{
           position: "relative",
@@ -36,9 +25,9 @@ const Nav = ({ sx, ...props }) => {
           justifyContent: "space-between",
         }}
       >
-        <SkipNavLink />
+        {/* <SkipNavLink className="flex items-center py-4 px-2" /> */}
 
-        <Logo />
+        {/* <Logo className="flex items-center py-4 px-2" /> */}
 
         <Flex sx={{ alignItems: "center" }}>
           <Flex as="ul">

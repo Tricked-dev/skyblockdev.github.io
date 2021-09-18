@@ -2,9 +2,10 @@ import * as React from "react";
 import Link from "next/link";
 import { Text } from "@chakra-ui/react";
 
-const Logo: React.FC = () => (
+const Logo: React.FC = ({ className }: any) => (
   <Link href="/" passHref>
     <Text
+      className={className}
       as="a"
       tabIndex={-1}
       sx={{

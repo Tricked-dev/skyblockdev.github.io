@@ -1,6 +1,6 @@
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets } from "@material-ui/core/styles";
+import { ServerStyleSheets } from "@mui/styles";
 import theme from "../api/theme";
 import { ColorModeScript } from "@chakra-ui/react";
 export default class MyDocument extends Document {

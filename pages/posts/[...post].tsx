@@ -1,7 +1,7 @@
 import { getPostBySlug, getAllPosts } from "../../api/index";
 import Paper from "@material-ui/core/Paper";
 import Head from "next/head";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
 import TopNav from "../../components/topnav";
 const useStyles = makeStyles({
   media: {
