@@ -1,5 +1,5 @@
-import { Box, Button, Text, Image } from "@chakra-ui/react";
-import * as icons from "@chakra-ui/icons";
+import { Box, Button, Text, Image, Wrap, WrapItem } from "@chakra-ui/react";
+import { ArrowRightIcon, ArrowLeftIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 // import Image from "next/image";
 import { useState } from "react";
@@ -77,30 +77,53 @@ const projects = [
 
 export default function Slideshow() {
   let [page, setPage] = useState(0);
-  let createPreview = (x: any) => {
+  let CreatePreview = ({ x }: any) => {
     return (
-      <Box background="blackAlpha.500" border="8px" borderColor="blackAlpha.500" rounded="md" width="xl">
+      <Box rounded="md" className="max-w-full w-80 h-52" maxW="100%">
         <Box>
           <Text variant="h2" textShadow="2xl" fontSize="2xl">
             {x.name}
           </Text>
         </Box>
-        <Image src={x.image} width="40rem" height="24rem" alt={x.name} />
-        <Box minH="3rem">
-          <Text>{x.description}</Text>
+        <Box className="w-80 h-52">
+          <Image src={x.image} className="w-80 h-52" width="40rem" height="24rem" alt={x.name} />
         </Box>
-        <Box>
-          {x.repository && (
-            <Button>
-              <Link href={x.repository}>Repository</Link>
-            </Button>
-          )}
-          {x.link && (
-            <Button>
-              <Link href={x.link}>Goto</Link>
-            </Button>
-          )}
+        <Box minH="3.4rem" maxW="40rem">
+          <Text fontSize="large">{x.description}</Text>
         </Box>
+        <Wrap>
+          <WrapItem>
+            <Button
+              leftIcon={<ArrowLeftIcon />}
+              onClick={() => {
+                upOne();
+              }}
+            />
+          </WrapItem>
+          <WrapItem>
+            <Button
+              leftIcon={<ArrowRightIcon />}
+              onClick={() => {
+                setPage(page--);
+                if (page == -1) setPage(projects.length - 1);
+              }}
+            />
+          </WrapItem>
+          <WrapItem>
+            {x.repository && (
+              <Button leftIcon={<ExternalLinkIcon />}>
+                <Link href={x.repository}>Repository</Link>
+              </Button>
+            )}
+          </WrapItem>
+          <WrapItem>
+            {x.link && (
+              <Button leftIcon={<ExternalLinkIcon />}>
+                <Link href={x.link}>Visit Website</Link>
+              </Button>
+            )}
+          </WrapItem>
+        </Wrap>
       </Box>
     );
   };
@@ -138,24 +161,11 @@ export default function Slideshow() {
   };
   return (
     <>
-      {createPreview(projects[page])}
-
-      <Box className="">
-        <Button
-          leftIcon={<icons.ArrowLeftIcon />}
-          onClick={() => {
-            upOne();
-          }}
-        />
-
-        <Button
-          leftIcon={<icons.ArrowRightIcon />}
-          className=""
-          onClick={() => {
-            setPage(page--);
-            if (page == -1) setPage(projects.length - 1);
-          }}
-        />
+      <Text variant="h1" textShadow="3xl" fontSize="3xl">
+        Project showcase
+      </Text>
+      <Box className="bg-yellow">
+        <CreatePreview x={projects[page]} />
       </Box>
     </>
   );
