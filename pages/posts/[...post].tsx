@@ -1,10 +1,12 @@
 import { getPostBySlug, getAllPosts } from "../../api/index";
 import Head from "next/head";
 import Container from "../../components/container";
-import { Box, Text, Link } from "@chakra-ui/react";
+import { Box, Text, Link, ListItem, UnorderedList, Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption } from "@chakra-ui/react";
 import { MDXRemote } from "next-mdx-remote";
 
 const components = {
+  ul: UnorderedList,
+  li: ListItem,
   a: ({ children, href }: any) => {
     console.log(children, href);
     return (
@@ -22,7 +24,7 @@ const components = {
   },
   h3: ({ children }: any) => {
     return (
-      <Text variant={"h3"} fontSize="1xl">
+      <Text variant={"h3"} fontSize="x-large">
         {children}
       </Text>
     );

@@ -5,30 +5,9 @@ description: This is my linux setup
 
 # My linux setup
 
-- Laptop
-  - Popos
-    - Applications
-      - Visual studio code
-      - Firefox and Brave for testing
-      - Konsole terminal emulator
-    - Desktop environment
-      - kde plasma
-- Desktop
-  - ArchLinux
-    - Applications
-      - Firefox
-      - Visual studio code
-      - Alacritty
-    - Desktop environment
-      - Sway on wayland
-- Server
-  - Ubuntu Server
-    - Applications
-      - Nodejs
-      - Deno
-      - Git
-      - SSH
-      - PM2
-      - \+ many more programs
-    - Desktop environment
-      - none i use ssh for everything
+| PC-TYPE      | DISTRO       | DESKTOP         | SOFTWARE                                  |
+| ------------ | ------------ | --------------- | ----------------------------------------- |
+| Laptop       | Popos        | KDE plasma      | Vscode, Rust, Konsole, Discord, Firefox   |
+| Desktop      | ArchLinux    | Sway on wayland | Vscode, Rust, Alacritty, Discord, Firefox |
+| Raspberry pi | UbuntuServer | None            | PM2, Deno, Nodejs Postgressql             |
+| VPS          | UbuntuServer | None            | Deno Postgressql                          |

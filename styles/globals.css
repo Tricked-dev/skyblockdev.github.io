@@ -13,6 +13,15 @@ body {
   margin-left: 15px;
 }
 
+.posts table {
+  padding: 6px, 6px, 6px, 6px;
+
+  border-collapse: collapse;
+}
+.posts th,
+td {
+  border: 0.1rem solid white;
+}
 li:not(:first-child) {
   margin-left: 4rem;
 }
