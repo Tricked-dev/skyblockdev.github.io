@@ -1,10 +1,48 @@
 import { getPostBySlug, getAllPosts } from "../../api/index";
 import Head from "next/head";
 import Container from "../../components/container";
-import { Box } from "@chakra-ui/react";
-function Cursed({ input }: any) {
-  return <Box dangerouslySetInnerHTML={{ __html: input }} />;
-}
+import { Box, Text, Link } from "@chakra-ui/react";
+import { MDXRemote } from "next-mdx-remote";
+
+const components = {
+  a: ({ children, href }: any) => {
+    console.log(children, href);
+    return (
+      <Link color="green.300" href={href}>
+        <Text as="u">{children}</Text>
+      </Link>
+    );
+  },
+  h4: ({ children }: any) => {
+    return (
+      <Text variant={"h4"} fontSize="large">
+        {children}
+      </Text>
+    );
+  },
+  h3: ({ children }: any) => {
+    return (
+      <Text variant={"h3"} fontSize="1xl">
+        {children}
+      </Text>
+    );
+  },
+  h2: ({ children }: any) => {
+    return (
+      <Text variant={"h2"} fontSize="2xl">
+        {children}
+      </Text>
+    );
+  },
+  h1: ({ children }: any) => {
+    return (
+      <Text variant={"h1"} fontSize="3xl">
+        {children}
+      </Text>
+    );
+  },
+};
+
 export default function Post({ title, content, description }: any) {
   return (
     <Container>
@@ -14,10 +52,13 @@ export default function Post({ title, content, description }: any) {
           <meta name="description" content={description} />
         </Head>
         <main>
-          <Box margin="auto" justifyContent="center" marginRight="auto" marginLeft="auto" maxW="60rem" className="posts">
-            <Cursed input={content} />
-          </Box>
-          <br />
+          <article>
+            <Box margin="auto" justifyContent="center" marginRight="auto" marginLeft="auto" maxW="60rem" className="posts">
+              <MDXRemote {...content} components={components} />
+              {/* <Cursed input={content} /> */}
+            </Box>
+            <br />
+          </article>
         </main>
       </Box>
     </Container>

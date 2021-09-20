@@ -1,4 +1,7 @@
-module.exports = {
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx$/,
+});
+module.exports = withMDX({
   reactStrictMode: true,
   compress: false,
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -10,4 +13,4 @@ module.exports = {
     path: "",
   },
   target: "serverless",
-};
+});

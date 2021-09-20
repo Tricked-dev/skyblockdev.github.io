@@ -1,4 +1,5 @@
 import { Box, Text, Progress, SimpleGrid, Center } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const skills = [
   {
@@ -270,19 +271,27 @@ export default function Tools({ isLargerThan1280 }: any) {
       <SimpleGrid columns={isLargerThan1280 ? 5 : 3} spacing={3}>
         {skills.map((x, y) => {
           return (
-            <Box key={y} width="8rem" height="8rem" backgroundColor="darkgrey" border="2px" rounded="md" borderColor="darkgray">
-              <Box textAlign="center">
-                <Text>{x.n}</Text>
-              </Box>
-              <Center>
-                <Box width="5rem" maxH="5rem">
-                  {x.i}
+            <motion.div
+              key={y}
+              whileHover={{
+                scale: 1.2,
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              <Box width="8rem" height="8rem" backgroundColor="darkgrey" border="2px" rounded="md" borderColor="darkgray">
+                <Box textAlign="center">
+                  <Text>{x.n}</Text>
                 </Box>
-              </Center>
-              <Box>
-                <Progress value={x.p} />
+                <Center>
+                  <Box width="5rem" maxH="5rem">
+                    {x.i}
+                  </Box>
+                </Center>
+                <Box>
+                  <Progress value={x.p} />
+                </Box>
               </Box>
-            </Box>
+            </motion.div>
           );
         })}
       </SimpleGrid>

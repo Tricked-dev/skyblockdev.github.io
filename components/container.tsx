@@ -23,7 +23,7 @@ export default function Container(props: any) {
   };
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -43,8 +43,7 @@ export default function Container(props: any) {
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
       <Nav />
-      {/* <nav className="flex items-center justify-between w-full max-w-4xl p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav md:my-8 dark:bg-black bg-opacity-60 dark:text-gray-100"></nav> */}
-      <main className="flex flex-col justify-center px-8 bg-white dark:bg-black">
+      <main>
         {children}
         <Footer />
       </main>

@@ -1,9 +1,17 @@
 import { Box, Button, Text, Image, Wrap, WrapItem } from "@chakra-ui/react";
 import { ArrowRightIcon, ArrowLeftIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 import Link from "next/link";
 // import Image from "next/image";
 import { useState } from "react";
-const projects = [
+interface Project {
+  image: string;
+  name: string;
+  description: string;
+  repository?: string;
+  link?: string;
+}
+const projects: Project[] = [
   {
     image: "/images/aethor.png",
     name: "Aethor",
@@ -79,14 +87,22 @@ export default function Slideshow() {
   let [page, setPage] = useState(0);
   let CreatePreview = ({ x }: any) => {
     return (
-      <Box rounded="md" className="max-w-full w-80 h-52" maxW="100%">
+      <Box maxW="100%">
         <Box>
           <Text variant="h2" textShadow="2xl" fontSize="2xl">
             {x.name}
           </Text>
         </Box>
-        <Box className="w-80 h-52">
-          <Image src={x.image} className="w-80 h-52" width="40rem" height="24rem" alt={x.name} />
+        <Box>
+          <motion.div
+            whileHover={{
+              scale: 1.2,
+            }}
+            transition={{ duration: 0.4 }}
+            // transition={{ type: "spring", stiffness: 100 }}
+          >
+            <Image src={x.image} width="40rem" height="24rem" alt={x.name} />
+          </motion.div>
         </Box>
         <Box minH="3.4rem" maxW="40rem">
           <Text fontSize="large">{x.description}</Text>
@@ -164,7 +180,7 @@ export default function Slideshow() {
       <Text variant="h1" textShadow="3xl" fontSize="3xl">
         Project showcase
       </Text>
-      <Box className="bg-yellow">
+      <Box>
         <CreatePreview x={projects[page]} />
       </Box>
     </>
