@@ -2,6 +2,7 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx$/,
 });
 const withPWA = require("next-pwa");
+
 module.exports = withPWA(
   withMDX({
     pwa: {

@@ -101,10 +101,10 @@ export default function Slideshow() {
             transition={{ duration: 0.4 }}
             // transition={{ type: "spring", stiffness: 100 }}
           >
-            <Image src={x.image} width="40rem" height="24rem" alt={x.name} />
+            <Image src={x.image} width="100%" height="24rem" alt={x.name} />
           </motion.div>
         </Box>
-        <Box minH="3.4rem" maxW="40rem">
+        <Box minH="3.4rem" maxW="100%">
           <Text fontSize="large">{x.description}</Text>
         </Box>
         <Wrap>

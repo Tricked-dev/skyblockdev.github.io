@@ -13,13 +13,13 @@ export default function Home({ posts }: any) {
     <Container>
       <Box>
         <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
-          <GridItem minH="3.4rem" maxW="40rem">
+          <GridItem minH="3.4rem" className="max-w-2xl">
             <Text fontSize="6xl">Hey, I&apos;m tricked</Text>
             <Text>
               I Am Typescript developer who mainly enjoys making discord bots using <a href="https://deno.land">Deno</a>, I do alot more though.
             </Text>
           </GridItem>
-          <GridItem item xs={12} sm={12} id="projects">
+          <GridItem item xs={12} sm={12} id="projects" className="max-w-2xl">
             <br />
             <Slideshow />
           </GridItem>

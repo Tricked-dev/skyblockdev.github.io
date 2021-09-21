@@ -1,14 +1,12 @@
 import { getPostBySlug, getAllPosts } from "../../api/index";
-import Head from "next/head";
 import Container from "../../components/container";
-import { Box, Text, Link, ListItem, UnorderedList, Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption } from "@chakra-ui/react";
+import { Box, Text, Link, ListItem, UnorderedList } from "@chakra-ui/react";
 import { MDXRemote } from "next-mdx-remote";
 
 const components = {
   ul: UnorderedList,
   li: ListItem,
   a: ({ children, href }: any) => {
-    console.log(children, href);
     return (
       <Link color="green.300" href={href}>
         <Text as="u">{children}</Text>
@@ -47,12 +45,8 @@ const components = {
 
 export default function Post({ title, content, description }: any) {
   return (
-    <Container>
+    <Container title={title} description={description}>
       <Box variant={"elevation"} shadow="md">
-        <Head>
-          <title>{title} | Tricked.pro</title>
-          <meta name="description" content={description} />
-        </Head>
         <main>
           <article>
             <Box margin="auto" justifyContent="center" marginRight="auto" marginLeft="auto" maxW="60rem" className="posts">
