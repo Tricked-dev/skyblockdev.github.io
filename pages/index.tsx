@@ -41,7 +41,7 @@ export default function Home({ posts }: any) {
                       <Box cursor="pointer">
                         <Box>
                           <Box>
-                            <Text gutterbottom variant="h5" component="h2">
+                            <Text variant="h5" component="h2">
                               {x.title || x.slug}
                             </Text>
                             <Text variant="body2" color="textSecondary" component="p" style={{ height: "2rem" }}>
