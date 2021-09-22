@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "lint": "eslint --ext .ts,.tsx --fix --max-warnings 0 .",
+    "format": "prettier --write './**/*.{tsx,ts}'"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
@@ -31,13 +32,24 @@
   "devDependencies": {
     "@types/js-yaml": "^4.0.3",
     "@types/marked": "^3.0.0",
-    "@types/react": "17.0.21",
+    "@types/react": "17.0.24",
     "@types/react-slick": "^0.23.5",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
     "autoprefixer": "^10.3.4",
-    "eslint": "7.32.0",
+    "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.3.6",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.4.1",
     "typescript": "4.4.3"
   },
   "prettier": {
@@ -72,6 +84,108 @@
             }
           ]
         ]
+      }
+    }
+  },
+  "eslint": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es2020": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "tsconfigRootDir": "",
+      "project": [
+        "./tsconfig.json"
+      ],
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "jsx-a11y",
+      "react",
+      "prettier",
+      "eslint-plugin-import-helpers"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:react/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:jsx-a11y/recommended",
+      "prettier",
+      "prettier/@typescript-eslint",
+      "prettier/react"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "hrefLeft",
+            "hrefRight"
+          ],
+          "aspects": [
+            "invalidHref",
+            "preferButton"
+          ]
+        }
+      ],
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "never",
+          "groups": [
+            [
+              "parent",
+              "sibling",
+              "index"
+            ]
+          ],
+          "alphabetize": {
+            "order": "asc",
+            "ignoreCase": false
+          }
+        }
+      ],
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".tsx",
+            "jsx"
+          ]
+        }
+      ],
+      "react/prop-types": 0
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      },
+      "import/resolver": {
+        "babel-module": {
+          "extensions": [
+            ".ts",
+            ".tsx",
+            ".js",
+            ".jsx"
+          ]
+        }
       }
     }
   }

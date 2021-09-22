@@ -45,7 +45,7 @@ const components = {
 
 export default function Post({ title, content, description }: any) {
   return (
-    <Container title={title} description={description}>
+    <Container title={`${title} | Tricked.pro`} description={description}>
       <Box variant={"elevation"} shadow="md">
         <main>
           <article>

@@ -16,7 +16,7 @@ export default function Container(props: any) {
   const router = useRouter();
   const meta = {
     title: "Tricked.pro",
-    description: `Typescript/javscript developer`,
+    description: `Typescript/javscript developer from the netherlands`,
     type: "website",
     themeColor: "#317EFB",
     keywords: "javascript typescript programming discord matrix",
@@ -27,10 +27,7 @@ export default function Container(props: any) {
   return (
     <div>
       <Head>
-        <title>
-          {meta.title}
-          {meta.title ? `| ${meta.title}` : ""}
-        </title>
+        <title>{meta.title}</title>
 
         <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png" />
