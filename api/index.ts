@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkHtml from "remark-html";
-import remarkprism from "remark-prism";
+// import remarkprism from "remark-prism";
 function readdirRecursive(directory: string) {
   const result = [];
 
@@ -42,7 +42,10 @@ export async function getPostBySlug(slug: any) {
   const meta = matter(fileContent);
   const mdxSource = await serialize(meta.content, {
     mdxOptions: {
-      remarkPlugins: [remarkprism, remarkHtml],
+      remarkPlugins: [
+        // remarkprism,
+        remarkHtml,
+      ],
     },
   });
   return {

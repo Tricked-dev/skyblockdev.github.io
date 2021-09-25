@@ -5,7 +5,7 @@ import { highlightAll } from "prismjs";
 import { useEffect } from "react";
 import fetch from "isomorphic-fetch";
 import remarkHtml from "remark-html";
-import remarkprism from "remark-prism";
+// import remarkprism from "remark-prism";
 const Bridger = ({ content }: any) => {
   return (
     <Container>
@@ -28,7 +28,10 @@ export async function getStaticProps() {
           .replace(/language-/gim, ""),
         {
           mdxOptions: {
-            remarkPlugins: [remarkprism, remarkHtml],
+            remarkPlugins: [
+              // remarkprism
+              remarkHtml,
+            ],
           },
         }
       ),
