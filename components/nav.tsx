@@ -15,15 +15,19 @@ const Links = [
     name: "Posts",
     route: "/#posts",
   },
+  {
+    name: "Aethor",
+    route: "/aethor/general",
+  },
 ];
 
-const Navbar = () => {
+const Navbar = ({ links = Links }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
   const navigationItem = (
     <>
-      {Links.map((link) => (
+      {links.map((link) => (
         <Link href={link.route} key={link.name} p={2} rounded={"md"}>
           {link.name}
         </Link>

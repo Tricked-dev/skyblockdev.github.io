@@ -1,6 +1,7 @@
 ---
 title: I use linux
 description: This is the reason why i use linux
+published: Saturday, Setptember 22, 2021
 ---
 
 # Why do i use linux.

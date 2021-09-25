@@ -16,7 +16,7 @@ const projects: Project[] = [
     image: "/images/aethor.png",
     name: "Aethor",
     description: "Aethor is the perfect multipurpose bot for your discord server",
-    link: "https://aethor.floppa.info/",
+    link: "/aethor/general",
   },
   {
     image: "/images/texter.png",
@@ -54,14 +54,14 @@ const projects: Project[] = [
     name: "Tricked.is-a.dev",
     description: "A cool website that hosts cool projects",
     repository: "https://github.com/SkyBlockDev/skyblockdev.github.io",
-    link: "https://tricked.is-a.dev",
+    link: "https://tricked.pro",
   },
   {
     image: "/images/soggaimages.png",
     name: "Sogga Images",
     description: "A image uploader with a fastify backend and nextjs frontend ment to be very fast",
     repository: "https://github.com/SkyBlockDev/images-frontend",
-    link: "https://sogga.floppa.info",
+    link: "https://soggaimges.xyz",
   },
   {
     image: "/images/doomfetch.png",
@@ -87,7 +87,7 @@ export default function Slideshow() {
   let [page, setPage] = useState(0);
   let CreatePreview = ({ x }: any) => {
     return (
-      <Box maxW="100%">
+      <Box maxW="100%" borderColor="darkgrey" border="2px" rounded="md" padding="3px 8px 8px">
         <Box>
           <Text variant="h2" textShadow="2xl" fontSize="2xl">
             {x.name}
@@ -96,12 +96,12 @@ export default function Slideshow() {
         <Box>
           <motion.div
             whileHover={{
-              scale: 1.2,
+              scale: 1.1,
             }}
             transition={{ duration: 0.4 }}
             // transition={{ type: "spring", stiffness: 100 }}
           >
-            <Image src={x.image} width="100%" height="24rem" alt={x.name} />
+            <Image src={x.image} className="object-cover" width="50rem" height="24rem" alt={x.name} />
           </motion.div>
         </Box>
         <Box minH="3.4rem" maxW="100%">

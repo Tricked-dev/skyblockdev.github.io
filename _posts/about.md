@@ -1,6 +1,7 @@
 ---
 title: About
 description: About me
+published: Saturday, Setptember 10, 2021
 ---
 
 ## Hello im tricked

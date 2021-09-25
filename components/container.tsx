@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import Nav from "./nav";
 import NextLink from "next/link";
 
@@ -12,7 +13,7 @@ export default function Container(props: any) {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
 
-  const { children, ...customMeta } = props;
+  const { children, Links, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: "Tricked.pro",
@@ -21,6 +22,7 @@ export default function Container(props: any) {
     themeColor: "#317EFB",
     keywords: "javascript typescript programming discord matrix",
     viewport: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
+    icon: "favicon.ico",
     ...customMeta,
   };
 
@@ -61,7 +63,7 @@ export default function Container(props: any) {
 
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-
+        <link rel="icon" href={meta.icon} type="image/ico" />
         <meta property="og:url" content={`https://tricked.pro${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content={meta.title} />
@@ -77,11 +79,15 @@ export default function Container(props: any) {
 
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <Nav />
+
+      <Nav links={Links} />
+
       <main>
-        {children}
-        <Footer />
+        <Box alignItems="stretch" maxW="50rem" margin="auto">
+          {children}
+        </Box>
       </main>
+      <Footer />
     </div>
   );
 }

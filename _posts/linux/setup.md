@@ -1,6 +1,7 @@
 ---
 title: My linux setup
 description: This is my linux setup
+published: Saturday, Setptember 22, 2021
 ---
 
 # My linux setup

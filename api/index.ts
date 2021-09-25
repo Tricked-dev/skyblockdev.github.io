@@ -2,6 +2,8 @@ import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
+import remarkHtml from "remark-html";
+import remarkprism from "remark-prism";
 function readdirRecursive(directory: string) {
   const result = [];
 
@@ -38,8 +40,11 @@ export async function getAllPosts() {
 export async function getPostBySlug(slug: any) {
   const fileContent = await fs.readFileSync(`${process.cwd()}/_posts/${slug}.md`, { encoding: "ascii" });
   const meta = matter(fileContent);
-  const mdxSource = await serialize(meta.content);
-
+  const mdxSource = await serialize(meta.content, {
+    mdxOptions: {
+      remarkPlugins: [remarkprism, remarkHtml],
+    },
+  });
   return {
     ...meta.data,
     title: meta.data.title,
