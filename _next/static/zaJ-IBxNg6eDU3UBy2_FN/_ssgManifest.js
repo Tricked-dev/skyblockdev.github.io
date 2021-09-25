@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fbridger","\u002F","\u002Fposts\u002F[...post]","\u002Faethor\u002F[commands]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
