@@ -109,21 +109,34 @@ export default function Slideshow() {
         </Box>
         <Wrap>
           <WrapItem>
-            <Button
-              leftIcon={<ArrowLeftIcon />}
+            <button
               onClick={() => {
                 upOne();
               }}
-            />
+            >
+              <Button
+                leftIcon={<ArrowLeftIcon />}
+                onClick={() => {
+                  upOne();
+                }}
+              />
+            </button>
           </WrapItem>
           <WrapItem>
-            <Button
-              leftIcon={<ArrowRightIcon />}
+            <button
               onClick={() => {
                 setPage(page--);
                 if (page == -1) setPage(projects.length - 1);
               }}
-            />
+            >
+              <Button
+                leftIcon={<ArrowRightIcon />}
+                onClick={() => {
+                  setPage(page--);
+                  if (page == -1) setPage(projects.length - 1);
+                }}
+              />
+            </button>
           </WrapItem>
           <WrapItem>
             {x.repository && (
