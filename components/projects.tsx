@@ -114,12 +114,7 @@ export default function Slideshow() {
                 upOne();
               }}
             >
-              <Button
-                leftIcon={<ArrowLeftIcon />}
-                onClick={() => {
-                  upOne();
-                }}
-              />
+              <Button leftIcon={<ArrowLeftIcon />} />
             </button>
           </WrapItem>
           <WrapItem>
@@ -129,13 +124,7 @@ export default function Slideshow() {
                 if (page == -1) setPage(projects.length - 1);
               }}
             >
-              <Button
-                leftIcon={<ArrowRightIcon />}
-                onClick={() => {
-                  setPage(page--);
-                  if (page == -1) setPage(projects.length - 1);
-                }}
-              />
+              <Button leftIcon={<ArrowRightIcon />} />
             </button>
           </WrapItem>
           <WrapItem>
