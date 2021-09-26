@@ -13,7 +13,7 @@ export default function Container(props: any) {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
 
-  const { children, Links, ...customMeta } = props;
+  const { children, Links, TextValue, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: "Tricked.pro",
@@ -80,7 +80,7 @@ export default function Container(props: any) {
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
 
-      <Nav links={Links} />
+      <Nav links={Links} TextValue={TextValue} />
 
       <main>
         <Box alignItems="stretch" maxW="50rem" margin="auto">

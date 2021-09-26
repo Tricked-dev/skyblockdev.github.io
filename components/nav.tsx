@@ -21,7 +21,7 @@ const Links = [
   },
 ];
 
-const Navbar = ({ links = Links }) => {
+const Navbar = ({ links = Links, TextValue = "Tricked.pro" }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -44,7 +44,7 @@ const Navbar = ({ links = Links }) => {
             <HStack spacing={8} alignItems={"center"}>
               <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
                 <Text>
-                  <b>Tricked.pro</b>
+                  <b>{TextValue}</b>
                 </Text>
 
                 {navigationItem}

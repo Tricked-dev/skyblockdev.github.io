@@ -32,7 +32,7 @@ const meta = {
 };
 export default function Cont({ children }: any) {
   return (
-    <Container Links={Links} {...meta}>
+    <Container Links={Links} TextValue={"Aethor"} {...meta}>
       {children}
     </Container>
   );

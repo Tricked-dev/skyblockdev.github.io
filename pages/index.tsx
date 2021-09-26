@@ -60,7 +60,7 @@ export default function Home({ posts }: any) {
           </GridItem>
           <GridItem id="posts" alignItems="center" className="place-items-center">
             <Text fontSize="2xl">Recent posts</Text>
-            <SimpleGrid columns={!isLargerThan1280 ? 2 : 1} spacing={1} alignItems="center" wrap="wrap" justifyContent="center" padding="10px 10px 10px">
+            <SimpleGrid minChildWidth="300px" spacing={1} alignItems="center" wrap="wrap" justifyContent="center" padding="10px 10px 10px">
               {posts.map((x: any, s: number) => (
                 <CreatePost x={x} key={s} y={s} />
               ))}

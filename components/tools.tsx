@@ -268,7 +268,7 @@ export default function Tools({ isLargerThan1280 }: any) {
       <Text variant="h2" fontSize="3xl">
         Tools and media
       </Text>
-      <SimpleGrid columns={isLargerThan1280 ? 5 : 3} spacing={3}>
+      <SimpleGrid minChildWidth="120px" spacing={3}>
         {skills.map((x, y) => {
           return (
             <motion.div

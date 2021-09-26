@@ -88,7 +88,7 @@ export async function getStaticProps(context: any) {
 
 export async function getStaticPaths() {
   return {
-    paths: [...Object.keys(Commands), "/", "commands"].map((x) => ({
+    paths: [...Object.keys(Commands), "index", "commands"].map((x) => ({
       params: { commands: x },
     })),
     fallback: false,
