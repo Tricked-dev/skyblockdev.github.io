@@ -83,7 +83,7 @@ export default function Container(props: any) {
       <Nav links={Links} TextValue={TextValue} />
 
       <main>
-        <Box alignItems="stretch" maxW="50rem" margin="auto">
+        <Box alignItems="stretch" maxW="50rem" margin="auto" padding="4px 10px 40px">
           {children}
         </Box>
       </main>

@@ -10,6 +10,12 @@ module.exports = withPWA(
     pwa: {
       dest: "public",
     },
+    webpack(config, { dev }) {
+      if (dev) {
+        config.devtool = "cheap-module-source-map";
+      }
+      return config;
+    },
 
     reactStrictMode: true,
     compress: false,

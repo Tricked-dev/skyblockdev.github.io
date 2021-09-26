@@ -39,23 +39,20 @@ export default function Home({ posts }: any) {
   return (
     <Container>
       <Box>
-        <Grid container spacing={1} alignItems="center" wrap="wrap" justifyContent="center" padding="4px 4px">
+        <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
           <GridItem minH="3.4rem">
             <Text fontSize="6xl">Hey, I&apos;m tricked</Text>
-            <Text>
+            <Text fontSize="larger">
               I Am Typescript developer who mainly enjoys making discord bots using <a href="https://deno.land">Deno</a>, I do alot more though.
             </Text>
           </GridItem>
-          <GridItem item xs={12} sm={12} id="projects">
-            <br />
+          <GridItem xs={12} sm={12} id="projects">
             <Slideshow />
           </GridItem>
-          <GridItem item xs={12} sm={12}>
-            <br />
+          <GridItem xs={12} sm={12}>
             <Tools isLargerThan1280={!isLargerThan1280} />
           </GridItem>
-          <GridItem item xs={12} sm={12}>
-            <br />
+          <GridItem xs={12} sm={12}>
             <Contacting />
           </GridItem>
           <GridItem id="posts" alignItems="center" className="place-items-center">
