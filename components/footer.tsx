@@ -3,15 +3,15 @@ import Link from "next/link";
 let items = [
   {
     n: "Matrix",
-    h: "https://matrix.to/#/#tricked-hangout:matrix.org",
+    h: "/matrix",
   },
   {
     n: "Discord",
-    h: "https://discord.gg/mY8zTARu4g",
+    h: "/discord",
   },
   {
     n: "Github",
-    h: "https://github.com/SkyBlockDev/skyblockdev.github.io",
+    h: "/github",
   },
 ];
 

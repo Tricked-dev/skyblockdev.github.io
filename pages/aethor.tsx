@@ -5,12 +5,15 @@ import NextLink from "next/link";
 const offline = () => {
   return (
     <Container>
-      <SimpleGrid columns={3}>
-        <GridItem colSpan={3}>
+      <SimpleGrid columns={3} alignContent="center" alignItems="center" justifyItems="center">
+        <GridItem colSpan={1}></GridItem>
+        <GridItem colSpan={1}>
           <Text fontSize="3xl" as="h1" className="font-bold">
             AETHOR
           </Text>
         </GridItem>
+
+        <GridItem colSpan={1}></GridItem>
         {/* <Spacer /> */}
         <GridItem>
           <NextLink href="/aethor/invite" passHref>

@@ -1,8 +1,9 @@
-import Container from "../../components/aethainer";
+import Redirect from "../../components/redirect";
 
-export default function aa() {
-  if (typeof window != "undefined") {
-    window.location.href = "https://discord.gg/zwUQGAG4cP";
-  }
-  return <Container>Please go to https://discord.gg/zwUQGAG4cP for the support server</Container>;
+export default function Support() {
+  return (
+    <Redirect url={"https://discord.gg/zwUQGAG4cP"} aethor>
+      Please go to https://discord.gg/zwUQGAG4cP for the support server
+    </Redirect>
+  );
 }

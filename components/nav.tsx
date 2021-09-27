@@ -9,11 +9,11 @@ const Links = [
   },
   {
     name: "Projects",
-    route: "/#projects",
+    route: "/projects",
   },
   {
     name: "Posts",
-    route: "/#posts",
+    route: "/posts",
   },
   {
     name: "Aethor",
