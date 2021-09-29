@@ -17,7 +17,7 @@ const Links = [
   },
   {
     name: "Aethor",
-    route: "/aethor/general",
+    route: "/aethor",
   },
 ];
 
