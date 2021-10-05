@@ -20,8 +20,8 @@ export default function Contacting() {
       </Text>
       <Text>
         <b>Github</b>:{" "}
-        <Link isExternal href="https://github.com/skyblockdev">
-          github.com/skyblockdev
+        <Link isExternal href="https://github.com/Tricked-dev">
+          github.com/Tricked-dev
         </Link>
       </Text>
     </Box>

@@ -19,12 +19,12 @@ export async function getStaticProps() {
     props: {
       content: await serialize(
         (
-          await fetch("https://raw.githubusercontent.com/SkyBlockDev/bridgebot/main/README.md").then((r: any) => r.text())
+          await fetch("https://raw.githubusercontent.com/Tricked-dev/bridgebot/main/README.md").then((r: any) => r.text())
         )
-          //   .replace(/.\//gim, "https://raw.githubusercontent.com/SkyBlockDev/bridgebot/main/")
+          //   .replace(/.\//gim, "https://raw.githubusercontent.com/Tricked-dev/bridgebot/main/")
 
-          .replace(/images/gim, "https://raw.githubusercontent.com/SkyBlockDev/bridgebot/main/images")
-          .replace("./LICENSE", "https://github.com/SkyBlockDev/bridgebot/blob/main/LICENSE")
+          .replace(/images/gim, "https://raw.githubusercontent.com/Tricked-dev/bridgebot/main/images")
+          .replace("./LICENSE", "https://github.com/Tricked-dev/bridgebot/blob/main/LICENSE")
           .replace(/language-/gim, ""),
         {
           mdxOptions: {
