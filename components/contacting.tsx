@@ -16,7 +16,7 @@ export default function Contacting() {
         </Link>
       </Text>
       <Text>
-        <b>Email&lsquo;s</b>: trickedcodes@tutanota.com OR contact@tricked.pro( may not be up all the time)
+        <b>Email&lsquo;s</b>: trickedcodes@tutanota.com, tricked@duck.com
       </Text>
       <Text>
         <b>Github</b>:{" "}

@@ -4,10 +4,11 @@ import type { AppProps } from "next/app";
 import { object, oneOfType, func, node } from "prop-types";
 import * as React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
+import theme from "../api/theme";
 
 function TrickedAPP({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
   );

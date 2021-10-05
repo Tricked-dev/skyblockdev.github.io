@@ -1,4 +1,4 @@
-import { Box, Text, Grid, GridItem, SimpleGrid, useMediaQuery, Button } from "@chakra-ui/react";
+import { Box, Text, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink } from "@chakra-ui/react";
 import Slideshow from "../components/projects";
 import { useState } from "react";
 import Link from "next/link";
@@ -12,16 +12,25 @@ export default function Home() {
     <Container>
       <Box>
         <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
-          <GridItem minH="3.4rem">
-            <Text fontSize="6xl">Hey, I&apos;m tricked</Text>
-            <Text fontSize="larger">
-              I Am Typescript developer who mainly enjoys making discord bots using <a href="https://deno.land">Deno</a>, I do alot more though.
+          <GridItem minH="3.4rem" margin="auto" paddingBottom="40px">
+            <Text fontSize="6xl" color="brand.100">
+              Hey, I&apos;m tricked
             </Text>
+            <Text fontSize="larger">I am Typescript/React developer</Text>
+            <Text color={useColorModeValue("graytext", "telegram.100")}>My biggest project is Aethor a discord bot made using deno and typescript it allows you to make suggestion channels and much more</Text>
+            {/* <Text color="GrayText">
+              I also made a image uploader using Fastify and NodeJs almost sure its the fastest image uploader out there you can find my other projects{" "}
+              <ChakraLink color="blue.400">
+                <Link passHref href="/projects">
+                  here
+                </Link>
+              </ChakraLink>
+            </Text> */}
           </GridItem>
-          <GridItem xs={12} sm={12}>
+          <GridItem paddingBottom="40px">
             <Tools />
           </GridItem>
-          <GridItem xs={12} sm={12}>
+          <GridItem>
             <Contacting />
           </GridItem>
         </Grid>

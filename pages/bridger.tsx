@@ -23,7 +23,7 @@ export async function getStaticProps() {
         )
           //   .replace(/.\//gim, "https://raw.githubusercontent.com/SkyBlockDev/bridgebot/main/")
 
-          .replace(/\images/gim, "https://raw.githubusercontent.com/SkyBlockDev/bridgebot/main/images")
+          .replace(/images/gim, "https://raw.githubusercontent.com/SkyBlockDev/bridgebot/main/images")
           .replace("./LICENSE", "https://github.com/SkyBlockDev/bridgebot/blob/main/LICENSE")
           .replace(/language-/gim, ""),
         {

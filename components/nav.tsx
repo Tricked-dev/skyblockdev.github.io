@@ -1,6 +1,7 @@
 import { Box, Flex, HStack, IconButton, Button, useColorMode, Text, useDisclosure, Stack, Container } from "@chakra-ui/react";
 import Link from "./Link";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
 const Links = [
   {
@@ -24,11 +25,12 @@ const Links = [
 const Navbar = ({ links = Links, TextValue = "Tricked.pro" }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const router = useRouter();
 
   const navigationItem = (
     <>
       {links.map((link) => (
-        <Link href={link.route} key={link.name} p={2} rounded={"md"}>
+        <Link href={link.route} active={router.pathname == link.route} key={link.name} p={2} rounded={"md"}>
           {link.name}
         </Link>
       ))}

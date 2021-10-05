@@ -1,4 +1,6 @@
-import { Box, Text, Progress, SimpleGrid, Center } from "@chakra-ui/react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { Box, Text, Progress, SimpleGrid, Center, useColorModeValue } from "@chakra-ui/react";
+
 import { motion } from "framer-motion";
 
 const skills = [
@@ -262,7 +264,8 @@ const skills = [
     n: "Console",
   },
 ];
-export default function Tools({ isLargerThan1280 }: any) {
+export default function Tools() {
+  const bgColor = useColorModeValue("darkgrey", "telegram.800");
   return (
     <>
       <Text variant="h2" fontSize="3xl">
@@ -278,7 +281,7 @@ export default function Tools({ isLargerThan1280 }: any) {
               }}
               transition={{ duration: 0.2 }}
             >
-              <Box width="8rem" height="8rem" backgroundColor="darkgrey" border="2px" rounded="md" borderColor="darkgray">
+              <Box p={2} width="8rem" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
                 <Box textAlign="center">
                   <Text>{x.n}</Text>
                 </Box>
@@ -287,8 +290,8 @@ export default function Tools({ isLargerThan1280 }: any) {
                     {x.i}
                   </Box>
                 </Center>
-                <Box>
-                  <Progress value={x.p} />
+                <Box paddingBottom="1px">
+                  <Progress colorScheme="green" as="div" value={x.p} />
                 </Box>
               </Box>
             </motion.div>
