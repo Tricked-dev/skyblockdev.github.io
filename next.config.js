@@ -6,6 +6,7 @@ const withPWA = require("next-pwa");
 
 module.exports = withPWA(
   withMDX({
+    dest: "public",
     webpack5: true,
     pwa: {
       dest: "public",

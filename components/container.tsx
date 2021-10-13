@@ -13,7 +13,7 @@ export default function Container(props: any) {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
 
-  const { children, Links, TextValue, ...customMeta } = props;
+  const { children, Links, TextValue, forceWidth, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: "Tricked.pro",
@@ -83,7 +83,7 @@ export default function Container(props: any) {
       <Nav links={Links} TextValue={TextValue} />
 
       <main>
-        <Box alignItems="stretch" maxW="50rem" margin="auto" padding="4px 10px 40px">
+        <Box alignItems="stretch" maxW={forceWidth ? "50rem" : "none"} margin="auto" padding={forceWidth ? "4px 10px 40px" : "none"}>
           {children}
         </Box>
       </main>

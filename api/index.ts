@@ -3,6 +3,17 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkHtml from "remark-html";
+
+import remark from "remark";
+import html from "remark-html";
+import prism from "remark-prism";
+import github from "remark-github";
+
+export async function markdownToHtml(markdown: string) {
+  const result = await remark().use(html).use(prism).process(markdown);
+  return result.toString();
+}
+
 // import remarkprism from "remark-prism";
 function readdirRecursive(directory: string) {
   const result = [];
@@ -23,6 +34,50 @@ function readdirRecursive(directory: string) {
 
   return result;
 }
+export async function getAllDocs() {
+  const context = readdirRecursive(path.join(process.cwd(), "_diplo"));
+  const docs = [];
+  for (const key of context) {
+    if (!key.endsWith("md") && !key.endsWith("mdx")) continue;
+    const meta = matter(fs.readFileSync(key));
+    docs.push({
+      ...meta.data,
+      slug: key.split("_diplo/").slice(1).join("/").replace(".md", ""),
+      title: meta.data.title || key.split("_diplo").slice(1).join("/"),
+    });
+    docs.push({
+      ...meta.data,
+      slug: key.split("_diplo/").slice(1).join("/"),
+      title: meta.data.title || key.split("_diplo").slice(1).join("/"),
+    });
+  }
+  return docs;
+}
+
+export async function getDocBySlug(slug: any) {
+  let fileContent: string;
+  try {
+    try {
+      fileContent = fs.readFileSync(`${process.cwd()}/_diplo/${slug}.md`, { encoding: "ascii" });
+    } catch (e) {}
+    //@ts-ignore -
+    if (!fileContent) fileContent = fs.readFileSync(`${process.cwd()}/_diplo/${slug}`, { encoding: "ascii" });
+  } catch (e) {}
+
+  const meta = matter(fileContent!);
+  const mdxSource = await serialize(meta.content, {
+    mdxOptions: {
+      //@ts-ignore -
+      remarkPlugins: [prism, remarkHtml],
+    },
+  });
+  return {
+    ...meta.data,
+    title: meta.data.title,
+    content: mdxSource,
+  };
+}
+
 export async function getAllPosts() {
   const context = readdirRecursive(path.join(process.cwd(), "_posts"));
   const posts = [];
@@ -42,10 +97,8 @@ export async function getPostBySlug(slug: any) {
   const meta = matter(fileContent);
   const mdxSource = await serialize(meta.content, {
     mdxOptions: {
-      remarkPlugins: [
-        // remarkprism,
-        remarkHtml,
-      ],
+      //@ts-ignore -
+      remarkPlugins: [prism, remarkHtml],
     },
   });
   return {

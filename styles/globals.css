@@ -9,10 +9,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-.posts ul > li {
-  margin-left: 15px;
-}
-
 .posts table {
   padding: 6px, 6px, 6px, 6px;
 
@@ -21,11 +17,4 @@ body {
 .posts th,
 td {
   border: 0.1rem solid white;
-}
-li:not(:first-child) {
-  margin-left: 4rem;
-}
-
-ul {
-  margin-left: 10px;
 }
