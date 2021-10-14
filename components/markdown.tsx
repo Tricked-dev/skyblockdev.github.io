@@ -1,13 +1,32 @@
 import { MDXRemote } from "next-mdx-remote";
-import { Text, Link, ListItem, UnorderedList } from "@chakra-ui/react";
+import { Text, Link, ListItem, UnorderedList, Box } from "@chakra-ui/react";
 import Head from "next/head";
-
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { agate } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+// import { shadesOfPurple } from "react-syntax-highlighter/dist/esm/styles/prism";
 const components = {
   ul: UnorderedList,
   li: ListItem,
   p: Text,
+
   code: ({ children, className }: any) => {
-    return <code className={className.replace(/language-/g, "")}>{children}</code>;
+    return (
+      <SyntaxHighlighter
+        style={agate}
+        customStyle={{
+          backgroundColor: "none",
+          borderRadius: 4,
+          fontSize: 13,
+          marginBottom: "1em",
+          marginTop: "1em",
+          overflowX: "auto",
+          WebkitOverflowScrolling: "touch",
+        }}
+        language={className?.replace(/language-/g, "")}
+      >
+        {children}
+      </SyntaxHighlighter>
+    );
   },
   a: ({ children, href }: any) => {
     return (
@@ -48,10 +67,12 @@ const components = {
 const Markdown = ({ content }: any) => {
   return (
     <>
-      <head>
+      {/* <head>
         <link href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`} rel="stylesheet" />
-      </head>
-      <MDXRemote {...content} components={components} />
+      </head> */}
+      <Box>
+        <MDXRemote {...content} components={components} />
+      </Box>
     </>
   );
 };

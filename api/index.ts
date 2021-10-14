@@ -3,14 +3,11 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkHtml from "remark-html";
-
 import remark from "remark";
 import html from "remark-html";
-import prism from "remark-prism";
-import github from "remark-github";
 
 export async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).use(prism).process(markdown);
+  const result = await remark().use(html).process(markdown);
   return result.toString();
 }
 
@@ -68,7 +65,7 @@ export async function getDocBySlug(slug: any) {
   const mdxSource = await serialize(meta.content, {
     mdxOptions: {
       //@ts-ignore -
-      remarkPlugins: [prism, remarkHtml],
+      remarkPlugins: [remarkHtml],
     },
   });
   return {
@@ -98,7 +95,7 @@ export async function getPostBySlug(slug: any) {
   const mdxSource = await serialize(meta.content, {
     mdxOptions: {
       //@ts-ignore -
-      remarkPlugins: [prism, remarkHtml],
+      remarkPlugins: [remarkHtml],
     },
   });
   return {

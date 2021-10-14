@@ -11,13 +11,42 @@ module.exports = withPWA(
     pwa: {
       dest: "public",
     },
-    webpack(config, { dev }) {
-      if (dev) {
-        config.devtool = "cheap-module-source-map";
-      }
-      return config;
-    },
+    // webpack(config, { dev }) {
+    //   if (dev) {
+    //     config.devtool = "cheap-module-source-map";
+    //   }
 
+    //   const externals = {
+    //     ...config.externals,
+    //     bcrypt: "bcrypt",
+    //     jimp: "jimp",
+    //     "probe-image-size": "probe-image-size",
+    //   };
+    //   return {
+    //     ...config,
+    //     module: {
+    //       ...config.module,
+    //       rules: [...config.module.rules],
+    //     },
+    //     externals,
+    //   };
+    // },
+    // webpack(config, options) {
+    //   const externals = {
+    //     ...config.externals,
+    //     bcrypt: "bcrypt",
+    //     jimp: "jimp",
+    //     "probe-image-size": "probe-image-size",
+    //   };
+    //   return {
+    //     ...config,
+    //     module: {
+    //       ...config.module,
+    //       rules: [...config.module.rules],
+    //     },
+    //     externals,
+    //   };
+    // },
     reactStrictMode: true,
     compress: false,
     purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],

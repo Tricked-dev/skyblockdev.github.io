@@ -4,14 +4,11 @@ import Container from "../../components/container";
 import Markdown from "../../components/markdown";
 
 import React, { ReactNode } from "react";
+import NextLink from "next/link";
 import { IconButton, Avatar, Box, CloseButton, Flex, HStack, VStack, Icon, useColorModeValue, Link, Drawer, DrawerContent, Text, useDisclosure, BoxProps, FlexProps, Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/react";
 import { FiHome, FiTrendingUp, FiCompass, FiStar, FiSettings, FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
 
 import { ReactText } from "react";
-
-interface LinkItemProps {
-  name: string;
-}
 
 export function SidebarWithHeader({ children, LinkItems }: { children: ReactNode; LinkItems: any }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,9 +45,9 @@ const SidebarContent = ({ onClose, LinkItems, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link, y) => (
-        <a href={`/diplo/${link.slug}`} key={y}>
-          <NavItem>{link.title || link.slug}</NavItem>
-        </a>
+        <NavItem key={y} href={`/diplo/${link.slug}`}>
+          {link.title || link.slug}
+        </NavItem>
       ))}
     </Box>
   );
@@ -58,10 +55,11 @@ const SidebarContent = ({ onClose, LinkItems, ...rest }: SidebarProps) => {
 
 interface NavItemProps extends FlexProps {
   children: ReactText;
+  href: string;
 }
-const NavItem = ({ children, ...rest }: NavItemProps) => {
+const NavItem = ({ children, href, ...rest }: NavItemProps) => {
   return (
-    <Link style={{ textDecoration: "none" }}>
+    <Link as={NextLink} passHref href={href} style={{ textDecoration: "none" }}>
       <Flex
         align="center"
         p="4"
@@ -98,7 +96,7 @@ export default function Post({ title, content, description, docs }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Container title={`${title} | Diplo`} description={description} foceWidth={false}>
+    <Container title={`${title} | Diplo`} description={description} DontforceWidth={true}>
       <Box minH="100vh">
         <SidebarContent LinkItems={docs.filter((x: any) => !x.slug.endsWith(".md") && !x.slug.endsWith(".mdx"))} onClose={() => onClose} display={{ base: "none", md: "block" }} />
         <Drawer autoFocus={false} isOpen={isOpen} placement="left" onClose={onClose} returnFocusOnClose={false} onOverlayClick={onClose} size="full">
