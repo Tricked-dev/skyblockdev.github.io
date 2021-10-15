@@ -142,7 +142,7 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       ...(await getDocBySlug(context.params.doc.join("/"))),
-      docs: await getAllDocs(),
+      docs: (await getAllDocs()).filter((x: any) => !x.slug.endsWith(".md") && !x.slug.endsWith(".mdx")),
     },
   };
 }
