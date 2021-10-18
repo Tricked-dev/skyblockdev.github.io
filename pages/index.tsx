@@ -16,8 +16,10 @@ export default function Home() {
             <Text fontSize="6xl" color="brand.100">
               Hey, I&apos;m tricked
             </Text>
-            <Text fontSize="larger">I am Typescript/React developer</Text>
-            <Text color={useColorModeValue("graytext", "telegram.100")}>My biggest project is Aethor a discord bot made using deno and typescript it allows you to make suggestion channels and much more</Text>
+            <Text fontSize="larger">I am a Typescript and Rust developer</Text>
+            <Text color={useColorModeValue("graytext", "telegram.100")}>
+              Im currently maintaing <Link href="https://github.com/Tricked-dev/diplo">Diplo</Link> a script runner and dependency manager for deno made in rust.
+            </Text>
             {/* <Text color="GrayText">
               I also made a image uploader using Fastify and NodeJs almost sure its the fastest image uploader out there you can find my other projects{" "}
               <ChakraLink color="blue.400">

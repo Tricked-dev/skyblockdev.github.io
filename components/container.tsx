@@ -17,7 +17,7 @@ export default function Container(props: any) {
   const router = useRouter();
   const meta = {
     title: "Tricked.pro",
-    description: `Typescript/javscript developer from the netherlands`,
+    description: `Rust and Typescript developer, Vscode and Linux enjoyer`,
     type: "website",
     themeColor: "#317EFB",
     keywords: "javascript typescript programming discord matrix",

@@ -13,10 +13,24 @@ interface Project {
 }
 const projects: Project[] = [
   {
+    image: "/images/diplo.png",
+    name: "Diplo",
+    description: "A script and dependency manager for deno made in rust ( high performance compiled language )",
+    link: "/diplo",
+    repository: "https://github.com/Tricked-dev/diplo",
+  },
+  {
     image: "/images/aethor.png",
     name: "Aethor",
     description: "Aethor is the perfect multipurpose bot for your discord server",
     link: "/aethor/general",
+  },
+  {
+    image: "/images/soggaimages.png",
+    name: "Sogga Images",
+    description: "A image uploader made in rust quickest on the market",
+    repository: "https://github.com/Tricked-dev/images-frontend",
+    link: "https://soggaimges.xyz",
   },
   {
     image: "/images/texter.png",
@@ -56,13 +70,7 @@ const projects: Project[] = [
     repository: "https://github.com/Tricked-dev/Tricked-dev.github.io",
     link: "https://tricked.pro",
   },
-  {
-    image: "/images/soggaimages.png",
-    name: "Sogga Images",
-    description: "A image uploader with a fastify backend and nextjs frontend ment to be very fast",
-    repository: "https://github.com/Tricked-dev/images-frontend",
-    link: "https://soggaimges.xyz",
-  },
+
   {
     image: "/images/doomfetch.png",
     name: "Doom Fetch",
