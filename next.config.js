@@ -53,10 +53,10 @@ module.exports = withPWA(
     typescript: {
       ignoreBuildErrors: true,
     },
-    images: {
-      loader: "imgix",
-      path: "",
-    },
-    target: "serverless",
+    // images: {
+    //   loader: "imgix",
+    //   path: "public/",
+    // },
+    // target: "serverless",
   })
 );
