@@ -13,6 +13,10 @@ let items = [
     n: "Github",
     h: "/github",
   },
+  {
+    n: "Donate",
+    h: "/donating",
+  },
 ];
 
 export default function Footer() {
