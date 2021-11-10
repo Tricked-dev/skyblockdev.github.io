@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     image: "/images/diplo.png",
     name: "Diplo",
-    description: "A script and dependency manager for deno made in rust ( high performance compiled language )",
+    description: "A script and dependency manager for deno written in rust",
     link: "/diplo",
     repository: "https://github.com/Tricked-dev/diplo",
   },
@@ -27,9 +27,9 @@ const projects: Project[] = [
   },
   {
     image: "/images/soggaimages.png",
-    name: "Sogga Images",
-    description: "A image uploader made in rust quickest on the market",
-    repository: "https://github.com/Tricked-dev/images-frontend",
+    name: "Ascella",
+    description: "The fastest opensource image uploader written in rust",
+    repository: "https://github.com/Tricked-dev/ascella-backend",
     link: "https://soggaimges.xyz",
   },
   {
