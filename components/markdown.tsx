@@ -1,5 +1,5 @@
 import { MDXRemote } from "next-mdx-remote";
-import { Text, Link, ListItem, UnorderedList, Box } from "@chakra-ui/react";
+import { Text, Link, ListItem, UnorderedList, Box, Center } from "@chakra-ui/react";
 import Head from "next/head";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { agate } from "react-syntax-highlighter/dist/cjs/styles/hljs";
@@ -8,7 +8,10 @@ const components = {
   ul: UnorderedList,
   li: ListItem,
   p: Text,
-
+  Center: Center,
+  gray: ({ children, className }: any) => {
+    return <Text color={"GrayText"}>{children}</Text>;
+  },
   code: ({ children, className }: any) => {
     return (
       <SyntaxHighlighter

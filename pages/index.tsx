@@ -20,6 +20,9 @@ export default function Home() {
             <Text color={useColorModeValue("graytext", "telegram.100")}>
               Im currently maintaing <Link href="https://github.com/Tricked-dev/diplo">Diplo</Link> a script runner and dependency manager for deno made in rust.
             </Text>
+            <Text>
+              <ChakraLink href="/services">Programming Services</ChakraLink>
+            </Text>
             {/* <Text color="GrayText">
               I also made a image uploader using Fastify and NodeJs almost sure its the fastest image uploader out there you can find my other projects{" "}
               <ChakraLink color="blue.400">
@@ -29,6 +32,7 @@ export default function Home() {
               </ChakraLink>
             </Text> */}
           </GridItem>
+
           <GridItem paddingBottom="40px">
             <Tools />
           </GridItem>
