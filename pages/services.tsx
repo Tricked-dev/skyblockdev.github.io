@@ -21,7 +21,7 @@ export default function Home() {
       </Center>
       <Center>
         <Text variant="h3" fontSize={"larger"}>
-          I make discord bots for monaro/etherium
+          I make discord bots for monaro/etherium/bitcoin cash(preffered)
         </Text>
       </Center>
       <Text>Pricing is around 1 euro(in crypto) per command depending on the effort is required to make the command</Text>
