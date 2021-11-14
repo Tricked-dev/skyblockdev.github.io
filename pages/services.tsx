@@ -25,7 +25,9 @@ export default function Home() {
         </Text>
       </Center>
       <Text>Pricing is around 1 euro(in crypto) per command depending on the effort is required to make the command</Text>
-      <Text>Dm tricked#3777 on discord if intrested or looking for more details</Text>
+      <Text>
+        Dm <ChakraLink href="https://discord.com/users/336465356304678913">tricked#3777</ChakraLink> on discord if intrested or looking for more details
+      </Text>
       <Text>I will not host the bot and it will be written in typescript using the discord.js api library</Text>
       <br />
       <Text textColor={"GrayText"}>I can also program other things in rust/typescript for a price decided in dms</Text>

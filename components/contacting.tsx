@@ -4,7 +4,7 @@ export default function Contacting() {
     <Box bg="blackAlpha.300" style={{ textAlign: "left" }}>
       <Text fontSize="3xl">You can contact me via the following media</Text>
       <Text>
-        <b>Discord</b>: tricked#3777{" "}
+        <b>Discord</b>: <Link href="https://discord.com/users/336465356304678913">tricked#3777</Link>{" "}
         <Link isExternal href="https://discord.gg/mY8zTARu4g">
           discord.gg/mY8zTARu4g
         </Link>
