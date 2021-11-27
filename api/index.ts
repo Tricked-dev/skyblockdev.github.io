@@ -3,8 +3,12 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkHtml from "remark-html";
-import remark from "remark";
-import html from "remark-html";
+import autolinkHeadings from "rehype-autolink-headings";
+import abbr from "remark-abbr";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import rehypeStringify from "rehype-stringify";
+import rehypeSlug from "rehype-slug";
 
 export async function getAllDocs() {
   return [...(await getAll("_diplo")), ...(await getAll("_diplo", false))];
@@ -49,8 +53,26 @@ export async function getSlug(dir: string, slug: any, ext: boolean = true) {
   const meta = matter(fileContent);
   const mdxSource = await serialize(meta.content, {
     mdxOptions: {
-      //@ts-ignore -
-      remarkPlugins: [remarkHtml],
+      remarkPlugins: [
+        remarkParse,
+        remarkGfm,
+        //@ts-ignore - stop bitching
+        abbr,
+      ],
+      rehypePlugins: [
+        //@ts-ignore - stop bitching
+        rehypeStringify,
+        rehypeSlug,
+
+        //@ts-ignore - stop bitching
+        [
+          autolinkHeadings,
+          {
+            behavior: "wrap",
+          },
+        ],
+        remarkHtml,
+      ],
     },
   });
   return {
