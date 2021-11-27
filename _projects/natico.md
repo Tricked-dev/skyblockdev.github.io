@@ -1,5 +1,5 @@
 ---
-name: Diplo
+name: Natico
 github: naticoo/framework
 website: natico.mod.land/framework
 description: A fast and simple bot framework built upon discordeno

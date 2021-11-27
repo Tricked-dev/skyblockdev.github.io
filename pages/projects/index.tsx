@@ -4,7 +4,6 @@ import { getAllProjects, getProjectBySlug } from "../../api";
 import Container from "../../components/container";
 
 export default function Home({ projects }: { projects: any[] }) {
-  console.log(projects);
   return (
     <Container>
       <Box>

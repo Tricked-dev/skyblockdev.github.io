@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts, getAllProjects, getProjectBySlug, markdownToHtml } from "../../api/index";
+import { getPostBySlug, getAllPosts, getAllProjects, getProjectBySlug } from "../../api/index";
 import Container from "../../components/container";
 import { Box, Text, Image, Button } from "@chakra-ui/react";
 import Markdown from "../../components/markdown";
@@ -9,17 +9,17 @@ export default function Post({ title, readme, name, content, image, description,
     <Container title={`${name} | Tricked.pro`} description={description}>
       <Box variant={"elevation"} shadow="md">
         <main>
-          <Button as="a" href="/projects">
-            Back?
-          </Button>
+          <Text fontSize={"xl"}>{name}</Text>
           <Image src={`/images/${image}`} width="10rem" height="auto" alt=""></Image>
           <article>
             {published && <Text color="GrayText">Published {published}</Text>}
             <Box margin="auto" justifyContent="center" marginRight="auto" marginLeft="auto" maxW="60rem" className="posts">
-              <Text fontSize={"xl"}>{name}</Text>
               <Markdown content={content} />
             </Box>
           </article>
+          <Button as="a" href="/projects">
+            Back?
+          </Button>
         </main>
       </Box>
     </Container>

@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Box, Text, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink, Button } from "@chakra-ui/react";
-import Slideshow from "../components/projects";
 import { useState } from "react";
 import Link from "next/link";
 import Contacting from "../components/contacting";
@@ -33,7 +32,7 @@ export default function Home() {
       </Box>
       <Box padding="10px">
         <Text>Donate ETH 0xc31a1A5dCd1a4704e81fB7c9C3fa858b9A00C7fb</Text>
-        <img src="/eth.png"></img>
+        <img src="/eth.png" alt=""></img>
       </Box>
     </Container>
   );

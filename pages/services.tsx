@@ -1,17 +1,7 @@
-import { Box, Text, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink, Center } from "@chakra-ui/react";
-import Slideshow from "../components/projects";
-import { useState } from "react";
-import Link from "next/link";
-import Contacting from "../components/contacting";
-import Tools from "../components/tools";
-import { getAllPosts } from "../api/index";
+import { Box, Text, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink, Center, Wrap } from "@chakra-ui/react";
 import Container from "../components/container";
-import fs from "fs";
-import { serialize } from "next-mdx-remote/serialize";
-import Markdown from "../components/markdown";
-import remarkHtml from "remark-html";
 
-export default function Home() {
+export default function Services() {
   return (
     <Container>
       <Center>
@@ -19,18 +9,35 @@ export default function Home() {
           Services
         </Text>
       </Center>
-      <Center>
-        <Text variant="h3" fontSize={"larger"}>
-          I make discord bots for monaro/etherium/bitcoin cash(preffered)
-        </Text>
-      </Center>
-      <Text>Pricing is around 1 euro(in crypto) per command depending on the effort is required to make the command</Text>
-      <Text>
-        Dm <ChakraLink href="https://discord.com/users/336465356304678913">tricked#3777</ChakraLink> on discord if intrested or looking for more details
-      </Text>
-      <Text>I will not host the bot and it will be written in typescript using the discord.js api library</Text>
+      <Box>
+        <Center>
+          <Text variant="h3" fontSize={"larger"} noOfLines={2}>
+            <Wrap>
+              <Text>I make discord bots for</Text>
+              <Text color="green.500">monaro/etherium/bitcoin cash</Text>
+            </Wrap>
+          </Text>
+        </Center>
+      </Box>
       <br />
-      <Text textColor={"GrayText"}>I can also program other things in rust/typescript for a price decided in dms</Text>
+      <Box>
+        <Text>Pricing is around 1 euro(in crypto) per command depending on the effort is required to make the command</Text>
+        <Text>
+          Dm{" "}
+          <ChakraLink color="green.600" href="https://discord.com/users/336465356304678913">
+            tricked#3777
+          </ChakraLink>{" "}
+          on discord for more info or offers!
+        </Text>
+        <Wrap>
+          <Text color="red">I will not host the bot</Text>
+          <Text> and it will be written in typescript using the discord.js api library</Text>
+        </Wrap>
+      </Box>
+      <br />
+      <Box>
+        <Text textColor={"GrayText"}>I can also program other things in rust/typescript for a price decided in dms</Text>
+      </Box>
     </Container>
   );
 }
