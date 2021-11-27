@@ -7,8 +7,8 @@ published: Saturday, Setptember 10, 2021
 ## Hello im tricked
 
 - I live in the netherlands.
-- Code things ( a lot )
-  - I make discord bots mostly
+- Code things
+  - I'm a rust/typescript developer the [ascella](https://github.com/Tricked-dev/ascella-backend) image uploader is one of my biggest projects
 - I moderate discord servers sometimes currently staff in skytils, drm, dsm, dg and others
 - socials
   - discord: tricked#3777
