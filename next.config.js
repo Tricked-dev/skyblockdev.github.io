@@ -74,4 +74,4 @@ const config = {
     ];
   },
 };
-module.exports = withOffline(withPWA(withMDX(config)));
+module.exports = withPWA(withMDX(config));

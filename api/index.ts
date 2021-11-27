@@ -63,7 +63,6 @@ export async function getSlug(dir: string, slug: any, ext: boolean = true) {
         //@ts-ignore - stop bitching
         rehypeStringify,
         rehypeSlug,
-
         //@ts-ignore - stop bitching
         [
           autolinkHeadings,

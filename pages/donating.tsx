@@ -1,39 +1,36 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import { Box, Text, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink, Button } from "@chakra-ui/react";
-import { useState } from "react";
-import Link from "next/link";
-import Contacting from "../components/contacting";
-import Tools from "../components/tools";
-import { getAllPosts } from "../api/index";
+import { Box, Text, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink, Button, Image, Wrap } from "@chakra-ui/react";
 import Container from "../components/container";
-import QRCode from "react-qr-code";
-import { MdSend } from "react-icons/md/index";
 
 export default function Home() {
-  const [expended, setExpended] = useState(false);
   return (
     <Container>
       <Box padding="10px">
-        <Text>
-          <Button rel="noopener noreferrer" target="_blank" as="a" href="monero:89prBkdG58KU15jv5LTbP3MgdJ2ikrcyu1vmdTKTGEVdhKRvbxgRN671jfFn3Uivk4Er1JXsc1xFZFbmFCGzVZNLPQeEwZc?tx_description=Donate%20to%20tricekd&recipient_name=tricked" leftIcon={<MdSend />}>
-            Donate XMR
-          </Button>
-          <Button onClick={() => setExpended(!expended)}>Expand Adress</Button>
-          {expended && (
-            <Text>
-              <pre>
-                <code>89prBkdG58KU15jv5LTbP3MgdJ2ikrcyu1vmdTKTGEVdhKRvbxgRN671jfFn3Uivk4Er1JXsc1xFZFbmFCGzVZNLPQeEwZc</code>
-              </pre>
-            </Text>
-          )}
-        </Text>
-
-        <QRCode value="monero:89prBkdG58KU15jv5LTbP3MgdJ2ikrcyu1vmdTKTGEVdhKRvbxgRN671jfFn3Uivk4Er1JXsc1xFZFbmFCGzVZNLPQeEwZc?tx_description=Donate%20to%20tricekd&recipient_name=tricked"></QRCode>
-      </Box>
-      <Box padding="10px">
-        <Text>Donate ETH 0xc31a1A5dCd1a4704e81fB7c9C3fa858b9A00C7fb</Text>
-        <img src="/eth.png" alt=""></img>
+        <Box>
+          <Box>
+            <Text fontSize={"1.7rem"}>You can donate to me using any of the crypto adresses</Text>
+          </Box>
+          <Box>
+            <Wrap>
+              <Image height="1rem" width="auto" src="/crypto/bitcoin-cash-bch-logo.png"></Image>
+              <Text>BCH: bitcoincash:qz9gyruyyvtwcmevtcnyru8gudenqjqeug096e459m</Text>
+            </Wrap>
+          </Box>
+          <Box>
+            <Wrap>
+              <Image height="1rem" width="auto" src="/crypto/ethereum-eth-logo.png"></Image>
+              <Text>ETH: 0xc31a1A5dCd1a4704e81fB7c9C3fa858b9A00C7fb</Text>
+            </Wrap>
+          </Box>
+          <Box>
+            <Wrap>
+              <Image height="1rem" width="auto" src="/crypto/monero-xmr-logo.png"></Image>
+              <Text>XMR:</Text>
+              <Text fontSize={"0.5rem"}>89prBkdG58KU15jv5LTbP3MgdJ2ikrcyu1vmdTKTGEVdhKRvbxgRN671jfFn3Uivk4Er1JXsc1xFZFbmFCGzVZNLPQeEwZc</Text>
+            </Wrap>
+          </Box>
+        </Box>
       </Box>
     </Container>
   );
