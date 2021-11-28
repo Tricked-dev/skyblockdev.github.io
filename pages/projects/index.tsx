@@ -7,10 +7,10 @@ export default function Home({ projects }: { projects: any[] }) {
   return (
     <Container>
       <Box>
-        <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
+        <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center" gap="1rem">
           {projects.map((x, y) => {
             return (
-              <GridItem key={y} maxW="100%" borderWidth="1px" borderRadius="lg" overflow="hidden">
+              <GridItem key={y} borderWidth="1px" borderRadius="lg" overflow="hidden">
                 <Image src={`/images/${x.image}`} className="object-cover" alt={x.name} width={"100%"} height="10rem" />
                 <Box p="6">
                   <Text fontSize={"larger"}>{x.name}</Text>

@@ -7,13 +7,13 @@ import { useState } from "react";
 export default function Post({ title, readme, name, content, image, description, published }: any) {
   return (
     <Container title={`${name} | Tricked.pro`} description={description}>
-      <Box variant={"elevation"} shadow="md">
+      <Box variant={"elevation"} shadow="md" marginRight="auto" marginLeft="auto" maxW="50rem">
         <main>
           <Text fontSize={"xl"}>{name}</Text>
           <Image src={`/images/${image}`} width="10rem" height="auto" alt=""></Image>
           <article>
             {published && <Text color="GrayText">Published {published}</Text>}
-            <Box margin="auto" justifyContent="center" marginRight="auto" marginLeft="auto" maxW="60rem" className="posts">
+            <Box margin="auto" justifyContent="center" className="posts">
               <Markdown content={content} />
             </Box>
           </article>

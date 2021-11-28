@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Box, Text, Progress, SimpleGrid, Center, useColorModeValue } from "@chakra-ui/react";
-
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const skills = [
@@ -264,7 +264,19 @@ const skills = [
     n: "Console",
   },
 ];
+
 export default function Tools() {
+  let [arr, setArr] = useState(skills);
+  // let arr = [...skills];
+
+  useEffect(() => {
+    let sorted = skills.sort(() => Math.random() - 0.5);
+    for (let i = sorted.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
+    }
+    setArr(sorted);
+  }, []);
   const bgColor = useColorModeValue("darkgrey", "telegram.800");
   return (
     <>
@@ -272,7 +284,7 @@ export default function Tools() {
         Tools and media
       </Text>
       <SimpleGrid minChildWidth="120px" spacing={3}>
-        {skills.map((x, y) => {
+        {arr.map((x, y) => {
           return (
             <motion.div
               key={y}
@@ -281,7 +293,7 @@ export default function Tools() {
               }}
               transition={{ duration: 0.2 }}
             >
-              <Box p={2} width="8rem" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
+              <Box p={2} width="auto" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
                 <Box textAlign="center">
                   <Text>{x.n}</Text>
                 </Box>

@@ -8,11 +8,10 @@ export default function Home({ posts }: any) {
     return (
       <GridItem
         as="article"
-        maxW="sm"
+        width="auto"
         p="5"
         borderWidth="1px"
         rounded="md"
-        width="15rem"
         cursor="pointer"
         _hover={{
           backgroundColor: "telegram.900",
@@ -39,7 +38,7 @@ export default function Home({ posts }: any) {
 
   return (
     <Container>
-      <Box>
+      <Box maxW={"50rem"} margin="auto">
         <Text fontSize="2xl">Recent posts</Text>
         <SimpleGrid minChildWidth="15rem" spacing={1} justifyContent="center" padding="10px 10px 10px">
           {posts.map((x: any, s: number) => (

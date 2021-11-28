@@ -4,6 +4,7 @@ const withMDX = require("@next/mdx")({
 });
 const withPWA = require("next-pwa");
 const withOffline = require("next-offline");
+const plugins = require("next-compose-plugins");
 
 const config = {
   dest: "public",
@@ -12,33 +13,12 @@ const config = {
     dest: "public",
   },
   reactStrictMode: true,
-  compress: false,
+  compress: true,
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   typescript: {
     ignoreBuildErrors: true,
   },
-  transformManifest: (manifest) => ["/"].concat(manifest),
-  generateInDevMode: true,
-  workboxOpts: {
-    swDest: "static/service-worker.js",
-    runtimeCaching: [
-      {
-        urlPattern: /^https?.*/,
-        handler: "NetworkFirst",
-        options: {
-          cacheName: "https-calls",
-          networkTimeoutSeconds: 15,
-          expiration: {
-            maxEntries: 150,
-            maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
-          },
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      },
-    ],
-  },
+
   async redirects() {
     return [
       {
@@ -74,4 +54,30 @@ const config = {
     ];
   },
 };
-module.exports = withPWA(withMDX(config));
+module.exports = plugins(
+  [
+    [withPWA],
+    [
+      withOffline,
+      {
+        workboxOpts: {
+          swDest: process.env.NEXT_EXPORT ? "service-worker.js" : "static/service-worker.js",
+          runtimeCaching: [
+            {
+              urlPattern: /^https?.*/,
+              handler: "NetworkFirst",
+              options: {
+                cacheName: "offlineCache",
+                expiration: {
+                  maxEntries: 200,
+                },
+              },
+            },
+          ],
+        },
+      },
+    ],
+    [withMDX],
+  ],
+  config
+);

@@ -9,8 +9,8 @@ export default function Post({ title, content, description, published }: any) {
       <Box variant={"elevation"} shadow="md">
         <main>
           <article>
-            {published && <Text color="GrayText">Published {published}</Text>}
             <Box margin="auto" justifyContent="center" marginRight="auto" marginLeft="auto" maxW="60rem" className="posts">
+              {published && <Text color="GrayText">Published {published}</Text>}
               <Markdown content={content} />
             </Box>
             <br />
