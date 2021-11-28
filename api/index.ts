@@ -76,7 +76,7 @@ export async function transform(i: string) {
 export async function getSlug(dir: string, slug: any, ext: boolean = true) {
   const fileContent = await fs.readFileSync(`${process.cwd()}/${dir}/${slug}${ext ? ".md" : ""}`, { encoding: "ascii" });
   const meta = matter(fileContent);
-  let mdxSource = transform(meta.content);
+  let mdxSource = await transform(meta.content);
   return {
     ...meta.data,
     content: mdxSource,

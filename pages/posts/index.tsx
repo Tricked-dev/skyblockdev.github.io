@@ -1,7 +1,7 @@
 import { Box, Text, Grid, GridItem, SimpleGrid, useMediaQuery, Button } from "@chakra-ui/react";
 import Link from "next/link";
-import { getAllPosts } from "../api/index";
-import Container from "../components/container";
+import { getAllPosts } from "../../api/index";
+import Container from "../../components/container";
 
 export default function Home({ posts }: any) {
   const CreatePost = ({ x, y }: { x: any; y: number }) => {
