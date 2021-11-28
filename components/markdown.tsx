@@ -70,9 +70,6 @@ const components = {
 const Markdown = ({ content }: any) => {
   return (
     <>
-      {/* <head>
-        <link href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`} rel="stylesheet" />
-      </head> */}
       <Box>
         <MDXRemote {...content} components={components} />
       </Box>

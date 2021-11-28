@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Box, Text, Progress, SimpleGrid, Center, useColorModeValue } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import { useEffect, useState } from "react";
+import FadeInWhenVisible from "./FadeIn";
 const skills = [
   {
     i: (
@@ -265,6 +265,38 @@ const skills = [
   },
 ];
 
+type Input = {
+  x: typeof skills[number];
+  bgColor: any;
+};
+
+let ToolBox = ({ x, bgColor }: Input) => {
+  return (
+    <FadeInWhenVisible>
+      <Box
+        as={motion.div}
+        whileHover={{
+          scale: 1.2,
+        }}
+      >
+        <Box p={2} width="auto" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
+          <Box textAlign="center">
+            <Text>{x.n}</Text>
+          </Box>
+          <Center>
+            <Box width="5rem" maxH="5rem">
+              {x.i}
+            </Box>
+          </Center>
+          <Box paddingBottom="1px">
+            <Progress colorScheme="green" as="div" value={x.p} />
+          </Box>
+        </Box>
+      </Box>
+    </FadeInWhenVisible>
+  );
+};
+
 export default function Tools() {
   let [arr, setArr] = useState(skills);
   // let arr = [...skills];
@@ -280,34 +312,15 @@ export default function Tools() {
   const bgColor = useColorModeValue("darkgrey", "telegram.800");
   return (
     <>
-      <Text variant="h2" fontSize="3xl">
-        Tools and media
-      </Text>
+      <FadeInWhenVisible>
+        <Text variant="h2" fontSize="3xl">
+          Tools and media
+        </Text>
+      </FadeInWhenVisible>
+
       <SimpleGrid minChildWidth="120px" spacing={3}>
         {arr.map((x, y) => {
-          return (
-            <motion.div
-              key={y}
-              whileHover={{
-                scale: 1.2,
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              <Box p={2} width="auto" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
-                <Box textAlign="center">
-                  <Text>{x.n}</Text>
-                </Box>
-                <Center>
-                  <Box width="5rem" maxH="5rem">
-                    {x.i}
-                  </Box>
-                </Center>
-                <Box paddingBottom="1px">
-                  <Progress colorScheme="green" as="div" value={x.p} />
-                </Box>
-              </Box>
-            </motion.div>
-          );
+          return <ToolBox x={x} key={y} bgColor={bgColor} />;
         })}
       </SimpleGrid>
     </>

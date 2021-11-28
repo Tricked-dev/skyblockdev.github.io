@@ -48,10 +48,8 @@ export async function getAll(dir: string, removeExt: boolean = true) {
   return data;
 }
 
-export async function getSlug(dir: string, slug: any, ext: boolean = true) {
-  const fileContent = await fs.readFileSync(`${process.cwd()}/${dir}/${slug}${ext ? ".md" : ""}`, { encoding: "ascii" });
-  const meta = matter(fileContent);
-  const mdxSource = await serialize(meta.content, {
+export async function transform(i: string) {
+  return await serialize(i, {
     mdxOptions: {
       remarkPlugins: [
         remarkParse,
@@ -63,7 +61,6 @@ export async function getSlug(dir: string, slug: any, ext: boolean = true) {
         //@ts-ignore - stop bitching
         rehypeStringify,
         rehypeSlug,
-        //@ts-ignore - stop bitching
         [
           autolinkHeadings,
           {
@@ -74,6 +71,12 @@ export async function getSlug(dir: string, slug: any, ext: boolean = true) {
       ],
     },
   });
+}
+
+export async function getSlug(dir: string, slug: any, ext: boolean = true) {
+  const fileContent = await fs.readFileSync(`${process.cwd()}/${dir}/${slug}${ext ? ".md" : ""}`, { encoding: "ascii" });
+  const meta = matter(fileContent);
+  let mdxSource = transform(meta.content);
   return {
     ...meta.data,
     content: mdxSource,

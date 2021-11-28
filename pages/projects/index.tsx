@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { getAllProjects, getProjectBySlug } from "../../api";
-
+import FadeInWhenVisible from "../../components/FadeIn";
 import Container from "../../components/container";
 
 export default function Home({ projects }: { projects: any[] }) {
@@ -11,27 +11,29 @@ export default function Home({ projects }: { projects: any[] }) {
           {projects.map((x, y) => {
             return (
               <GridItem key={y} borderWidth="1px" borderRadius="lg" overflow="hidden">
-                <Image src={`/images/${x.image}`} className="object-cover" alt={x.name} width={"100%"} height="10rem" />
-                <Box p="6">
-                  <Text fontSize={"larger"}>{x.name}</Text>
-                  <Text color="gray.50">{x.description}</Text>
-                  <Box></Box>
-                </Box>
-                <ButtonGroup size="sm" isAttached variant="outline">
-                  <Button as="a" colorScheme={"telegram"} href={`/projects/${x.slug}`}>
-                    Visit
-                  </Button>
-                  {x.website && (
-                    <Button as="a" colorScheme={"telegram"} mr="-px" href={`https://${x.website}`}>
-                      Website
+                <FadeInWhenVisible>
+                  <Image src={`/images/${x.image}`} className="object-cover" alt={x.name} width={"100%"} height="10rem" />
+                  <Box p="6">
+                    <Text fontSize={"larger"}>{x.name}</Text>
+                    <Text color="gray.50">{x.description}</Text>
+                    <Box></Box>
+                  </Box>
+                  <ButtonGroup size="sm" isAttached variant="outline">
+                    <Button as="a" colorScheme={"telegram"} href={`/projects/${x.slug}`}>
+                      Visit
                     </Button>
-                  )}
-                  {x.github && (
-                    <Button as="a" colorScheme={"telegram"} mr="-px" href={`https://github.com/${x.github}`}>
-                      Github
-                    </Button>
-                  )}
-                </ButtonGroup>
+                    {x.website && (
+                      <Button as="a" colorScheme={"telegram"} mr="-px" href={`https://${x.website}`}>
+                        Website
+                      </Button>
+                    )}
+                    {x.github && (
+                      <Button as="a" colorScheme={"telegram"} mr="-px" href={`https://github.com/${x.github}`}>
+                        Github
+                      </Button>
+                    )}
+                  </ButtonGroup>
+                </FadeInWhenVisible>
               </GridItem>
             );
           })}
