@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-
+import { Box } from "@chakra-ui/react";
 export default function FadeInWhenVisible({ children }: any) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -24,6 +24,6 @@ export default function FadeInWhenVisible({ children }: any) {
       }}
     >
       {children}
-    </motion.div>+
+    </motion.div>
   );
 }
