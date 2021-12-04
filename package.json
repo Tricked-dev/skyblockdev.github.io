@@ -27,6 +27,7 @@
     "gray-matter": "^4.0.3",
     "i18next": "^21.5.4",
     "i18next-browser-languagedetector": "^6.0.1",
+    "imagescript": "^1.2.9",
     "isomorphic-fetch": "^3.0.0",
     "next": "12.0.6",
     "next-compose-plugins": "^2.2.1",

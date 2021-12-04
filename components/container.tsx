@@ -19,6 +19,7 @@ const langMeta = {
 export default function Container(props: any) {
   const { children, Links, TextValue, DontforceWidth = false, lang, ...customMeta } = props;
   const router = useRouter();
+
   const meta = {
     title: "Tricked.pro",
     type: "website",
@@ -26,6 +27,7 @@ export default function Container(props: any) {
     keywords: "javascript typescript programming rust discord matrix",
     viewport: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
     icon: "favicon.ico",
+    image: `/cards/${router.route.replace(/\//gim, "_")}.png`,
     ...langMeta[lang as keyof typeof langMeta],
     ...customMeta,
   };

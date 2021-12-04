@@ -89,7 +89,7 @@ export async function getSlug(dir: string, slug: any, ext: boolean = true) {
   }
 }
 
-function readdirRecursive(directory: string) {
+export function readdirRecursive(directory: string) {
   const result = [];
 
   (function read(dir) {
