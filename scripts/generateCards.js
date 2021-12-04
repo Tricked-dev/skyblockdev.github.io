@@ -14,7 +14,7 @@ async function getShit() {
     let fileName = file.split("/");
     let name = fileName[fileName.length - 1].replace(".tsx", "") == "index" ? fileName[fileName.length - 2].replace(".tsx", "") : fileName[fileName.length - 1].replace(".tsx", "");
 
-    generate(name, file.split("pages/")[1].replace(/\//gim, "_").replace(".tsx", ".png"));
+    generate(name, file.split("pages/")[1].replace("/index", "").replace(/\//gim, "_").replace(".tsx", ".png"));
   }
   for (let [text, out] of defaults) {
     generate(text, out + ".png");
