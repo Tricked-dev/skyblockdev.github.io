@@ -5,8 +5,8 @@ const path = require("path");
 let font = fs.readFileSync(path.join(__dirname, "..", "fonts", "Roboto-Bold.ttf"));
 
 let defaults = [
-  ["404!?!??!?!", "_404"],
-  ["index", "_[lang]"],
+  ["404!?!??!?!", "404"],
+  ["index", "[lang]"],
 ];
 
 async function getShit() {

@@ -10,5 +10,6 @@
   "on_discord": " op discord als je geintreseert bent",
   "not_host": "Ik ga je bot niet hosten",
   "written": "en hij word geschrevent in typescript met het discordjs api library",
-  "program_other": "Ik kan ook dingen anderen programeren in rust/typescript voor een prijs gekozen in dms"
+  "program_other": "Ik kan ook dingen anderen programeren in rust/typescript voor een prijs gekozen in dms",
+  "change_lang": "verander taal naar engels"
 }

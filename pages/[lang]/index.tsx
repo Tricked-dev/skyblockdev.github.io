@@ -20,11 +20,23 @@ export default function Home({ lang }: NextJsData) {
             </Text>
             <Text fontSize="larger">{i18next.t("developer")}</Text>
             <Text color={useColorModeValue("graytext", "telegram.100")}>{i18next.t("maintaining")}</Text>
-            <Box>
-              <Text>
-                <ChakraLink href="/services">{i18next.t("services")}</ChakraLink>
+            <Box paddingTop={"5px"}>
+              <Text paddingTop={"5px"}>
+                <Link passHref={true} href="/[lang]/services" as={`/${lang}/services`}>
+                  <ChakraLink>
+                    {"> "} {i18next.t("services")}
+                  </ChakraLink>
+                </Link>
+              </Text>
+              <Text paddingTop={"5px"}>
+                <Link passHref={true} href="/[lang]" as={`/${lang == "en" ? "nl" : "en"}`}>
+                  <ChakraLink color="green.600">
+                    {"> "} {i18next.t("change_lang")}
+                  </ChakraLink>
+                </Link>
               </Text>
             </Box>
+            <Box></Box>
           </GridItem>
 
           <GridItem paddingBottom="40px">
