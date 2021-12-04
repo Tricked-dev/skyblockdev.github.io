@@ -1,6 +1,12 @@
-import Container from "../components/container";
+import Container from "^components/container";
 import { Box, Text } from "@chakra-ui/react";
-const offline = () => {
+import { useEffect } from "react";
+const Four0Four = () => {
+  useEffect(() => {
+    if (!window.location.pathname.startsWith("/nl") && !window.location.pathname.startsWith("/en")) {
+      window.location.pathname = "/en" + window.location.pathname;
+    }
+  }, []);
   return (
     <Container>
       <Box alignItems="center" wrap="wrap" justifyContent="center">
@@ -11,4 +17,4 @@ const offline = () => {
     </Container>
   );
 };
-export default offline;
+export default Four0Four;

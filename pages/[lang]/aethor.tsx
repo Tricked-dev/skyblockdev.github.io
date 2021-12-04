@@ -1,10 +1,11 @@
-import Container from "../components/aethainer";
+import Container from "^components/aethainer";
 import { Box, Text, Button, GridItem, SimpleGrid } from "@chakra-ui/react";
 
 import NextLink from "next/link";
-const offline = () => {
+import { getAllLanguageSlugs, getLanguage } from "^api/lang";
+const offline = ({ lang }: any) => {
   return (
-    <Container>
+    <Container lang={lang}>
       <SimpleGrid columns={3} alignContent="center" alignItems="center" justifyItems="center" paddingTop="4rem" paddingBottom="6rem" gridGap="3rem">
         <GridItem colSpan={1}></GridItem>
         <GridItem colSpan={1}>
@@ -44,4 +45,20 @@ const offline = () => {
     </Container>
   );
 };
+export async function getStaticPaths() {
+  const paths = getAllLanguageSlugs();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const language = getLanguage(params.lang);
+  return {
+    props: {
+      lang: language,
+    },
+  };
+}
 export default offline;

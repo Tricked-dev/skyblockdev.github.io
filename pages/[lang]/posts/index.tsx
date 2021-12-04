@@ -1,9 +1,13 @@
 import { Box, Text, Grid, GridItem, SimpleGrid, useMediaQuery, Button } from "@chakra-ui/react";
+import { readFile } from "fs/promises";
 import Link from "next/link";
-import { getAllPosts } from "../../api/index";
-import Container from "../../components/container";
-
-export default function Home({ posts }: any) {
+import { join } from "path";
+import { getAllPosts } from "^api/index";
+import { getAllLanguageSlugs, getLanguage } from "^api/lang";
+import type { NextJsData } from "^api/types";
+import Container from "^components/container";
+import i18next from "i18next";
+export default function Home({ posts, lang }: NextJsData) {
   const CreatePost = ({ x, y }: { x: any; y: number }) => {
     return (
       <GridItem
@@ -18,7 +22,7 @@ export default function Home({ posts }: any) {
           color: "white",
         }}
       >
-        <Link href={`/posts/${x.slug}`} passHref>
+        <Link href={`/[lang]/posts/[post]`} as={`/${lang}/posts/${x.slug}`} passHref>
           <Box>
             <Box>
               <Box>
@@ -37,9 +41,9 @@ export default function Home({ posts }: any) {
   };
 
   return (
-    <Container>
+    <Container lang={lang}>
       <Box maxW={"50rem"} margin="auto">
-        <Text fontSize="2xl">Recent posts</Text>
+        <Text fontSize="2xl">{i18next.t("recent_posts")}</Text>
         <SimpleGrid minChildWidth="15rem" spacing={1} justifyContent="center" padding="10px 10px 10px">
           {posts.map((x: any, s: number) => (
             <CreatePost x={x} key={s} y={s} />
@@ -50,9 +54,23 @@ export default function Home({ posts }: any) {
   );
 }
 
-export async function getStaticProps() {
-  let paths: any = await getAllPosts();
+export async function getStaticPaths() {
+  const paths = getAllLanguageSlugs();
+
   return {
-    props: { posts: paths },
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const language = getLanguage(params.lang);
+  const posts = await getAllPosts(params.lang);
+
+  return {
+    props: {
+      posts: posts,
+      lang: language,
+    },
   };
 }

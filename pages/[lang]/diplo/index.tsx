@@ -1,10 +1,11 @@
-import Container from "../../components/container";
+import Container from "^components/container";
 import { useEffect } from "react";
 import fetch from "isomorphic-fetch";
 import { Button, Grid, GridItem, Box } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
-
+import Link from "next/link";
 import { useState } from "react";
+import { getAllLanguageSlugs, getLanguage } from "^api/lang";
 let diplo = (
   <svg viewBox="0 0 1151 512" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0)">
@@ -22,7 +23,7 @@ let diplo = (
   </svg>
 );
 
-const Bridger = () => {
+const Diplo = ({ lang }: any) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -44,21 +45,30 @@ const Bridger = () => {
     fetchData();
   }, []);
   let links = [
-    ["guides", "/diplo/home"],
-    ["github", "https://github.com/tricked-dev/diplo"],
-  ];
+    ["guides", "/diplo/home", true],
+    ["github", "https://github.com/tricked-dev/diplo", false],
+  ] as const;
   return (
-    <Container title="Diplo">
+    <Container title="Diplo" lang={lang}>
       <Grid alignItems="center" justifyContent="center" colums={1} padding="1 1 1 1">
         <Box width="100%">{diplo}</Box>
         {links.map((x, y) => {
           return (
             <GridItem key={y} width="100%" paddingY="2px">
-              <a href={x[1]}>
-                <Button fontWeight={"bold"} textAlign={"center"} width="100%" colorScheme="telegram" rounded="none" border="1px" borderColor={"1px"}>
-                  {x[0]}
-                </Button>
-              </a>
+              {x[2] && (
+                <Link passHref={true} href={`/[lang]${x[1]}`} as={`/${lang}${x[1]}`}>
+                  <Button fontWeight={"bold"} textAlign={"center"} width="100%" colorScheme="telegram" rounded="none" border="1px" borderColor={"1px"}>
+                    {x[0]}
+                  </Button>
+                </Link>
+              )}
+              {!x[2] && (
+                <Link passHref={true} href={x[1]}>
+                  <Button fontWeight={"bold"} textAlign={"center"} width="100%" colorScheme="telegram" rounded="none" border="1px" borderColor={"1px"}>
+                    {x[0]}
+                  </Button>
+                </Link>
+              )}
             </GridItem>
           );
         })}
@@ -78,4 +88,21 @@ const Bridger = () => {
   );
 };
 
-export default Bridger;
+export async function getStaticPaths() {
+  const paths = getAllLanguageSlugs();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const language = getLanguage(params.lang);
+  return {
+    props: {
+      lang: language,
+    },
+  };
+}
+
+export default Diplo;

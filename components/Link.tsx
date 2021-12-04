@@ -2,10 +2,11 @@ import NextLink from "next/link";
 import { Link as ChakraLink, Box, Center } from "@chakra-ui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-const Link = ({ children, href, currentPath, active, ...props }: any) => {
+const Link = ({ children, href, currentPath, lang = "en", active, ...props }: any) => {
   const [expended, setExpended] = useState(false);
+
   return (
-    <NextLink href={href} passHref>
+    <NextLink passHref prefetch={false} href={`/[lang]${href}`} as={`/${lang}${href}`}>
       <ChakraLink
         bg={href === "gray.700"}
         onMouseEnter={() => setExpended(true)}

@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
-import Commands from "../../data/commands.json";
-import Container from "../../components/aethainer";
+import Commands from "../../../data/commands.json";
+import Container from "^components/aethainer";
 import { Flex, Button, Accordion, AccordionItem, AccordionPanel, AccordionButton, Box, AccordionIcon, Tag, Text, Code, SimpleGrid, GridItem, Spacer } from "@chakra-ui/react";
 import Link from "next/link";
+import { getAllLanguageSlugs, getLanguage } from "^api/lang";
 
 // type Categories = keyOf Commands;
 
@@ -78,19 +79,29 @@ interface Command {
 }
 
 export async function getStaticProps(context: any) {
+  const language = getLanguage(context.params.lang);
   let commands: Command[] =
     //@ts-ignore -
     Commands[context.params.commands] || Commands.general;
   return {
-    props: { commands, categories: Object.keys(Commands) },
+    props: { commands, categories: Object.keys(Commands), language },
   };
 }
 
 export async function getStaticPaths() {
+  let paths = [...Object.keys(Commands), "index", "commands"].map((x) => ({
+    params: { commands: x },
+  }));
+  const langs = getAllLanguageSlugs();
+
+  let newPaths = [];
+  for (let path of paths) {
+    for (let lang of langs) {
+      newPaths.push({ params: { ...path.params, ...lang.params } });
+    }
+  }
   return {
-    paths: [...Object.keys(Commands), "index", "commands"].map((x) => ({
-      params: { commands: x },
-    })),
+    paths: newPaths,
     fallback: false,
   };
 }

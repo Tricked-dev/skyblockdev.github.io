@@ -1,11 +1,12 @@
 import { Box, Button, ButtonGroup, Grid, GridItem, Image, Text } from "@chakra-ui/react";
-import { getAllProjects, getProjectBySlug } from "../../api";
-import FadeInWhenVisible from "../../components/FadeIn";
-import Container from "../../components/container";
-
-export default function Home({ projects }: { projects: any[] }) {
+import { getAllProjects, getProjectBySlug } from "^api";
+import FadeInWhenVisible from "^components/FadeIn";
+import Container from "^components/container";
+import { getAllLanguageSlugs, getLanguage } from "^api/lang";
+import NextLink from "next/link";
+export default function Projects({ projects, lang }: { projects: any[]; lang: string }) {
   return (
-    <Container>
+    <Container lang={lang}>
       <Box>
         <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center" gap="1rem">
           {projects.map((x, y) => {
@@ -19,9 +20,12 @@ export default function Home({ projects }: { projects: any[] }) {
                     <Box></Box>
                   </Box>
                   <ButtonGroup size="sm" isAttached variant="outline">
-                    <Button as="a" colorScheme={"telegram"} href={`/projects/${x.slug}`}>
-                      Visit
-                    </Button>
+                    <NextLink href={`/[lang]/projects/[project]`} as={`/${lang}/projects/${x.slug}`}>
+                      <Button as="a" colorScheme={"telegram"}>
+                        Visit
+                      </Button>
+                    </NextLink>
+
                     {x.website && (
                       <Button as="a" colorScheme={"telegram"} mr="-px" href={`https://${x.website}`}>
                         Website
@@ -43,8 +47,20 @@ export default function Home({ projects }: { projects: any[] }) {
   );
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticPaths() {
+  const paths = getAllLanguageSlugs();
   return {
-    props: { projects: await getAllProjects() },
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const language = getLanguage(params.lang);
+  return {
+    props: {
+      lang: language,
+      projects: await getAllProjects(language),
+    },
   };
 }

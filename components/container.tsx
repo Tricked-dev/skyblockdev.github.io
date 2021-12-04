@@ -7,28 +7,34 @@ import NextLink from "next/link";
 
 import Footer from "./footer";
 
+const langMeta = {
+  en: {
+    description: `Hello i'm Tricked im a Rust and Typescript developer, my github is Tricked-dev`,
+  },
+  nl: {
+    description: `Hallo ik ben Tricked ik ben een Rust en Typescript developer, mijn github is Tricked-dev`,
+  },
+};
+
 export default function Container(props: any) {
-  const [mounted, setMounted] = useState(false);
-
-  // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
-
-  const { children, Links, TextValue, DontforceWidth = false, ...customMeta } = props;
+  const { children, Links, TextValue, DontforceWidth = false, lang, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: "Tricked.pro",
-    description: `Rust and Typescript developer, Vscode and Linux enjoyer`,
     type: "website",
     themeColor: "#317EFB",
-    keywords: "javascript typescript programming discord matrix",
+    keywords: "javascript typescript programming rust discord matrix",
     viewport: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
     icon: "favicon.ico",
+    ...langMeta[lang as keyof typeof langMeta],
     ...customMeta,
   };
 
   return (
     <div>
       <Head>
+        <html lang={lang} />
+
         <title>{meta.title}</title>
 
         <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png" />
@@ -80,14 +86,14 @@ export default function Container(props: any) {
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
 
-      <Nav links={Links} TextValue={TextValue} />
+      <Nav links={Links} lang={lang} TextValue={TextValue} />
 
       <main>
         <Box alignItems="stretch" maxW={!DontforceWidth ? "80rem" : "none"} margin="auto" padding={!DontforceWidth ? "4px 10px 40px" : "none"}>
           {children}
         </Box>
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }

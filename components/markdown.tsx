@@ -68,6 +68,7 @@ const components = {
   },
 };
 const Markdown = ({ content }: any) => {
+  if (content.compiledSource == "") return <></>;
   return (
     <>
       <Box>

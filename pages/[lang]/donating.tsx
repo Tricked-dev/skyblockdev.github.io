@@ -1,15 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import { Box, Text, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink, Button, Image, Wrap } from "@chakra-ui/react";
-import Container from "../components/container";
+import { readFile } from "fs/promises";
+import { join } from "path";
+import { getAllLanguageSlugs, getLanguage } from "^api/lang";
+import type { NextJsData } from "^api/types";
+import Container from "^components/container";
+import i18next from "i18next";
 
-export default function Home() {
+export default function Home({ lang }: NextJsData) {
   return (
-    <Container>
+    <Container lang={lang}>
       <Box padding="10px">
         <Box>
           <Box>
-            <Text fontSize={"1.7rem"}>You can donate to me using any of the crypto adresses</Text>
+            <Text fontSize={"1.7rem"}>{i18next.t("donating")}</Text>
           </Box>
           <Box>
             <Wrap>
@@ -34,4 +39,21 @@ export default function Home() {
       </Box>
     </Container>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = getAllLanguageSlugs();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const language = getLanguage(params.lang);
+  return {
+    props: {
+      lang: language,
+    },
+  };
 }
