@@ -1,10 +1,16 @@
 const imageScript = require("imagescript");
+const png = require("imagescript/png/node");
+const mem = require("imagescript/utils/mem");
 const fs = require("fs");
 const path = require("path");
 
-let font = fs.readFileSync(path.join(__dirname, "..", "fonts", "Roboto-Bold.ttf"));
+//Precache data
+const font = fs.readFileSync(path.join(__dirname, "..", "fonts", "Roboto-Bold.ttf"));
+const defaultPng = fs.readFileSync(path.join(__dirname, "..", "public", "cards", "default.png"));
+const png_data = png.decode(mem.view(defaultPng));
 
-let defaults = [
+//Overwrites [value,name.png]
+const defaults = [
   ["404!?!??!?!", "404"],
   ["index", "[lang]"],
 ];
@@ -22,9 +28,11 @@ async function getShit() {
 }
 
 async function generate(text, out) {
-  let image = await imageScript.Image.decode(fs.readFileSync(path.join(__dirname, "..", "public", "cards", "default.png")));
-  const firstence = await imageScript.Image.renderText(font, 180, text, 0xfcfcfcff);
-  const desc = await imageScript.Image.renderText(font, 50, "Tricked software developer 2021", 0xfcfcfcff);
+  await png_data;
+  let image = new imageScript.Image(png_data.width, png_data.height);
+  image.bitmap.set(png_data.pixels);
+  const firstence = await imageScript.Image.renderText(font, 180, text.charAt(0).toUpperCase() + text.slice(1), 0xfcfcfcff);
+  const desc = await imageScript.Image.renderText(font, 50, "Tricked-dev 2021", 0xfcfcfcff);
   image.composite(firstence, 100, 100);
   image.composite(desc, 120, 320);
   let img = await image.encode();
