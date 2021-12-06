@@ -28,6 +28,7 @@ export default function Container(props: any) {
     viewport: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
     icon: "favicon.ico",
     image: `/cards/${router.route.replace("/", "").replace(/\//gim, "_")}.png`,
+    ...langMeta["en"],
     ...langMeta[lang as keyof typeof langMeta],
     ...customMeta,
   };
@@ -70,7 +71,7 @@ export default function Container(props: any) {
         <meta name="theme-color" content={meta.themeColor} />
 
         <meta name="robots" content="follow, index" />
-        <meta content={meta.description} name="description" />
+        <meta name="description" content={meta.description} />
         <link rel="icon" href={meta.icon} type="image/ico" />
         <meta property="og:url" content={`https://tricked.pro${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
