@@ -3,7 +3,6 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx$/,
 });
 const withPWA = require("next-pwa");
-const withOffline = require("next-offline");
 const plugins = require("next-compose-plugins");
 
 const config = {
@@ -62,30 +61,4 @@ const config = {
     ];
   },
 };
-module.exports = plugins(
-  [
-    [withPWA],
-    [
-      withOffline,
-      {
-        workboxOpts: {
-          swDest: process.env.NEXT_EXPORT ? "service-worker.js" : "static/service-worker.js",
-          runtimeCaching: [
-            {
-              urlPattern: /^https?.*/,
-              handler: "NetworkFirst",
-              options: {
-                cacheName: "offlineCache",
-                expiration: {
-                  maxEntries: 200,
-                },
-              },
-            },
-          ],
-        },
-      },
-    ],
-    [withMDX],
-  ],
-  config
-);
+module.exports = plugins([[withPWA], [withMDX]], config);
