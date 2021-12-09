@@ -1,0 +1,9 @@
+---
+import { Link as ChakraLink } from "@chakra-ui/react";
+const { i18n = true, href, ...props } = Astro.props;
+let lang = Astro.request.params?.lang;
+---
+
+<ChakraLink href={i18n ? `/${lang}${href}` : href} {...props}>
+  <slot />
+</ChakraLink>

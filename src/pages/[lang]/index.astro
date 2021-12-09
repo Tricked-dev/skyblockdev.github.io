@@ -1,0 +1,53 @@
+---
+//import Button from "../components/Button.svelte";
+//import Container from "../../components/Container.astro";
+import Container from "../../components/Container.astro";
+import { Grid, GridItem, Box, Text as ChakraText } from "@chakra-ui/react";
+import { Text, Link, Bottom, Tools } from "../../components/lib";
+import i18next from "../../i18n/init";
+i18next.changeLanguage(Astro.request.params.lang);
+
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        lang: "en",
+      },
+    },
+    {
+      params: {
+        lang: "nl",
+      },
+    },
+  ];
+}
+let title = i18next.t("hey_im");
+let developer = i18next.t("developer");
+let maintaining = i18next.t("maintaining");
+let services = i18next.t("services");
+let changeLang = i18next.t("change_lang");
+---
+
+<Container>
+  <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
+    <GridItem minH="3.4rem" paddingBottom="40px">
+      <Text color="blue.500" fontSize={"5xl"}>
+        {title}
+      </Text>
+      <Text fontSize="larger">{developer}</Text>
+      <Text color={"graytext"}>{maintaining}</Text>
+      <Box paddingTop={"5px"}>
+        <Text paddingTop={"5px"} color="green.600">
+          <Link href="services">{`> ${services}`}</Link>
+        </Text>
+        <Text paddingTop={"5px"} color="green.600">
+          <Link href="/" i18n={false}>
+            {`> ${changeLang}`}
+          </Link>
+        </Text>
+      </Box>
+    </GridItem>
+
+    <Bottom />
+  </Grid>
+</Container>
