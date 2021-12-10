@@ -7,7 +7,8 @@ import path from "path";
 let out = Astro.request.url.pathname.replace("/", "").replace(/\//gim, "_");
 if (out.endsWith("_")) out = out.slice(0, -1);
 out += ".png";
-if (!fs.existsSync(out)) {
+let fullOut = path.join(process.cwd(), "public", "cards", out);
+if (!fs.existsSync(fullOut)) {
   const splitPath = Astro.request.url.pathname.split("/");
   const text = splitPath[splitPath.length - 2];
 
@@ -26,6 +27,6 @@ if (!fs.existsSync(out)) {
   image.composite(desc, 120, 320);
 
   let img = await image.encode();
-  fs.writeFileSync(path.join(process.cwd(), "public", "cards", out), img);
+  fs.writeFileSync(fullOut, img);
 }
 ---
