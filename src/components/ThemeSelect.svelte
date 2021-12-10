@@ -22,6 +22,8 @@
     { id: "luxury", name: "💎  luxury" },
     { id: "dracula", name: "🧛‍♂️  dracula" },
     { id: "cmyk", name: "🖨  CMYK" },
+    { id: "darkforest", name: "😎  darkforest" },
+    { id: "blossom", name: "🤧  blossom" },
   ];
   function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme || "dark");
