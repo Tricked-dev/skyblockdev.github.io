@@ -273,29 +273,20 @@ type Input = {
 
 let ToolBox = ({ x, bgColor }: Input) => {
   return (
-    <FadeInWhenVisible>
-      <Box
-        as={motion.div}
-        whileHover={{
-          scale: 1.2,
-        }}
-      >
-        <Box p={2} width="auto" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
-          <Box textAlign="center">
-            <Text>{x.n}</Text>
-          </Box>
-          <Center>
-            <Box width="5rem" maxH="5rem">
-              {x.i}
-            </Box>
-          </Center>
-          <Box paddingBottom="1px">
-            {/*//@ts-ignore - shut up bitch */}
-            <Progress colorScheme="green" as="div" value={x.p} />
-          </Box>
-        </Box>
-      </Box>
-    </FadeInWhenVisible>
+    <div className="card p-2 m-w-32 w-full bg-cover card bg-base-200 compact bordered">
+      <div className="text-center card-title">
+        <p>{x.n}</p>
+      </div>
+      <div className="">
+        <figure className="justify-center content-center">
+          <div className="">{x.i}</div>
+        </figure>
+      </div>
+
+      {/* <div className="pt-1 "> */}
+      <progress className="progress progress-success align-bottom pt-1 mt-auto" max="100" value={x.p.toString()} />
+      {/* </div> */}
+    </div>
   );
 };
 
@@ -315,12 +306,10 @@ const Tools = () => {
   return (
     <>
       <FadeInWhenVisible>
-        <Text variant="h2" fontSize="3xl">
-          Tools and media
-        </Text>
+        <h2 className="text-3xl">Tools and media</h2>
       </FadeInWhenVisible>
 
-      <SimpleGrid minChildWidth="120px" spacing={3}>
+      <SimpleGrid minChildWidth="130px" spacing={3}>
         {arr.map((x, y) => {
           return <ToolBox x={x} key={y} bgColor={bgColor} />;
         })}
@@ -328,4 +317,4 @@ const Tools = () => {
     </>
   );
 };
-export default WithChakra(Tools);
+export default Tools;

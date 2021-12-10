@@ -1,5 +1,6 @@
 ---
-import { Footer, Nav } from "./chakra/lib";
+import { Nav } from "./chakra/lib";
+import Footer from "./Footer.svelte";
 import { Box } from "@chakra-ui/react";
 import { SEO } from "astro-seo";
 import Card from "./Card.astro";
@@ -26,7 +27,7 @@ const meta = {
 ---
 
 <Card />
-<html lang={meta.lang}>
+<html lang={meta.lang} data-theme="darkforest">
   <head>
     <meta charset="utf-8" />
 

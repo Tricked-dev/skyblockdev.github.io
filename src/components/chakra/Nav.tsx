@@ -18,10 +18,6 @@ const Links = [
     name: "Posts",
     route: "/posts",
   },
-  // {
-  //   name: "Aethor",
-  //   route: "/aethor",
-  // },
 ];
 
 const Navbar = ({ links = Links, lang, TextValue = "Tricked.pro" }) => {
