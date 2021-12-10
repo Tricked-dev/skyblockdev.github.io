@@ -22,13 +22,13 @@ export function getStaticPaths() {
 const nlProjects = Astro.fetchContent("../nl/projects/**/*.md");
 const enProjects = Astro.fetchContent("../en/projects/**/*.md");
 let projects = lang == "en" ? enProjects : nlProjects;
-projects = projects.map((x) => ({ url: x.url, title: x.title, image: x.image, description: x.description }));
+projects = projects.map((x) => ({ url: x.url, title: x.title, image: x.image, description: x.description, website: x.website, github: x.github }));
 ---
 
 <Container>
   <Box>
     <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center" gap="1rem">
-      <Projects {projects} />
+      <Projects client:visible="react" {projects} />
     </Grid>
   </Box>
 </Container>

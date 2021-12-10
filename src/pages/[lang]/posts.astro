@@ -1,6 +1,6 @@
 ---
-import { Box, Button, Text, ButtonGroup, Grid, GridItem, Image } from "@chakra-ui/react";
-import { Container, FadeIn, Link, Posts } from "../../components/lib";
+import { Box, Button, ButtonGroup, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Container, FadeIn, Link, Posts, Text } from "../../components/lib";
 import i18next from "../../i18n/init";
 const lang = Astro.request.params.lang;
 i18next.changeLanguage(lang);
@@ -28,9 +28,9 @@ const recentPosts = i18next.t("recent_posts");
 
 <Container>
   <Box maxW={"50rem"} margin="auto">
-    <Text client:only="react" fontSize="2xl">{recentPosts}</Text>
+    <Text client:visible="react" className="text-center" fontSize="2xl">{recentPosts}</Text>
     <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center" gap="1rem">
-      <Posts client:only="react" {posts} />
+      <Posts client:visible="react" {posts} width="80rem" maxW="100%" />
     </Grid>
   </Box>
 </Container>

@@ -1,9 +1,6 @@
+import { SimpleGrid } from "@chakra-ui/react";
+
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Box, Text, Progress, SimpleGrid, Center, useColorModeValue } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import FadeInWhenVisible from "./FadeIn";
-import WithChakra from "./withChakra";
 const skills = [
   {
     i: (

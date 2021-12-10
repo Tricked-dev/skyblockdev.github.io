@@ -25,7 +25,7 @@ const meta = {
 ---
 
 <Card />
-<html lang={meta.lang} data-theme="darkforest">
+<html lang={meta.lang} data-theme="dark">
   <head>
     <meta charset="utf-8" />
 
@@ -81,10 +81,8 @@ const meta = {
   </head>
   <Header />
 
-  <main class="min-h-screen">
-    <div class="pt-8 w-full max-w-7xl m-auto">
-      <slot />
-    </div>
+  <main class="min-h[90vh] pb-10 pt-8 w-[80rem] max-w-full m-auto">
+    <slot />
   </main>
   <Footer {lang} />
 </html>
