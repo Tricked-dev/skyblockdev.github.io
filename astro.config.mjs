@@ -1,3 +1,4 @@
+import { VitePWA } from "vite-plugin-pwa";
 // Full Astro Configuration API Documentation:
 // https://docs.astro.build/reference/configuration-reference
 
@@ -16,4 +17,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     tailwindConfig: "./tailwind.config.js",
   },
   renderers: ["@astrojs/renderer-react"],
+  vite: {
+    plugins: [VitePWA()],
+  },
 });

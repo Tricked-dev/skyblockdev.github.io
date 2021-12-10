@@ -1,0 +1,34 @@
+---
+import { Box, Button, ButtonGroup, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Container, Text, FadeIn, Link, Projects } from "../../components/lib";
+import i18next from "../../i18n/init";
+const lang = Astro.request.params.lang;
+i18next.changeLanguage(lang);
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        lang: "en",
+      },
+    },
+    {
+      params: {
+        lang: "nl",
+      },
+    },
+  ];
+}
+
+const nlProjects = Astro.fetchContent("../nl/projects/**/*.md");
+const enProjects = Astro.fetchContent("../en/projects/**/*.md");
+let projects = lang == "en" ? enProjects : nlProjects;
+projects = projects.map((x) => ({ url: x.url, title: x.title, image: x.image, description: x.description }));
+---
+
+<Container>
+  <Box>
+    <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center" gap="1rem">
+      <Projects {projects} />
+    </Grid>
+  </Box>
+</Container>

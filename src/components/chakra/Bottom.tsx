@@ -6,10 +6,10 @@ import WithChakra from "./withChakra";
 const Bottom = () => {
   return (
     <>
-      <GridItem paddingBottom="40px">
+      <GridItem paddingBottom="40px" width="100%">
         <Tools />
       </GridItem>
-      <GridItem>
+      <GridItem width="100%">
         <Contacting />
       </GridItem>
     </>

@@ -290,6 +290,7 @@ let ToolBox = ({ x, bgColor }: Input) => {
             </Box>
           </Center>
           <Box paddingBottom="1px">
+            {/*//@ts-ignore - shut up bitch */}
             <Progress colorScheme="green" as="div" value={x.p} />
           </Box>
         </Box>

@@ -1,0 +1,30 @@
+---
+import imageScript from "imagescript";
+import png from "imagescript/png/node";
+import mem from "imagescript/utils/mem";
+import fs from "fs";
+import path from "path";
+
+const splitPath = Astro.request.url.pathname.split("/");
+const text = splitPath[splitPath.length - 2];
+
+let out = Astro.request.url.pathname.replace("/", "").replace(/\//gim, "_");
+if (out.endsWith("_")) out = out.slice(0, -1);
+out += ".png";
+const font = fs.readFileSync(path.join(process.cwd(), "fonts", "Roboto-Bold.ttf"));
+const defaultPng = fs.readFileSync(path.join(process.cwd(), "public", "cards", "default.png"));
+const png_data = await png.decode(mem.view(defaultPng));
+
+let image = new imageScript.Image(png_data.width, png_data.height);
+image.bitmap.set(png_data.pixels);
+
+const firstence = await imageScript.Image.renderText(font, 180, text.charAt(0).toUpperCase() + text.slice(1), 0xfcfcfcff);
+
+const desc = await imageScript.Image.renderText(font, 50, "Tricked-dev 2021", 0xfcfcfcff);
+
+image.composite(firstence, 100, 100);
+image.composite(desc, 120, 320);
+
+let img = await image.encode();
+fs.writeFileSync(path.join(process.cwd(), "public", "cards", out), img);
+---

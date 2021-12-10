@@ -1,0 +1,36 @@
+---
+import { Box, Button, Text, ButtonGroup, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Container, FadeIn, Link, Posts } from "../../components/lib";
+import i18next from "../../i18n/init";
+const lang = Astro.request.params.lang;
+i18next.changeLanguage(lang);
+
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        lang: "en",
+      },
+    },
+    {
+      params: {
+        lang: "nl",
+      },
+    },
+  ];
+}
+const enPosts = Astro.fetchContent("../../pages/en/posts/*.md");
+const nlPosts = Astro.fetchContent("../../pages/nl/posts/*.md");
+let posts = lang == "en" ? enPosts : nlPosts;
+posts = posts.map((x) => ({ url: x.url, title: x.title, image: x.image, description: x.description }));
+const recentPosts = i18next.t("recent_posts");
+---
+
+<Container>
+  <Box maxW={"50rem"} margin="auto">
+    <Text client:only fontSize="2xl">{recentPosts}</Text>
+    <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center" gap="1rem">
+      <Posts client:only {posts} />
+    </Grid>
+  </Box>
+</Container>

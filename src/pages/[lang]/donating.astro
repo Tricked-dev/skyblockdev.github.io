@@ -1,0 +1,52 @@
+---
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
+import { Box, Grid, GridItem, SimpleGrid, useColorModeValue, Link as ChakraLink, Button, Image, Wrap } from "@chakra-ui/react";
+import { Container, Text } from "../../components/lib";
+import i18next from "../../i18n/init";
+i18next.changeLanguage(Astro.request.params.lang);
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        lang: "en",
+      },
+    },
+    {
+      params: {
+        lang: "nl",
+      },
+    },
+  ];
+}
+let donating = i18next.t("donating");
+---
+
+<Container>
+  <Box padding="10px">
+    <Box>
+      <Box>
+        <Text fontSize={"1.7rem"}>{donating}</Text>
+      </Box>
+      <Box>
+        <Wrap>
+          <Image height="1rem" width="auto" src="/crypto/bitcoin-cash-bch-logo.png" />
+          <Text>BCH: bitcoincash:qz9gyruyyvtwcmevtcnyru8gudenqjqeug096e459m</Text>
+        </Wrap>
+      </Box>
+      <Box>
+        <Wrap>
+          <Image height="1rem" width="auto" src="/crypto/ethereum-eth-logo.png" />
+          <Text>ETH: 0xc31a1A5dCd1a4704e81fB7c9C3fa858b9A00C7fb</Text>
+        </Wrap>
+      </Box>
+      <Box>
+        <Wrap>
+          <Image height="1rem" width="auto" src="/crypto/monero-xmr-logo.png" />
+          <Text>XMR:</Text>
+          <Text fontSize={"0.5rem"}>89prBkdG58KU15jv5LTbP3MgdJ2ikrcyu1vmdTKTGEVdhKRvbxgRN671jfFn3Uivk4Er1JXsc1xFZFbmFCGzVZNLPQeEwZc</Text>
+        </Wrap>
+      </Box>
+    </Box>
+  </Box>
+</Container>

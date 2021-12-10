@@ -1,0 +1,12 @@
+/assets/*
+  cache-control: max-age=31536000
+  cache-control: immutable
+/cards/*
+  cache-control: max-age=31536000
+  cache-control: immutable
+/images/*
+  cache-control: max-age=31536000
+  cache-control: immutable
+/crypto/*
+  cache-control: max-age=31536000
+  cache-control: immutable

@@ -4,5 +4,8 @@ export { default as FadeIn } from "./FadeIn";
 export { default as Footer } from "./Footer";
 // export { default as Index } from "./Index";
 export { default as Nav } from "./Nav";
+export { default as Posts } from "./Posts";
+export { default as Projects } from "./Projects";
+export { default as ReactLink } from "./ReactLink";
 export { default as Text } from "./Text";
 export { default as Tools } from "./Tools";

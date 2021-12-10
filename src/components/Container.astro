@@ -2,9 +2,10 @@
 import { Footer, Nav } from "./chakra/lib";
 import { Box } from "@chakra-ui/react";
 import { SEO } from "astro-seo";
-
+import Card from "./Card.astro"
 const langMeta = { en: { description: `Hello i'm Tricked im a Rust and Typescript developer, my github is Tricked-dev` }, nl: { description: `Hallo ik ben Tricked ik ben een Rust en Typescript developer, mijn github is Tricked-dev` } };
-const { Links, TextValue, DontforceWidth = false, lang, ...customMeta } = Astro.props;
+//@ts-ignore - PLease
+const { Links, TextValue, DontforceWidth = false, lang, ...customMeta } = { ...{lang: Astro.request.url.pathname.split("/")[0] || "en"}, ...Astro.request.params, ...Astro.props };
 let split = Astro.site.href.split("/");
 let name = split[split.length - 1] == "index" ? split[split.length - 2] : split[split.length - 1];
 
@@ -23,7 +24,7 @@ const meta = {
   ...customMeta,
 };
 ---
-
+<Card/>
 <html lang={meta.lang}>
   <head>
     <meta charset="utf-8" />
@@ -39,12 +40,13 @@ const meta = {
     <SEO
       title={meta.title}
       description={meta.description}
+      locale={meta.lang}
       openGraph={{
         basic: {
           title: meta.title_long,
           description: meta.description,
           type: meta.type,
-          image: "/cards/test",
+          image: `/cards/${Astro.request.url.pathname.replace("/", "").replace(/\//gim, "_").slice(0, -1)}.png`,
         },
         image: {
           alt: "Site card",
@@ -81,11 +83,11 @@ const meta = {
       }}
     />
   </head>
-  <Nav links={Links} {lang} {TextValue} client:visible />
+  <Nav {lang} links={Links} {lang} {TextValue} client:visible />
   <main>
-    <Box alignItems="stretch" maxW={!DontforceWidth ? "80rem" : "none"} margin="auto" padding={!DontforceWidth ? "4px 10px 40px" : "none"}>
-      <slot />
-    </Box>
+    <Box alignItems="stretch" width="100%" maxW={!DontforceWidth ? "80rem" : "none"} margin="auto" padding={!DontforceWidth ? "4px 10px 40px" : "none"}>
+      <slot  />
+    </Box> 
   </main>
   <Footer {lang} />
 </html>
