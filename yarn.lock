@@ -76,12 +76,12 @@
   integrity sha512-5U+jcgfibLKW8PwnHQEdmgb+uZVeMVLz+paEr3vxKgikYfjXDjQu6qEDLOW3WTc/cIWrOF9rAtTKy8R/ArPscw==
 
 "@astrojs/renderer-preact@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/renderer-preact/-/renderer-preact-0.3.1.tgz#19d93a0b518a12d3d7b5353f2afb9869ae6e6364"
-  integrity sha512-NEcUEtir2H0g4bV4/GwBxqE6bJpOH4WV/FfFRAO6yxqVx3VCdRJ7163fLmMqqznczoqg9w64uEGejx+NdHAFIg==
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/renderer-preact/-/renderer-preact-0.3.2.tgz#98d2dd2653d41a11e3a8790d1f467a2452b5cb44"
+  integrity sha512-841A8Fpg9/w8UgHSh5YzvqoRFwToOicgAtBt98F1mPS7miN0x1elzUDOgk2zYCii+/DI4DMpW4NotsAV7qou8w==
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.16.0"
-    preact "^10.5.15"
+    preact "~10.5.15"
     preact-render-to-string "^5.1.19"
 
 "@astrojs/renderer-react@0.3.1", "@astrojs/renderer-react@^0.3.1":
@@ -2276,9 +2276,9 @@ astro-seo@^0.4.2:
   integrity sha512-o5Jh3j81Iib4eB/x1S3/IG+qT7nbfXk2q+o95vh4XnNHswoW/VkhxPhTs42PkMzq69cJPcHaljaYb8PDMHSxfw==
 
 astro@^0.21.11:
-  version "0.21.11"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-0.21.11.tgz#c2eb3ed0b8ae35c05e54e52f2127e3e0999c5f79"
-  integrity sha512-CjMEgwau8RrFiIsZXM8OpzIrh9QFJxQe7hiMa/ab/IMlPbWotOiW3dDQhFHJPHgtCrVt076NG37jaNiLvwlWFw==
+  version "0.21.12"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-0.21.12.tgz#b857107b3c812e141df340f1320bcb10980dba25"
+  integrity sha512-58vEFjNE97rw84G2s8C8+FbBwPyurIFghaqK5rKouGgJ9aRcXMshsM81mdensz03yO3Y6VdRhyDexiz7eFiUWw==
   dependencies:
     "@astrojs/compiler" "^0.5.7"
     "@astrojs/language-server" "^0.8.2"
@@ -2343,6 +2343,18 @@ at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
+
+autoprefixer@^10.4.0:
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.0.tgz#c3577eb32a1079a440ec253e404eaf1eb21388c8"
+  integrity sha512-7FdJ1ONtwzV1G43GDD0kpVMn/qbiNqyOPMFTX5nRffI+7vgWoFEc6DcXOxHJxrWNDXrZh18eDsZjvZGUljSRGA==
+  dependencies:
+    browserslist "^4.17.5"
+    caniuse-lite "^1.0.30001272"
+    fraction.js "^4.1.1"
+    normalize-range "^0.1.2"
+    picocolors "^1.0.0"
+    postcss-value-parser "^4.1.0"
 
 available-typed-arrays@^1.0.5:
   version "1.0.5"
@@ -2481,6 +2493,11 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
+
+caniuse-lite@^1.0.30001272:
+  version "1.0.30001286"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001286.tgz#3e9debad420419618cfdf52dc9b6572b28a8fff6"
+  integrity sha512-zaEMRH6xg8ESMi2eQ3R4eZ5qw/hJiVsO/HlLwniIwErij0JDr9P+8V4dtx1l+kLq6j3yy8l8W4fst1lBnat5wQ==
 
 caniuse-lite@^1.0.30001280:
   version "1.0.30001285"
@@ -3512,6 +3529,11 @@ formdata-polyfill@^4.0.10:
   integrity sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==
   dependencies:
     fetch-blob "^3.1.2"
+
+fraction.js@^4.1.1:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.1.2.tgz#13e420a92422b6cf244dff8690ed89401029fbe8"
+  integrity sha512-o2RiJQ6DZaR/5+Si0qJUIy637QMRudSi9kU/FFzx9EZazrIdnBgpU+3sEWCxAVhH2RtxW2Oz+T4p2o8uOPVcgA==
 
 framer-motion@^5.4.5:
   version "5.4.5"
@@ -5088,6 +5110,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
+normalize-range@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
+  integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -5324,10 +5351,10 @@ preact-render-to-string@^5.1.19:
   dependencies:
     pretty-format "^3.8.0"
 
-preact@^10.5.15:
-  version "10.6.3"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.6.3.tgz#5d2fd00c34114373ed2bfbeb4fcc9b14df78160d"
-  integrity sha512-vwuM6VmFffw5t3RrLFn49QHPzoepD9hiNdkLa3Mt4UGSRdfQfIHtC1xqxhjVGoq70Sjtxrn4c9xwAnaS6z3anA==
+preact@~10.5.15:
+  version "10.5.15"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.15.tgz#6df94d8afecf3f9e10a742fd8c362ddab464225f"
+  integrity sha512-5chK29n6QcJc3m1lVrKQSQ+V7K1Gb8HeQY6FViQ5AxCAEGu3DaHffWNDkC9+miZgsLvbvU9rxbV1qinGHMHzqA==
 
 prettier-plugin-astro@^0.0.11:
   version "0.0.11"
@@ -5791,17 +5818,10 @@ rollup-plugin-terser@^7.0.0:
     serialize-javascript "^4.0.0"
     terser "^5.0.0"
 
-rollup@^2.43.1, rollup@^2.60.2:
+rollup@^2.43.1, rollup@^2.57.0, rollup@^2.59.0, rollup@^2.60.2:
   version "2.61.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.61.0.tgz#ccd927bcd6cc0c78a4689c918627a717977208f4"
   integrity sha512-teQ+T1mUYbyvGyUavCodiyA9hD4DxwYZJwr/qehZGhs1Z49vsmzelMVYMxGU4ZhGRKxYPupHuz5yzm/wj7VpWA==
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-rollup@^2.57.0, rollup@^2.59.0:
-  version "2.60.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.60.2.tgz#3f45ace36a9b10b4297181831ea0719922513463"
-  integrity sha512-1Bgjpq61sPjgoZzuiDSGvbI1tD91giZABgjCQBKM5aYLnzjq52GoDuWVwT/cm/MCxCMPU8gqQvkj8doQ5C8Oqw==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -6413,9 +6433,9 @@ type-fest@^0.8.1:
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
 typescript@^4.3.5, typescript@^4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
-  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.3.tgz#afaa858e68c7103317d89eb90c5d8906268d353c"
+  integrity sha512-eVYaEHALSt+s9LbvgEv4Ef+Tdq7hBiIZgii12xXJnukryt3pMgJf6aKhoCZ3FWQsu6sydEnkg11fYXLzhLBjeQ==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"

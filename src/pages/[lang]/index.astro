@@ -31,20 +31,20 @@ let changeLang = i18next.t("change_lang");
 <Container>
   <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
     <GridItem minH="3.4rem" paddingBottom="40px" width="100%">
-      <Text color="blue.500" fontSize={"5xl"}>
+      <p class="text-blue-500 text-5xl">
         {title}
-      </Text>
-      <Text fontSize="larger">{developer}</Text>
-      <Text color={"graytext"}>{maintaining}</Text>
-      <Box paddingTop={"5px"}>
-        <Text paddingTop={"5px"} color="green.600">
+      </p>
+      <p class="text-lg">{developer}</p>
+      <p class="text-gray-200">{maintaining}</p>
+      <Box class="pt-1">
+        <p class="pt-1 text-green-600">
           <Link href="services">{`> ${services}`}</Link>
-        </Text>
-        <Text paddingTop={"5px"} color="green.600">
+        </p>
+        <p class="pt-1 text-green-600">
           <Link href="/" i18n={false}>
             {`> ${changeLang}`}
           </Link>
-        </Text>
+        </p>
       </Box>
     </GridItem>
     <Bottom />

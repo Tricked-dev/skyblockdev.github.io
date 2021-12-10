@@ -16,7 +16,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   devOptions: {
     tailwindConfig: "./tailwind.config.js",
   },
-  renderers: ["@astrojs/renderer-react"],
+  renderers: ["@astrojs/renderer-react", "@astrojs/renderer-svelte"],
   vite: {
     plugins: [VitePWA()],
   },
