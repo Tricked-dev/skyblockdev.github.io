@@ -1,4 +1,12 @@
 import { VitePWA } from "vite-plugin-pwa";
+
+// import remarkHtml from "remark-html";
+// import autolinkHeadings from "rehype-autolink-headings";
+// import abbr from "remark-abbr";
+// import remarkParse from "remark-parse";
+// import remarkGfm from "remark-gfm";
+// import rehypeStringify from "rehype-stringify";
+// import rehypeSlug from "rehype-slug";
 // Full Astro Configuration API Documentation:
 // https://docs.astro.build/reference/configuration-reference
 
@@ -19,5 +27,30 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   renderers: ["@astrojs/renderer-react", "@astrojs/renderer-svelte"],
   vite: {
     plugins: [VitePWA()],
+  },
+  markdownOptions: {
+    render: [
+      "@astrojs/markdown-remark",
+      {
+        remarkPlugins: [
+          // [import("remark-autolink-headings"), { behavior: "prepend" }],
+          // remarkParse,
+          // remarkGfm,
+          //@ts-ignore - stop bitching
+          // abbr,
+        ],
+        rehypePlugins: [
+          // rehypeStringify,
+          // rehypeSlug,
+          // [
+          //   autolinkHeadings,
+          //   {
+          //     behavior: "wrap",
+          //   },
+          // ],
+          // remarkHtml,
+        ],
+      },
+    ],
   },
 });

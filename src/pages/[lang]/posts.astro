@@ -28,9 +28,9 @@ const recentPosts = i18next.t("recent_posts");
 
 <Container>
   <Box maxW={"50rem"} margin="auto">
-    <Text client:only fontSize="2xl">{recentPosts}</Text>
+    <Text client:only="react" fontSize="2xl">{recentPosts}</Text>
     <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center" gap="1rem">
-      <Posts client:only {posts} />
+      <Posts client:only="react" {posts} />
     </Grid>
   </Box>
 </Container>

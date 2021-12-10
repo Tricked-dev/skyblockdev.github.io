@@ -1,7 +1,5 @@
 ---
-import { Nav } from "./chakra/lib";
 import Footer from "./Footer.svelte";
-import { Box } from "@chakra-ui/react";
 import { SEO } from "astro-seo";
 import Card from "./Card.astro";
 import Header from "./Header.astro";
@@ -83,11 +81,10 @@ const meta = {
   </head>
   <Header />
 
-  <!-- <Nav {lang} links={Links} {lang} {TextValue} client:visible /> -->
-  <main>
-    <Box alignItems="stretch" width="100%" maxW={!DontforceWidth ? "80rem" : "none"} margin="auto" padding={!DontforceWidth ? "4px 10px 40px" : "none"}>
+  <main class="min-h-screen">
+    <div class="pt-8 w-full max-w-7xl m-auto">
       <slot />
-    </Box>
+    </div>
   </main>
   <Footer {lang} />
 </html>

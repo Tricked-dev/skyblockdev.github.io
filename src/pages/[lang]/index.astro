@@ -4,6 +4,7 @@
 import Container from "../../components/Container.astro";
 import { Grid, GridItem, Box, Text as ChakraText } from "@chakra-ui/react";
 import { Text, Link, Bottom, Tools } from "../../components/lib";
+import Contacting from "../../components/Contacting.astro";
 import i18next from "../../i18n/init";
 i18next.changeLanguage(Astro.request.params.lang);
 
@@ -47,6 +48,11 @@ let changeLang = i18next.t("change_lang");
         </p>
       </Box>
     </GridItem>
-    <Bottom />
+    <GridItem paddingBottom="40px" width="100%">
+      <Tools client:only="react" />
+    </GridItem>
+    <GridItem width="100%">
+      <Contacting />
+    </GridItem>
   </Grid>
 </Container>

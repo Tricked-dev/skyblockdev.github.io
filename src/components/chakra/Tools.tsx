@@ -268,10 +268,9 @@ const skills = [
 
 type Input = {
   x: typeof skills[number];
-  bgColor: any;
 };
 
-let ToolBox = ({ x, bgColor }: Input) => {
+let ToolBox = ({ x }: Input) => {
   return (
     <div className="card p-2 m-w-32 w-full bg-cover card bg-base-200 compact bordered">
       <div className="text-center card-title">
@@ -283,35 +282,19 @@ let ToolBox = ({ x, bgColor }: Input) => {
         </figure>
       </div>
 
-      {/* <div className="pt-1 "> */}
       <progress className="progress progress-success align-bottom pt-1 mt-auto" max="100" value={x.p.toString()} />
-      {/* </div> */}
     </div>
   );
 };
 
 const Tools = () => {
-  let [arr, setArr] = useState(skills);
-  // let arr = [...skills];
-
-  useEffect(() => {
-    let sorted = skills.sort(() => Math.random() - 0.5);
-    for (let i = sorted.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
-    }
-    setArr(sorted);
-  }, []);
-  const bgColor = useColorModeValue("darkgrey", "telegram.800");
   return (
     <>
-      <FadeInWhenVisible>
-        <h2 className="text-3xl">Tools and media</h2>
-      </FadeInWhenVisible>
+      <h2 className="text-3xl">Tools and media</h2>
 
       <SimpleGrid minChildWidth="130px" spacing={3}>
-        {arr.map((x, y) => {
-          return <ToolBox x={x} key={y} bgColor={bgColor} />;
+        {skills.map((x, y) => {
+          return <ToolBox x={x} key={y} />;
         })}
       </SimpleGrid>
     </>
