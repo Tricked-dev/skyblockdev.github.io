@@ -1,5 +1,6 @@
 ---
 import Links from "./Links.svelte";
+import ThemeSelect from "./ThemeSelect.svelte";
 const { lang } = { ...{ lang: Astro.request.url.pathname.split("/")[0] || "en" }, ...Astro.request.params, ...Astro.props };
 let links = [
   {
@@ -21,7 +22,21 @@ links = links.map((x) => ({
 }));
 ---
 
-<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-3">
+<div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
+  <div class="flex-none px-2 mx-2">
+    <span class="text-lg font-bold"> Tricked.pro </span>
+  </div>
+  <div class="flex-1 px-2 mx-2">
+    <div class="items-stretch hidden lg:flex">
+      <Links {links} />
+    </div>
+    <div class="">
+      <ThemeSelect client:load />
+    </div>
+  </div>
+</div>
+
+<!-- <nav class="flex items-center justify-between flex-wrap bg-blue-500 p-3">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
     <span class="font-semibold text-xl tracking-tight">Tricked.pro</span>
   </div>
@@ -36,4 +51,4 @@ links = links.map((x) => ({
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <Links {links} />
   </div>
-</nav>
+</nav> -->

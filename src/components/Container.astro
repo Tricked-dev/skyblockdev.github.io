@@ -3,6 +3,7 @@ import Footer from "./Footer.svelte";
 import { SEO } from "astro-seo";
 import Card from "./Card.astro";
 import Header from "./Header.astro";
+import { themeChange } from "theme-change";
 const langMeta = { en: { description: `Hello i'm Tricked im a Rust and Typescript developer, my github is Tricked-dev` }, nl: { description: `Hallo ik ben Tricked ik ben een Rust en Typescript developer, mijn github is Tricked-dev` } };
 //@ts-ignore - PLease
 const { Links, TextValue, DontforceWidth = false, lang, ...customMeta } = { ...{ lang: Astro.request.url.pathname.split("/")[0] || "en" }, ...Astro.request.params, ...Astro.props };
@@ -79,10 +80,19 @@ const meta = {
       }}
     />
   </head>
-  <Header />
-
-  <main class="min-h[90vh] pb-10 pt-8 w-[80rem] max-w-full m-auto">
+  <div class="w-[200rem] max-w-[99vw]">
+    <Header />
+  </div>
+  <main class="min-h[90vh] pb-10 pt-8 w-[80rem] max-w-[99vw] m-auto">
     <slot />
   </main>
-  <Footer {lang} />
+  <div class="w-[200rem] max-w-[99vw]">
+    <Footer {lang} />
+  </div>
+
+  <script>
+    themeChange("dark");
+    // let theme = localStorage.getItem("theme");
+    // document.documentElement.setAttribute("data-theme", theme || "dark");
+  </script>
 </html>
