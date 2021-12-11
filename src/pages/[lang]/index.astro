@@ -28,6 +28,7 @@ let developer = i18next.t("developer");
 let maintaining = i18next.t("maintaining");
 let services = i18next.t("services");
 let changeLang = i18next.t("change_lang");
+let lng = Astro.request.params.lang == "nl" ? "en" : "nl";
 ---
 
 <Container>
@@ -36,14 +37,14 @@ let changeLang = i18next.t("change_lang");
       <h1 class="text-blue-500 text-7xl">
         {title}
       </h1>
-      <h3 class="text-4xl">{developer}</h3>
+      <h3 class="text-4xl pt-3">{developer}</h3>
       <h2 class="text-gray-200 text-lg">{maintaining}</h2>
       <Box class="pt-1">
-        <p class="pt-1 text-green-600">
+        <p class="pt-1 text-green-600 text-lg link">
           <Link href="services">{`> ${services}`}</Link>
         </p>
-        <p class="pt-1 text-green-600">
-          <Link href="/" i18n={false}>
+        <p class="pt-1 text-green-600 text-lg link">
+          <Link href={`/${lng}`} i18n={false}>
             {`> ${changeLang}`}
           </Link>
         </p>
@@ -54,6 +55,17 @@ let changeLang = i18next.t("change_lang");
     </GridItem>
     <GridItem width="100%">
       <Contacting />
+    </GridItem>
+    <GridItem paddingTop="4rem" width="100%">
+      <h2 class="text-xl">Experience</h2>
+      <ul class="w-full steps">
+        <li class="step step-accent"><strong>3-2020</strong> Started by making bots in js</li>
+        <li class="step step-accent"><strong>6-2020</strong> Learned some python</li>
+        <li class="step step-accent"><strong>2-2021</strong> Learned typescript rewrote bot in it</li>
+        <li class="step step-accent"><strong>5-2021</strong> Learned alot of react and wrote many websites</li>
+        <li class="step step-accent"><strong>10-2021</strong> Learned Rust and wrote some programs in it</li>
+        <li class="step step-success"><strong>today</strong> Still doing some Typescript and Rust daily</li>
+      </ul>
     </GridItem>
   </Grid>
 </Container>

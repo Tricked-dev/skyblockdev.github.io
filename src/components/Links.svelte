@@ -3,9 +3,9 @@
 </script>
 
 {#each links as link}
-  <li>
-    <a href={link.route} class="btn btn-ghost btn-sm rounded-btn">
+  <div class="">
+    <a href={link.route} class="lg:text-2xl text-lg btn btn-ghost rounded-btn ">
       {link.name}
     </a>
-  </li>
+  </div>
 {/each}

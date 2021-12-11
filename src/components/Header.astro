@@ -24,15 +24,13 @@ links = links.map((x) => ({
 
 <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
   <div class="flex-none px-2 mx-2">
-    <span class="text-lg font-bold"> Tricked.pro </span>
+    <span class="lg:text-4xl text-lg font-bold"> Tricked.pro </span>
   </div>
   <div class="flex-1 px-2 mx-2">
-    <div class="items-stretch lg:flex">
-      <ul class="md:list-none list-none md:grid md:grid-cols-[1fr,1fr,1fr,1fr,1fr]"><Links {links} /></ul>
-    </div>
+    <div class="md:grid md:grid-cols-[1fr,1fr,1fr]"><Links {links} /></div>
   </div>
   <div class="flex">
-    <ThemeSelect client:load />
+    <ThemeSelect client:load="svelte" />
   </div>
 </div>
 

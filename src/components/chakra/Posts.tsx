@@ -9,6 +9,7 @@ const Posts = ({ posts }) => {
       {posts.map((x, y) => {
         return (
           <GridItem
+            key={y}
             as="article"
             width="auto"
             p="5"
