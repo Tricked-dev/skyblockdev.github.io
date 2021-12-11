@@ -269,7 +269,7 @@ type Input = {
 
 let ToolBox = ({ x }: Input) => {
   return (
-    <div className="card p-2 m-w-32 w-full bg-cover card bg-base-200 compact bordered">
+    <div className="card p-2 max-w-sm w-full bg-cover card bg-base-200 compact bordered">
       <div className="text-center card-title">
         <p>{x.n}</p>
       </div>
@@ -279,7 +279,7 @@ let ToolBox = ({ x }: Input) => {
         </figure>
       </div>
 
-      <progress className="progress progress-success align-bottom pt-1 mt-auto" max="100" value={x.p.toString()} />
+      <progress className="h-4 progress progress-success align-bottom pt-1 mt-auto" max="100" value={x.p.toString()} />
     </div>
   );
 };
@@ -289,7 +289,7 @@ const Tools = () => {
     <>
       <h2 className="text-3xl">Tools and media</h2>
 
-      <SimpleGrid minChildWidth="130px" spacing={3}>
+      <SimpleGrid minChildWidth="130px" spacing={3} gap="4">
         {skills.map((x, y) => {
           return <ToolBox x={x} key={y} />;
         })}

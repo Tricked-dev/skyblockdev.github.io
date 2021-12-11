@@ -46,7 +46,7 @@
       {#each themes as theme}
         <li on:click={() => setTheme(theme.id)}>
           <!-- svelte-ignore a11y-missing-attribute -->
-          <a tabindex="0" :data-set-theme="theme.id" data-act-class="active">{theme.name}</a>
+          <a tabindex="0" data-act-class="active">{theme.name}</a>
         </li>
       {/each}
     </ul>

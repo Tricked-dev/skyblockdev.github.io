@@ -3,7 +3,6 @@ import Footer from "./Footer.svelte";
 import { SEO } from "astro-seo";
 import Card from "./Card.astro";
 import Header from "./Header.astro";
-import "daisyui/colors/themes";
 const langMeta = { en: { description: `Hello i'm Tricked im a Rust and Typescript developer, my github is Tricked-dev` }, nl: { description: `Hallo ik ben Tricked ik ben een Rust en Typescript developer, mijn github is Tricked-dev` } };
 //@ts-ignore - PLease
 const { Links, TextValue, DontforceWidth = false, lang, ...customMeta } = { ...{ lang: Astro.request.url.pathname.split("/")[0] || "en" }, ...Astro.request.params, ...Astro.props };
@@ -31,10 +30,10 @@ const meta = {
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href={Astro.resolve("../css/tailwind.css")} />
-    <link rel="stylesheet" href={Astro.resolve("../css/daisy.css")} />
+    <!-- <link rel="stylesheet" href={Astro.resolve("../css/daisy.css")} /> -->
     <meta name="msapplication-TileColor" content={meta.themeColor} />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.16.2/dist/themes.css" rel="stylesheet" type="text/css" />
     <SEO
       title={meta.title}
       description={meta.description}
