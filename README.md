@@ -1,5 +1,7 @@
 # Tricked.pro
 
+This website is hosted on netlify
+
 ## Features
 
 - i18n
