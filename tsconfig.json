@@ -13,7 +13,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "importsNotUsedAsValues": "error",
+    "sourceMap": true,
+    "checkJs": false,
+    "paths": {
+      "^components": ["./components"],
+      "^components/*": ["./components/*"],
+      "^api": ["./api"],
+      "^api/*": ["./api/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.js", "postcss.config.ts", "next.config.js"],
   "exclude": ["node_modules"]

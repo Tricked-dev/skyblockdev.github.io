@@ -1,0 +1,15 @@
+{
+  "services": "Programming Services",
+  "maintaining": "Im currently maintaing Diplo a script runner and dependency manager for deno made in rust.",
+  "developer": "I am a Typescript and Rust developer",
+  "hey_im": "Hey, I'm tricked",
+  "donating": "You can donate to me using any of the crypto adresses",
+  "recent_posts": "Recent posts",
+  "make_bots": "I make discord bots for",
+  "pricing": "Pricing is around 1 euro(in crypto) per command depending on the effort is required to make the command",
+  "on_discord": " on discord for more info or offers!",
+  "not_host": "I will not host the bot",
+  "written": "and it will be written in typescript using the discord.js api library",
+  "program_other": "I can also program other things in rust/typescript for a price decided in dms",
+  "change_lang": "Change your language to dutch"
+}

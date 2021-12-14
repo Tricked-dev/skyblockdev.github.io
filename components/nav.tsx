@@ -16,13 +16,13 @@ const Links = [
     name: "Posts",
     route: "/posts",
   },
-  {
-    name: "Aethor",
-    route: "/aethor",
-  },
+  // {
+  //   name: "Aethor",
+  //   route: "/aethor",
+  // },
 ];
 
-const Navbar = ({ links = Links, TextValue = "Tricked.pro" }) => {
+const Navbar = ({ links = Links, lang = "en", TextValue = "Tricked.pro" }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const router = useRouter();
@@ -30,7 +30,7 @@ const Navbar = ({ links = Links, TextValue = "Tricked.pro" }) => {
   const navigationItem = (
     <>
       {links.map((link) => (
-        <Link href={link.route} active={router.pathname == link.route} key={link.name} p={2} rounded={"md"}>
+        <Link lang={lang} href={link.route} active={router.pathname == link.route} key={link.name} p={2} rounded={"md"}>
           {link.name}
         </Link>
       ))}

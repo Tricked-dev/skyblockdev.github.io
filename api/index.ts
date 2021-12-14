@@ -1,6 +1,6 @@
 import matter from "gray-matter";
 import fs from "fs";
-import path from "path";
+import path, { join } from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkHtml from "remark-html";
 import autolinkHeadings from "rehype-autolink-headings";
@@ -16,18 +16,18 @@ export async function getAllDocs() {
 export async function getDocBySlug(slug: any) {
   return getSlug("_diplo", slug.replace(".md", ""));
 }
-export async function getAllPosts() {
-  return await getAll("_posts");
-}
-export async function getAllProjects() {
-  return await getAll("_projects");
-}
-export async function getProjectBySlug(slug: any) {
-  return await getSlug("_projects", slug);
-}
 
-export async function getPostBySlug(slug: any) {
-  return await getSlug("_posts", slug);
+export async function getAllPosts(lang: string | undefined) {
+  return await getAll(lang ? join("_posts", lang) : "_posts");
+}
+export async function getAllProjects(lang: string | undefined) {
+  return await getAll(lang ? join("_projects", lang) : "_projects");
+}
+export async function getProjectBySlug(lang: string, slug: any) {
+  return await getSlug("_projects", join(lang, slug));
+}
+export async function getPostBySlug(lang: string, slug: any) {
+  return await getSlug("_posts", join(lang, slug));
 }
 
 export async function getAll(dir: string, removeExt: boolean = true) {
@@ -74,16 +74,22 @@ export async function transform(i: string) {
 }
 
 export async function getSlug(dir: string, slug: any, ext: boolean = true) {
-  const fileContent = await fs.readFileSync(`${process.cwd()}/${dir}/${slug}${ext ? ".md" : ""}`, { encoding: "ascii" });
-  const meta = matter(fileContent);
-  let mdxSource = await transform(meta.content);
-  return {
-    ...meta.data,
-    content: mdxSource,
-  };
+  try {
+    const fileContent = await fs.readFileSync(`${process.cwd()}/${dir}/${slug}${ext ? ".md" : ""}`, { encoding: "ascii" });
+    const meta = matter(fileContent);
+    let mdxSource = await transform(meta.content);
+    return {
+      ...meta.data,
+      content: mdxSource,
+    };
+  } catch {
+    return {
+      content: { compiledSource: "" },
+    };
+  }
 }
 
-function readdirRecursive(directory: string) {
+export function readdirRecursive(directory: string) {
   const result = [];
 
   (function read(dir) {
