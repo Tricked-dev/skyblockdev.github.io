@@ -44,378 +44,387 @@ td {
   }
 }
 
-@keyframes go {
+@keyframes scale {
   to {
     transform: scaleX(1);
   }
 }
 
-#circle {
+#denoCircle {
   stroke-dasharray: 322px;
   stroke-dashoffset: 322px;
-  animation: stranim 1.7s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
-}
-
-#body {
-  stroke: black;
-  stroke-dashoffset: 208px;
-  stroke-dasharray: 208px;
-  animation: stranim 2s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
-}
-
-#Ellipse {
-  stroke: black;
-  stroke-dasharray: 6px;
-  stroke-dashoffset: 6px;
   animation: stranim 2.2s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
 }
 
-:is(#Vector, #eye, #main, .original path) {
-  opacity: 0.00001;
-  animation: opacity 1s ease-in-out 1.7s forwards;
+#denoBody {
+  stroke-dashoffset: 208px;
+  stroke-dasharray: 208px;
+  animation: stranim 2.4s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
 }
 
-#svg_7 {
+#denoEyes {
+  stroke-dasharray: 6px;
+  stroke-dashoffset: 6px;
+  animation: stranim 2.6s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
+}
+
+:is(#deno, #denoEye, #rust, .cssOriginal path) {
+  opacity: 0.00001;
+  animation: opacity 1s ease-in-out 2s forwards;
+}
+
+#cssStroke1 {
   stroke-dasharray: 414px;
   stroke-dashoffset: 414px;
-  animation: stranim 1.7s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
+  animation: stranim 1.7s ease-in-out forwards, hide 1s ease-in-out 1.5s forwards;
 }
 
-#svg_8 {
+#cssStroke2 {
   stroke-dasharray: 458px;
   stroke-dashoffset: 458px;
-  animation: stranim 2s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
+  animation: stranim 2s ease-in-out forwards, hide 1s ease-in-out 1.5s forwards;
 }
 
-#old > path {
+#firgmaOriginal > path {
   opacity: 0.00001;
   animation: opacity 1s ease-in-out forwards;
 }
 
-#old-orange {
+#firgmaOriginal-orange {
   animation-delay: 1.7s !important;
   stroke-dasharray: 150px;
   stroke-dashoffset: 150px;
 }
 
-#old-pink {
+#firgmaOriginal-pink {
   animation-delay: 1.9s !important;
   stroke-dasharray: 150px;
   stroke-dashoffset: 150px;
 }
 
-#old-bloo {
+#firgmaOriginal-bloo {
   animation-delay: 2.1s !important;
   stroke-dasharray: 132.0081787109375px;
   stroke-dashoffset: 132.0081787109375px;
 }
 
-#old-prpl {
+#firgmaOriginal-prpl {
   animation-delay: 2.3s !important;
   stroke-dasharray: 150px;
   stroke-dashoffset: 150px;
 }
 
-#old-green {
+#firgmaOriginal-green {
   animation-delay: 2.5s !important;
   stroke-dasharray: 141.0063018798828px;
   stroke-dashoffset: 141.0063018798828px;
 }
 
-#new > path {
+#firgmaNew > path {
   animation: stranim 2s ease-in-out forwards;
 }
 
-#orangeS {
+#firgmaNew-orangeStroke {
   stroke-dasharray: 150px;
   stroke-dashoffset: 150px;
 }
 
-#pinkS {
-  animation-delay: 0.2s !important;
+#firgmaNew-pinkStroke {
+  animation-delay: 0.4s !important;
   stroke-dasharray: 150px;
   stroke-dashoffset: 150px;
 }
 
-#blooS {
-  animation-delay: 0.5s !important;
+#firgmaNew-blooStroke {
+  animation-delay: 0.7s !important;
   stroke-dasharray: 132.0081787109375px;
   stroke-dashoffset: 132.0081787109375px;
 }
 
-#prplS {
-  animation-delay: 0.7s !important;
+#firgmaNew-prplStroke {
+  animation-delay: 1s !important;
   stroke-dasharray: 150px;
   stroke-dashoffset: 150px;
 }
 
-#greenS {
-  animation-delay: 1s !important;
+#firgmaNew-greenStroke {
+  animation-delay: 1.3s !important;
   stroke-dasharray: 141.0063018798828px;
   stroke-dashoffset: 141.0063018798828px;
 }
 
-#main {
-  animation-delay: 6.1s !important;
+#rust {
+  animation-delay: 3s !important;
 }
 
 #gears {
   stroke-dasharray: 450.7996826171875px;
   stroke-dashoffset: 450.7996826171875px;
-  animation: stranim 3s ease-in-out 1.7s forwards;
+  animation: stranim 3s ease-in-out 0.4s forwards;
 }
 
-#circles > path {
+#rustCircle > path {
   stroke-dasharray: 111.09793090820312px;
   stroke-dashoffset: 111.09793090820312px;
-  animation: stranim 3s ease-in-out 1.7s forwards;
+  animation: stranim 2s ease-in-out 0.4s forwards;
 }
 
-#circles > path:nth-child(2) {
-  animation-delay: 2s !important;
+#rustCircle2 {
+  animation-delay: 0.6s !important;
 }
 
-#circles > path:nth-child(4) {
-  animation-delay: 2.3s !important;
+#rustCircle4 {
+  animation-delay: 0.8s !important;
 }
 
-#circles > path:nth-child(5) {
-  animation-delay: 2.6s !important;
+#rustCircle5 {
+  animation-delay: 1s !important;
 }
 
-#circles > path:nth-child(3) {
-  animation-delay: 2.9s !important;
+#rustCircle3 {
+  animation-delay: 1.2s !important;
 }
 
-#R1 {
+#rustR1 {
   stroke-dasharray: 211.16099548339844px;
   stroke-dashoffset: 211.16099548339844px;
-  animation: stranim 3s ease-in-out 3s forwards;
+  animation: stranim 2s ease-in-out 1s forwards;
 }
 
-#R2 {
+#rustR2 {
   stroke-dasharray: 70.64369201660156px;
   stroke-dashoffset: 70.64369201660156px;
-  animation: stranim 3s ease-in-out 3s forwards;
+  animation: stranim 2s ease-in-out 1.2s forwards;
 }
-#R3 {
+#rustR3 {
   stroke-dasharray: 190.21678161621094px;
   stroke-dashoffset: 190.21678161621094px;
-  animation: stranim 3s ease-in-out 3s forwards;
+  animation: stranim 2s ease-in-out 1.4s forwards;
 }
 
-#R4 {
+#rustR4 {
   stroke-dasharray: 45.83991622924805px;
   stroke-dashoffset: 45.83991622924805px;
-  animation: stranim 3s ease-in-out 3s forwards;
+  animation: stranim 2s ease-in-out 1.6s forwards;
 }
 
-#G {
+#goG {
   stroke-dasharray: 253.16680908203125px;
   stroke-dashoffset: 253.16680908203125px;
-  animation: stranim 3s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.7s forwards;
-  fill-opacity: 0.0000001;
+  animation: stranim 2s ease-in-out 0.7s forwards, fillanim 1s ease-in-out 3.5s forwards;
 }
 
-#O {
+#goO {
   stroke-dasharray: 218.99244689941406px;
   stroke-dashoffset: 218.99244689941406px;
-  animation: stranim 3s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.7s forwards;
-  fill-opacity: 0.0000001;
+  animation: stranim 2s ease-in-out 0.7s forwards, fillanim 1s ease-in-out 3.5s forwards;
 }
 
-:is(#first, #second, #third) {
+:is(#goFirst, #goSecond, #goThird) {
   transform: scaleX(0);
 }
 
-#first {
-  animation: go 2s ease-in-out 3s forwards;
+#goFirst {
+  animation: scale 2s ease-in-out 2.5s forwards;
 }
 
-#second {
-  animation: go 1.5s ease-in-out 4s forwards;
+#goSecond {
+  animation: scale 1.5s ease-in-out 3s forwards;
 }
 
-#third {
-  animation: go 2.5s ease-in-out 2s forwards;
+#goThird {
+  animation: scale 2.5s ease-in-out 2s forwards;
 }
 
-#Firefox > path {
+#fireFox > path {
   fill-opacity: 0.0000001;
-  stroke-width: 15px;
+  stroke-width: 10px;
 }
 
-#lwl {
+#fireFox1 {
   stroke-dasharray: 12157.626953125px;
   stroke-dashoffset: 12157.626953125px;
-  animation: stranim 3s ease-in-out 0s forwards, fillanim 1.5s ease-in-out 3s forwards;
+  animation: stranim 3s ease-in-out 0s forwards, fillanim 1.5s ease-in-out 2.4s forwards;
 }
 
-#tani {
+#fireFox2 {
   stroke-dasharray: 2911.82470703125px;
   stroke-dashoffset: 2911.82470703125px;
-  animation: stranim 3s ease-in-out 0.5s forwards, fillanim 1.5s ease-in-out 3.2s forwards;
+  animation: stranim 3s ease-in-out 0.2s forwards, fillanim 1.5s ease-in-out 2.5s forwards;
 }
 
-#talet {
+#fireFox3 {
   stroke-dasharray: 3315.058349609375px;
   stroke-dashoffset: 3315.058349609375px;
-  animation: stranim 3s ease-in-out 1s forwards, fillanim 1.5s ease-in-out 3.4s forwards;
+  animation: stranim 3s ease-in-out 0.4s forwards, fillanim 1.5s ease-in-out 2.6s forwards;
 }
 
-#rabe3 {
+#fireFox4 {
   stroke-dasharray: 3443.279296875px;
   stroke-dashoffset: 3443.279296875px;
-  animation: stranim 3s ease-in-out 1.5s forwards, fillanim 1.5s ease-in-out 3.6s forwards;
+  animation: stranim 3s ease-in-out 0.6s forwards, fillanim 1.5s ease-in-out 2.7s forwards;
 }
 
-#khames {
+#fireFox5 {
   stroke-dasharray: 8901.6025390625px;
   stroke-dashoffset: 8901.6025390625px;
-  animation: stranim 3s ease-in-out 2s forwards, fillanim 1.5s ease-in-out 3.8s forwards;
+  animation: stranim 3s ease-in-out 0.8s forwards, fillanim 1.5s ease-in-out 2.8s forwards;
 }
 
-#sades {
+#fireFox6 {
   stroke-dasharray: 894.7145385742188px;
   stroke-dashoffset: 894.7145385742188px;
-  animation: stranim 3s ease-in-out 2.5s forwards, fillanim 1.5s ease-in-out 4s forwards;
+  animation: stranim 3s ease-in-out 1s forwards, fillanim 1.5s ease-in-out 2.9s forwards;
 }
 
-#sabe3 {
+#fireFox7 {
   stroke-dasharray: 4201.8681640625px;
   stroke-dashoffset: 4201.8681640625px;
-  animation: stranim 3s ease-in-out 3s forwards, fillanim 1.5s ease-in-out 4.2s forwards;
+  animation: stranim 3s ease-in-out 1.2s forwards, fillanim 1.5s ease-in-out 3s forwards;
 }
 
-#tamen {
+#fireFox8 {
   stroke-dasharray: 4201.8681640625px;
   stroke-dashoffset: 4201.8681640625px;
-  animation: stranim 3s ease-in-out 3.5s forwards, fillanim 1.5s ease-in-out 4.4s forwards;
+  animation: stranim 3s ease-in-out 1.4s forwards, fillanim 1.5s ease-in-out 3.1s forwards;
 }
 
-#tase3 {
+#fireFox9 {
   stroke-dasharray: 2399.7216796875px;
   stroke-dashoffset: 2399.7216796875px;
-  animation: stranim 3s ease-in-out 4s forwards, fillanim 1.5s ease-in-out 4.6s forwards;
+  animation: stranim 3s ease-in-out 1.6s forwards, fillanim 1.5s ease-in-out 3.2s forwards;
 }
 
-#acher {
+#fireFox10 {
   stroke-dasharray: 8345.2119140625px;
   stroke-dashoffset: 8345.2119140625px;
-  animation: stranim 3s ease-in-out 4.5s forwards, fillanim 1.5s ease-in-out 4.8s forwards;
+  animation: stranim 3s ease-in-out 1.8s forwards, fillanim 1.5s ease-in-out 3.3s forwards;
 }
 
-#hadech {
+#fireFox11 {
   stroke-dasharray: 8345.2119140625px;
   stroke-dashoffset: 8345.2119140625px;
-  animation: stranim 3s ease-in-out 5s forwards, fillanim 1.5s ease-in-out 5s forwards;
+  animation: stranim 3s ease-in-out 2s forwards, fillanim 1.5s ease-in-out 3.4s forwards;
 }
 
-#tanech {
+#fireFox12 {
   stroke-dasharray: 8619.8857421875px;
   stroke-dashoffset: 8619.8857421875px;
-  animation: stranim 3s ease-in-out 5.5s forwards, fillanim 1.5s ease-in-out 5.2s forwards;
+  animation: stranim 3s ease-in-out 2.2s forwards, fillanim 1.5s ease-in-out 3.5s forwards;
 }
 
-#Git > path {
-  fill-opacity: 0.0000041;
+:is(#git > path, #githubDots, #github, #njs, #ts, #Njs, #goO, #goG) {
+  fill-opacity: 0.000001;
+}
+
+#git > path {
   stroke-dasharray: 644.1839599609375px;
   stroke-dashoffset: 644.1839599609375px;
-  animation: stranim 3s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.7s forwards;
+  animation: stranim 3s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
 }
 
-#dots {
-  fill-opacity: 0.000001;
-  animation: fillanim 1s ease-in-out 4.7s forwards;
+#githubDots {
+  animation: fillanim 1s ease-in-out 5s forwards;
 }
 
 #github {
-  fill-opacity: 0.00004;
   stroke-dasharray: 696.9649047851562px;
   stroke-dashoffset: 696.9649047851562px;
-  animation: stranim 3s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.7s forwards;
-}
-
-#N {
-  fill-opacity: 0.00001;
-  stroke-dasharray: 765.3524780273438px;
-  stroke-dashoffset: 765.3524780273438px;
-  animation: stranim 3s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 3.7s forwards;
-}
-
-#bg,
-#pg,
-#ub,
-#wahed,
-#zoj,
-#tla,
-#ta,
-#vsc,
-#c,
-#ca,
-#o,
-#i {
-  fill-opacity: 0.000001;
-  animation: fillanim 1s ease-in-out 4.2s forwards;
-}
-
-#original {
-  fill-opacity: 0.00001;
-  stroke-dasharray: 949.564697265625px;
-  stroke-dashoffset: 949.564697265625px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 3.7s forwards;
+  animation: stranim 3s ease-in-out 2s forwards, fillanim 1s ease-in-out 5s forwards;
 }
 
 #Njs {
-  fill-opacity: 0.00001;
+  stroke-dasharray: 765.3524780273438px;
+  stroke-dashoffset: 765.3524780273438px;
+  animation: stranim 4.3s ease-in-out 2.2s forwards, fillanim 1s ease-in-out 5.3s forwards;
+}
+
+:is(#tsBg, #postgres, #ubuntu, #wahed, #vsc, #yarnCat, #yarnCircle, #intellijI, #intellijO, #consoleStroke + path) {
+  fill-opacity: 0.000001;
+  animation: fillanim 1s ease-in-out 6s forwards;
+}
+
+#ts {
+  stroke-dasharray: 949.564697265625px;
+  stroke-dashoffset: 949.564697265625px;
+  animation: stranim 5.6s ease-in-out 2.4s forwards, fillanim 1s ease-in-out 5.6s forwards;
+}
+
+#njs {
   stroke-dasharray: 1104.76318359375px;
   stroke-dashoffset: 1104.76318359375px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
+  animation: stranim 6s ease-in-out 2.6s forwards, fillanim 1s ease-in-out 6.5s forwards;
 }
 
-#VS {
+#postgres {
+  animation-delay: 7s !important;
+}
+
+#postgresStroke {
   stroke-dasharray: 833.6484985351562px;
   stroke-dashoffset: 833.6484985351562px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
+  animation: stranim 8.7s ease-in-out 2.8s forwards;
 }
 
-#ub {
+#ubuntu {
   stroke-dasharray: 954.9606323242188px;
   stroke-dashoffset: 954.9606323242188px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
+  animation: stranim 11s ease-in-out 3s forwards, fillanim 1s ease-in-out 7.5s forwards !important;
 }
 
-#wahed {
-  stroke-dasharray: 339.4634094238281px;
-  stroke-dashoffset: 339.4634094238281px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
+#vsc {
+  animation-delay: 8s !important;
 }
 
-#flat {
+#vscFlat {
   stroke-dasharray: 852.0916137695312px;
   stroke-dashoffset: 852.0916137695312px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards, hide 0.5s ease-in-out 4.5s forwards;
+  animation: stranim 12s ease-in-out 3.2s forwards, hide 0.5s ease-in-out 8s forwards;
 }
 
-#cs {
+:is(#yarnCat, #yarnCircle) {
+  animation-delay: 8.5s !important;
+}
+
+#yarnCircleStroke {
   stroke-dasharray: 664.6370239257812px;
   stroke-dashoffset: 664.6370239257812px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards, hide 0.5s ease-in-out 4.5s forwards;
+  animation: stranim 10s ease-in-out 3.4s forwards, hide 0.5s ease-in-out 9s forwards;
 }
 
-#cas {
+#yarnCatStroke {
   stroke-dasharray: 311.0260925292969px;
   stroke-dashoffset: 311.0260925292969px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards, hide 0.5s ease-in-out 4.5s forwards;
-}
-#os {
-  stroke-dasharray: 101.0206527709961px;
-  stroke-dashoffset: 101.0206527709961px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
+  animation: stranim 10s ease-in-out 3.4s forwards, hide 0.5s ease-in-out 9s forwards;
 }
 
-#is {
+:is(#intellijI, #intellijO) {
+  animation-delay: 9s !important;
+}
+
+#intellijOStroke {
+  stroke-dasharray: 101.0206527709961px;
+  stroke-dashoffset: 101.0206527709961px;
+  animation: stranim 5s ease-in-out 5s forwards, fillanim 1s ease-in-out 4.5s forwards;
+}
+
+#intellijIStroke {
   stroke-dasharray: 670.9763793945312px;
   stroke-dashoffset: 670.9763793945312px;
-  animation: stranim 5s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
+  animation: stranim 10s ease-in-out 3.6s forwards, fillanim 1s ease-in-out 4.5s forwards;
+}
+
+#consoleStroke + path {
+  animation-delay: 9.5s !important;
+}
+
+#consoleStroke {
+  stroke-dasharray: 811.7780151367188px;
+  stroke-dashoffset: 811.7780151367188px;
+  animation: stranim 12s ease-in-out 3.8s forwards, hide 0.5s ease-in-out 9.5s forwards;
+}
+
+#consoleLine {
+  transform: scaleX(0);
+  animation: scale 2s ease-in-out 7.5s forwards;
 }
