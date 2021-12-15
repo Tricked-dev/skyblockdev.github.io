@@ -351,7 +351,7 @@ type Input = {
 
 let ToolBox = ({ x, bgColor }: Input) => {
   return (
-    // <FadeInWhenVisible>
+    <FadeInWhenVisible>
     <Box className="tsxsucks">
       <Box p={2} width="auto" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
         <Box textAlign="center">
@@ -367,7 +367,7 @@ let ToolBox = ({ x, bgColor }: Input) => {
         </Box>
       </Box>
     </Box>
-    // </FadeInWhenVisible>
+    </FadeInWhenVisible>
   );
 };
 
