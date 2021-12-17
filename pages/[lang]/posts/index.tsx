@@ -22,7 +22,7 @@ export default function Home({ posts, lang }: NextJsData) {
           color: "white",
         }}
       >
-        <Link href={`/[lang]/posts/[post]`} as={`/${lang}/posts/${x.slug}`} passHref>
+        <Link href={`/[lang]/posts/[...post]`} as={`/${lang}/posts/${x.slug}`} passHref>
           <Box>
             <Box>
               <Box>

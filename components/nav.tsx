@@ -2,6 +2,7 @@ import { Box, Flex, HStack, IconButton, Button, useColorMode, Text, useDisclosur
 import Link from "./Link";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const Links = [
   {
@@ -24,7 +25,7 @@ const Links = [
 
 const Navbar = ({ links = Links, lang = "en", TextValue = "Tricked.pro" }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode: SetToggleColorMode } = useColorMode();
   const router = useRouter();
 
   const navigationItem = (
@@ -36,6 +37,23 @@ const Navbar = ({ links = Links, lang = "en", TextValue = "Tricked.pro" }) => {
       ))}
     </>
   );
+  useEffect(() => {
+    if (window.document)
+      if (colorMode == "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+  });
+  function toggleColorMode() {
+    SetToggleColorMode();
+    localStorage.theme = colorMode;
+    if (colorMode == "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }
 
   return (
     <>
