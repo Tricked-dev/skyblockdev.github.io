@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F[lang]\u002Fdonating","\u002F[lang]\u002Fposts","\u002F[lang]\u002Fservices","\u002F[lang]\u002Faethor","\u002F[lang]\u002Faethor\u002F[commands]","\u002F[lang]","\u002F[lang]\u002Fprojects","\u002F[lang]\u002Fposts\u002F[...post]","\u002F[lang]\u002Fprojects\u002F[...project]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
