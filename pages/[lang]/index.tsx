@@ -11,10 +11,10 @@ import i18next from "i18next";
 
 export default function Home({ lang }: NextJsData) {
   return (
-    <Container lang={lang}>
+    <Container lang={lang} className="w-full">
       <Box width="100%">
         <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
-          <GridItem minH="3.4rem" paddingBottom="40px">
+          <GridItem minH="3.4rem" paddingBottom="40px" w="80rem" maxW={"100vw"}>
             <Text fontSize="6xl" color="brand.100">
               {i18next.t("hey_im")}
             </Text>
