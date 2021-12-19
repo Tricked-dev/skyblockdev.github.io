@@ -17,15 +17,19 @@ const config = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  productionBrowserSourceMaps: true,
-  // i18n: {
-  //   // These are all the locales you want to support in
-  //   // your application
-  //   locales: ["en", "nl"],
-  //   // This is the default locale you want to be used when visiting
-  //   // a non-locale prefixed path e.g. `/hello`
-  //   defaultLocale: "en",
-  // },
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.module.rules.push({
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: "@mdx-js/loader",
+          options: pluginOptions.options,
+        },
+      ],
+    });
+    return config;
+  },
+  productionBrowserSourceMaps: false,
   async redirects() {
     return [
       {
@@ -61,4 +65,4 @@ const config = {
     ];
   },
 };
-module.exports = plugins([[withPWA], [withMDX]], config);
+module.exports = process.env.NODE_ENV === "development" ? plugins([[withMDX]], config) : plugins([[withPWA], [withMDX]], config);

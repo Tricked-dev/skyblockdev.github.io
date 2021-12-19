@@ -352,21 +352,21 @@ type Input = {
 let ToolBox = ({ x, bgColor }: Input) => {
   return (
     <FadeInWhenVisible>
-    <Box className="tsxsucks">
-      <Box p={2} width="auto" height="8rem" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
-        <Box textAlign="center">
-          <Text>{x.n}</Text>
-        </Box>
-        <Center>
-          <Box width="5rem" maxH="5rem">
-            {x.i}
+      <Box className="tsxsucks">
+        <Box p={2} width="auto" height="8rem" className="focus:bg-green-700 hover:bg-green-700 duration-1000" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
+          <Box textAlign="center">
+            <Text>{x.n}</Text>
           </Box>
-        </Center>
-        <Box paddingBottom="1px">
-          <Progress colorScheme="green" as="div" value={x.p} />
+          <Center>
+            <Box width="5rem" maxH="5rem">
+              {x.i}
+            </Box>
+          </Center>
+          <Box paddingBottom="1px">
+            <Progress colorScheme="green" as="div" value={x.p} />
+          </Box>
         </Box>
       </Box>
-    </Box>
     </FadeInWhenVisible>
   );
 };
