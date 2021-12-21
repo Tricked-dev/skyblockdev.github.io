@@ -1704,6 +1704,21 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/arya@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/arya/-/arya-4.5.0.tgz#0afb9a27479e37610bc080a52aab65ec28f941e4"
+  integrity sha512-f0XXxQlG/VrVgb63Phz1/qSU7he4sUx307395F3fJ7BW6dY+jug0Qz3uK7/aULM1ULB/DvZZIb1q4c6ZJKutjQ==
+
+"@fontsource/atomic-age@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/atomic-age/-/atomic-age-4.5.0.tgz#ebd031ca9c1a81328c559e932222145a49d7af14"
+  integrity sha512-G6PgZkJ/xEZ2r2Of8ZDk69wXphmXjo/p5xyMZ5CNVTAmgndp0YN+3xegF18RL7h8iQAHhsDIEnuiydSeRmCaUQ==
+
+"@fontsource/roboto@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-4.5.1.tgz#63f7b783f755d8f6727eb60198627e7e1be3ac20"
+  integrity sha512-3mhfL+eNPG/woMNqwD/OHaW5qMpeGEBsDwzmhFmjB1yUV+M+M9P0NhP/AyHvnGz3DrqkvZ7CPzNMa+UkVLeELg==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"

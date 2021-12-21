@@ -17,18 +17,7 @@ const config = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    config.module.rules.push({
-      use: [
-        options.defaultLoaders.babel,
-        {
-          loader: "@mdx-js/loader",
-          options: pluginOptions.options,
-        },
-      ],
-    });
-    return config;
-  },
+
   productionBrowserSourceMaps: false,
   async redirects() {
     return [

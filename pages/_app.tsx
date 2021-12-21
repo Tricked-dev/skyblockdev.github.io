@@ -8,6 +8,7 @@ import theme from "../api/theme";
 import "../i18n/init";
 import i18next from "i18next";
 import Head from "next/head";
+import "@fontsource/roboto";
 function TrickedAPP({ Component, pageProps }: AppProps) {
   i18next.changeLanguage(pageProps.lang);
   return (

@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 
 import i18next from "i18next";
 
-import { getSortedLangsData } from "../api/lang";
-
 export default function Home() {
   const router = useRouter();
 
