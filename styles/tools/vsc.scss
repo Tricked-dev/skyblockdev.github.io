@@ -1,0 +1,13 @@
+#vsc {
+  animation-delay: 8s !important;
+}
+
+#vscFlat {
+  stroke-dasharray: 852.0916137695312px;
+  stroke-dashoffset: 852.0916137695312px;
+  animation: stranim 12s ease-in-out 3.2s forwards, hide 0.5s ease-in-out 8s forwards;
+}
+:is(#tsBg, #postgres, #ubuntu, #wahed, #vsc, #yarnCat, #yarnCircle, #intellijI, #intellijO, #consoleStroke + path) {
+  fill-opacity: 0.000001;
+  animation: fillanim 1s ease-in-out 6s forwards;
+}

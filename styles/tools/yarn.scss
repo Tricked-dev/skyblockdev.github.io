@@ -1,0 +1,15 @@
+:is(#yarnCat, #yarnCircle) {
+  animation-delay: 8.5s !important;
+}
+
+#yarnCircleStroke {
+  stroke-dasharray: 664.6370239257812px;
+  stroke-dashoffset: 664.6370239257812px;
+  animation: stranim 10s ease-in-out 3.4s forwards, hide 0.5s ease-in-out 9s forwards;
+}
+
+#yarnCatStroke {
+  stroke-dasharray: 311.0260925292969px;
+  stroke-dashoffset: 311.0260925292969px;
+  animation: stranim 10s ease-in-out 3.4s forwards, hide 0.5s ease-in-out 9s forwards;
+}

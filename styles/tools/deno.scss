@@ -1,0 +1,22 @@
+#denoCircle {
+  stroke-dasharray: 322px;
+  stroke-dashoffset: 322px;
+  animation: stranim 2.2s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
+}
+
+#denoBody {
+  stroke-dashoffset: 208px;
+  stroke-dasharray: 208px;
+  animation: stranim 2.4s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
+}
+
+#denoEyes {
+  stroke-dasharray: 6px;
+  stroke-dashoffset: 6px;
+  animation: stranim 2.6s ease-in-out forwards, hide 1s ease-in-out 1.7s forwards;
+}
+
+:is(#deno, #denoEye, #rust, .cssOriginal path) {
+  opacity: 0.00001;
+  animation: opacity 1s ease-in-out 2s forwards;
+}

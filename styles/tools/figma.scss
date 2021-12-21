@@ -1,0 +1,67 @@
+#figmaOriginal > path {
+  opacity: 0.00001;
+  animation: opacity 1s ease-in-out forwards;
+}
+
+#figmaOriginal-orange {
+  animation-delay: 1.7s !important;
+  stroke-dasharray: 150px;
+  stroke-dashoffset: 150px;
+}
+
+#figmaOriginal-pink {
+  animation-delay: 1.9s !important;
+  stroke-dasharray: 150px;
+  stroke-dashoffset: 150px;
+}
+
+#figmaOriginal-bloo {
+  animation-delay: 2.1s !important;
+  stroke-dasharray: 132.0081787109375px;
+  stroke-dashoffset: 132.0081787109375px;
+}
+
+#figmaOriginal-prpl {
+  animation-delay: 2.3s !important;
+  stroke-dasharray: 150px;
+  stroke-dashoffset: 150px;
+}
+
+#figmaOriginal-green {
+  animation-delay: 2.5s !important;
+  stroke-dasharray: 141.0063018798828px;
+  stroke-dashoffset: 141.0063018798828px;
+}
+
+#figmaNew > path {
+  animation: stranim 2s ease-in-out forwards;
+}
+
+#figmaNew-orangeStroke {
+  stroke-dasharray: 150px;
+  stroke-dashoffset: 150px;
+}
+
+#figmaNew-pinkStroke {
+  animation-delay: 0.4s !important;
+  stroke-dasharray: 150px;
+  stroke-dashoffset: 150px;
+}
+
+#figmaNew-blooStroke {
+  animation-delay: 0.7s !important;
+  stroke-dasharray: 132.0081787109375px;
+  stroke-dashoffset: 132.0081787109375px;
+}
+
+#figmaNew-prplStroke {
+  animation-delay: 1s !important;
+  stroke-dasharray: 150px;
+  stroke-dashoffset: 150px;
+}
+
+#figmaNew-greenStroke {
+  animation-delay: 1.3s !important;
+  stroke-dasharray: 141.0063018798828px;
+  stroke-dashoffset: 141.0063018798828px;
+}

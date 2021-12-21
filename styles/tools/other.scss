@@ -1,0 +1,41 @@
+@keyframes stranim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hide {
+  to {
+    opacity: 0.000001;
+  }
+}
+
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fillanim {
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+#cssStroke1 {
+  stroke-dasharray: 414px;
+  stroke-dashoffset: 414px;
+  animation: stranim 1.7s ease-in-out forwards, hide 1s ease-in-out 1.5s forwards;
+}
+
+#cssStroke2 {
+  stroke-dasharray: 458px;
+  stroke-dashoffset: 458px;
+  animation: stranim 2s ease-in-out forwards, hide 1s ease-in-out 1.5s forwards;
+}

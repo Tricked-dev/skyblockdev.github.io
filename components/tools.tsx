@@ -3,6 +3,7 @@ import { Box, Text, Progress, SimpleGrid, Center, useColorModeValue } from "@cha
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import FadeInWhenVisible from "./FadeIn";
+
 const skills = [
   {
     i: (
@@ -43,19 +44,19 @@ const skills = [
   {
     i: (
       <svg viewBox="0 0 128 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="firgmaOriginal">
-          <path id="firgmaOriginal-green" d="M43.5 130C55.4 130 65 120.4 65 108.5V87H43.5C31.6 87 22 96.6 22 108.5C22 120.4 31.6 130 43.5 130Z" fill="#0ACF83" />
-          <path id="firgmaOriginal-prpl" d="M22 66C22 54.1 31.6 44.5 43.5 44.5H65V87.5H43.5C31.6 87.5 22 77.9 22 66Z" fill="#A259FF" />
-          <path id="firgmaOriginal-orange" d="M22 23C22 11.1 31.6 1.5 43.5 1.5H65V44.5H43.5C31.6 44.5 22 34.9 22 23Z" fill="#F24E1E" />
-          <path id="firgmaOriginal-pink" d="M65 1.5H86.5C98.4 1.5 108 11.1 108 23C108 34.9 98.4 44.5 86.5 44.5H65V1.5Z" fill="#FF7262" />
-          <path id="firgmaOriginal-bloo" d="M108 66C108 77.9 98.4 87.5 86.5 87.5C74.6 87.5 65 77.9 65 66C65 54.1 74.6 44.5 86.5 44.5C98.4 44.5 108 54.1 108 66Z" fill="#1ABCFE" />
+        <g id="figmaOriginal">
+          <path id="figmaOriginal-green" d="M43.5 130C55.4 130 65 120.4 65 108.5V87H43.5C31.6 87 22 96.6 22 108.5C22 120.4 31.6 130 43.5 130Z" fill="#0ACF83" />
+          <path id="figmaOriginal-prpl" d="M22 66C22 54.1 31.6 44.5 43.5 44.5H65V87.5H43.5C31.6 87.5 22 77.9 22 66Z" fill="#A259FF" />
+          <path id="figmaOriginal-orange" d="M22 23C22 11.1 31.6 1.5 43.5 1.5H65V44.5H43.5C31.6 44.5 22 34.9 22 23Z" fill="#F24E1E" />
+          <path id="figmaOriginal-pink" d="M65 1.5H86.5C98.4 1.5 108 11.1 108 23C108 34.9 98.4 44.5 86.5 44.5H65V1.5Z" fill="#FF7262" />
+          <path id="figmaOriginal-bloo" d="M108 66C108 77.9 98.4 87.5 86.5 87.5C74.6 87.5 65 77.9 65 66C65 54.1 74.6 44.5 86.5 44.5C98.4 44.5 108 54.1 108 66Z" fill="#1ABCFE" />
         </g>
-        <g id="firgmaNew">
-          <path id="firgmaNew-pinkStroke" d="M66 1.5H65.5V2V43V43.5H66H86.5C98.1227 43.5 107.5 34.1227 107.5 22.5C107.5 10.8773 98.1227 1.5 86.5 1.5H66Z" stroke="#FF7262" />
-          <path id="firgmaNew-orangeStroke" d="M64.5 2V1.5H64H43.5C31.8773 1.5 22.5 10.8773 22.5 22.5C22.5 34.1227 31.8773 43.5 43.5 43.5H64H64.5V43V2Z" stroke="#F24E1E" />
-          <path id="firgmaNew-blooStroke" d="M86.5 86.5C98.1227 86.5 107.5 77.1227 107.5 65.5C107.5 53.8773 98.1227 44.5 86.5 44.5C74.8773 44.5 65.5 53.8773 65.5 65.5C65.5 77.1227 74.8773 86.5 86.5 86.5Z" stroke="#1ABCFE" />
-          <path id="firgmaNew-greenStroke" d="M64.5 88V87.5H64H43.5C31.8773 87.5 22.5 96.8773 22.5 108.5C22.5 120.123 31.8773 129.5 43.5 129.5C55.1227 129.5 64.5 120.123 64.5 108.5V88Z" stroke="#0ACF83" />
-          <path id="firgmaNew-prplStroke" d="M64.5 45V44.5H64H43.5C31.8773 44.5 22.5 53.8773 22.5 65.5C22.5 77.1227 31.8773 86.5 43.5 86.5H64H64.5V86V45Z" stroke="#A259FF" />
+        <g id="figmaNew">
+          <path id="figmaNew-pinkStroke" d="M66 1.5H65.5V2V43V43.5H66H86.5C98.1227 43.5 107.5 34.1227 107.5 22.5C107.5 10.8773 98.1227 1.5 86.5 1.5H66Z" stroke="#FF7262" />
+          <path id="figmaNew-orangeStroke" d="M64.5 2V1.5H64H43.5C31.8773 1.5 22.5 10.8773 22.5 22.5C22.5 34.1227 31.8773 43.5 43.5 43.5H64H64.5V43V2Z" stroke="#F24E1E" />
+          <path id="figmaNew-blooStroke" d="M86.5 86.5C98.1227 86.5 107.5 77.1227 107.5 65.5C107.5 53.8773 98.1227 44.5 86.5 44.5C74.8773 44.5 65.5 53.8773 65.5 65.5C65.5 77.1227 74.8773 86.5 86.5 86.5Z" stroke="#1ABCFE" />
+          <path id="figmaNew-greenStroke" d="M64.5 88V87.5H64H43.5C31.8773 87.5 22.5 96.8773 22.5 108.5C22.5 120.123 31.8773 129.5 43.5 129.5C55.1227 129.5 64.5 120.123 64.5 108.5V88Z" stroke="#0ACF83" />
+          <path id="figmaNew-prplStroke" d="M64.5 45V44.5H64H43.5C31.8773 44.5 22.5 53.8773 22.5 65.5C22.5 77.1227 31.8773 86.5 43.5 86.5H64H64.5V86V45Z" stroke="#A259FF" />
         </g>
       </svg>
     ),
@@ -352,7 +353,7 @@ type Input = {
 let ToolBox = ({ x, bgColor }: Input) => {
   return (
     <FadeInWhenVisible>
-      <Box className="tsxsucks">
+      <Box>
         <Box p={2} width="auto" height="8rem" className="focus:bg-green-700 hover:bg-green-700 duration-1000" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
           <Box textAlign="center">
             <Text>{x.n}</Text>
@@ -372,17 +373,8 @@ let ToolBox = ({ x, bgColor }: Input) => {
 };
 
 export default function Tools() {
-  let [arr, setArr] = useState(skills);
   // let arr = [...skills];
 
-  useEffect(() => {
-    let sorted = skills.sort(() => Math.random() - 0.5);
-    for (let i = sorted.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
-    }
-    setArr(sorted);
-  }, []);
   const bgColor = useColorModeValue("darkgrey", "telegram.800");
   return (
     <>
@@ -393,7 +385,7 @@ export default function Tools() {
       </FadeInWhenVisible>
 
       <SimpleGrid minChildWidth="120px" spacing={3}>
-        {arr.map((x, y) => {
+        {skills.map((x, y) => {
           return <ToolBox x={x} key={y} bgColor={bgColor} />;
         })}
       </SimpleGrid>

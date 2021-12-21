@@ -1,0 +1,27 @@
+#goG {
+  stroke-dasharray: 253.16680908203125px;
+  stroke-dashoffset: 253.16680908203125px;
+  animation: stranim 2s ease-in-out 0.7s forwards, fillanim 1s ease-in-out 3.5s forwards;
+}
+
+#goO {
+  stroke-dasharray: 218.99244689941406px;
+  stroke-dashoffset: 218.99244689941406px;
+  animation: stranim 2s ease-in-out 0.7s forwards, fillanim 1s ease-in-out 3.5s forwards;
+}
+
+:is(#goFirst, #goSecond, #goThird) {
+  transform: scaleX(0);
+}
+
+#goFirst {
+  animation: scale 2s ease-in-out 2.5s forwards;
+}
+
+#goSecond {
+  animation: scale 1.5s ease-in-out 3s forwards;
+}
+
+#goThird {
+  animation: scale 2.5s ease-in-out 2s forwards;
+}

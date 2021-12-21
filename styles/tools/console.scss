@@ -1,0 +1,14 @@
+#consoleStroke + path {
+  animation-delay: 9.5s !important;
+}
+
+#consoleStroke {
+  stroke-dasharray: 811.7780151367188px;
+  stroke-dashoffset: 811.7780151367188px;
+  animation: stranim 12s ease-in-out 3.8s forwards, hide 0.5s ease-in-out 9.5s forwards;
+}
+
+#consoleLine {
+  transform: scaleX(0);
+  animation: scale 2s ease-in-out 7.5s forwards;
+}

@@ -1,0 +1,15 @@
+:is(#intellijI, #intellijO) {
+  animation-delay: 9s !important;
+}
+
+#intellijOStroke {
+  stroke-dasharray: 101.0206527709961px;
+  stroke-dashoffset: 101.0206527709961px;
+  animation: stranim 5s ease-in-out 5s forwards, fillanim 1s ease-in-out 4.5s forwards;
+}
+
+#intellijIStroke {
+  stroke-dasharray: 670.9763793945312px;
+  stroke-dashoffset: 670.9763793945312px;
+  animation: stranim 10s ease-in-out 3.6s forwards, fillanim 1s ease-in-out 4.5s forwards;
+}

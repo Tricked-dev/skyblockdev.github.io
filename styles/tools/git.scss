@@ -1,0 +1,19 @@
+:is(#git > path, #githubDots, #github, #njs, #ts, #Njs, #goO, #goG) {
+  fill-opacity: 0.000001;
+}
+
+#git > path {
+  stroke-dasharray: 644.1839599609375px;
+  stroke-dashoffset: 644.1839599609375px;
+  animation: stranim 3s ease-in-out 1.7s forwards, fillanim 1s ease-in-out 4.5s forwards;
+}
+
+#githubDots {
+  animation: fillanim 1s ease-in-out 5s forwards;
+}
+
+#github {
+  stroke-dasharray: 696.9649047851562px;
+  stroke-dashoffset: 696.9649047851562px;
+  animation: stranim 3s ease-in-out 2s forwards, fillanim 1s ease-in-out 5s forwards;
+}

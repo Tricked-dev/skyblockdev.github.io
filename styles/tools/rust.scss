@@ -1,0 +1,54 @@
+#rust {
+  animation-delay: 3s !important;
+}
+
+#gears {
+  stroke-dasharray: 450.7996826171875px;
+  stroke-dashoffset: 450.7996826171875px;
+  animation: stranim 3s ease-in-out 0.4s forwards;
+}
+
+#rustCircle > path {
+  stroke-dasharray: 111.09793090820312px;
+  stroke-dashoffset: 111.09793090820312px;
+  animation: stranim 2s ease-in-out 0.4s forwards;
+}
+
+#rustCircle2 {
+  animation-delay: 0.6s !important;
+}
+
+#rustCircle4 {
+  animation-delay: 0.8s !important;
+}
+
+#rustCircle5 {
+  animation-delay: 1s !important;
+}
+
+#rustCircle3 {
+  animation-delay: 1.2s !important;
+}
+
+#rustR1 {
+  stroke-dasharray: 211.16099548339844px;
+  stroke-dashoffset: 211.16099548339844px;
+  animation: stranim 2s ease-in-out 1s forwards;
+}
+
+#rustR2 {
+  stroke-dasharray: 70.64369201660156px;
+  stroke-dashoffset: 70.64369201660156px;
+  animation: stranim 2s ease-in-out 1.2s forwards;
+}
+#rustR3 {
+  stroke-dasharray: 190.21678161621094px;
+  stroke-dashoffset: 190.21678161621094px;
+  animation: stranim 2s ease-in-out 1.4s forwards;
+}
+
+#rustR4 {
+  stroke-dasharray: 45.83991622924805px;
+  stroke-dashoffset: 45.83991622924805px;
+  animation: stranim 2s ease-in-out 1.6s forwards;
+}
