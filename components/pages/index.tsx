@@ -5,6 +5,7 @@ import React from "react";
 import Contacting from "../contacting";
 import { Text, Link as ChakraLink } from "@chakra-ui/react";
 import Tools from "../tools";
+import { comp } from "../fadeUtils";
 
 function index({ lang }: any) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -12,7 +13,7 @@ function index({ lang }: any) {
   return (
     <Box width="100%">
       <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
-        <GridItem minH="3.4rem" paddingBottom="40px" w="80rem" maxW={"100vw"}>
+        <GridItem minH="3.4rem" paddingBottom="40px" w="80rem" maxW={"100vw"} as={comp("div")}>
           <Text fontSize="6xl" color="brand.100">
             {i18next.t("hey_im")}
           </Text>
@@ -37,10 +38,10 @@ function index({ lang }: any) {
           <Box></Box>
         </GridItem>
 
-        <GridItem paddingBottom="40px">
+        <GridItem paddingBottom="40px" as={comp("div")}>
           <Tools />
         </GridItem>
-        <GridItem>
+        <GridItem as={comp("div")}>
           <Contacting />
         </GridItem>
       </Grid>

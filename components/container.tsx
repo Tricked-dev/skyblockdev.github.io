@@ -6,6 +6,7 @@ import Nav from "./nav";
 import NextLink from "next/link";
 
 import Footer from "./footer";
+import { motion } from "framer-motion";
 
 const langMeta = {
   en: {
@@ -34,7 +35,7 @@ export default function Container(props: any) {
   };
 
   return (
-    <div>
+    <motion.div initial="initial" animate="animate" exit="exit">
       <Head>
         <html lang={lang} />
         <title>{meta.title}</title>
@@ -60,11 +61,27 @@ export default function Container(props: any) {
       <Nav links={Links} lang={lang} TextValue={TextValue} />
 
       <main>
-        <Box alignItems="stretch" maxW={!DontforceWidth ? "80rem" : "none"} margin="auto" padding={!DontforceWidth ? "4px 10px 40px" : "none"}>
-          {children}
-        </Box>
+        <motion.div
+          variants={{
+            animate: {
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+            exit: {
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+        >
+          {" "}
+          <Box alignItems="stretch" maxW={!DontforceWidth ? "80rem" : "none"} margin="auto" padding={!DontforceWidth ? "4px 10px 40px" : "none"}>
+            {children}
+          </Box>
+        </motion.div>
       </main>
       <Footer lang={lang} />
-    </div>
+    </motion.div>
   );
 }

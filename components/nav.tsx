@@ -3,6 +3,7 @@ import Link from "./Link";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Links = [
   {
@@ -23,11 +24,16 @@ const Links = [
   // },
 ];
 
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" },
+};
+
 const Navbar = ({ links = Links, lang = "en", TextValue = "Tricked.pro" }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode: SetToggleColorMode } = useColorMode();
+  const [animate, setAnimate] = useState(false);
   const router = useRouter();
-
   const navigationItem = (
     <>
       {links.map((link) => (
@@ -46,6 +52,7 @@ const Navbar = ({ links = Links, lang = "en", TextValue = "Tricked.pro" }) => {
       }
   });
   function toggleColorMode() {
+    setAnimate(true);
     SetToggleColorMode();
     localStorage.theme = colorMode;
     if (colorMode == "light") {
@@ -53,6 +60,7 @@ const Navbar = ({ links = Links, lang = "en", TextValue = "Tricked.pro" }) => {
     } else {
       document.documentElement.classList.add("dark");
     }
+    setAnimate(false);
   }
 
   return (
@@ -71,7 +79,7 @@ const Navbar = ({ links = Links, lang = "en", TextValue = "Tricked.pro" }) => {
               </HStack>
             </HStack>
             <Flex alignItems={"center"}>
-              <Button aria-label="Switch Theme" onClick={toggleColorMode}>
+              <Button as={motion.div} whileHover={{ scale: 1.2, rotate: -20 }} whileTap={{ scale: 0.3, rotate: -360 }} aria-label="Switch Theme" onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
             </Flex>

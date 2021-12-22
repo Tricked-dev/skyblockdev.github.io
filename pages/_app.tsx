@@ -1,14 +1,22 @@
-import "../styles/globals.scss";
-import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import { object, oneOfType, func, node } from "prop-types";
-import * as React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../api/theme";
-import "../i18n/init";
 import i18next from "i18next";
 import Head from "next/head";
+import NProgress from "nprogress";
+import { Router } from "next/router";
+
+import "../styles/globals.scss";
+import "../i18n/init";
+import "tailwindcss/tailwind.css";
 import "@fontsource/roboto";
+import "nprogress/nprogress.css";
+
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
+
 function TrickedAPP({ Component, pageProps }: AppProps) {
   i18next.changeLanguage(pageProps.lang);
   return (

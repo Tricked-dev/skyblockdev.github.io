@@ -1,7 +1,5 @@
 import { Box, Text, Grid, GridItem, SimpleGrid, useMediaQuery, Button } from "@chakra-ui/react";
-import { readFile } from "fs/promises";
 import Link from "next/link";
-import { join } from "path";
 import { getAllPosts } from "^api/index";
 import { getAllLanguageSlugs, getLanguage } from "^api/lang";
 import type { NextJsData } from "^api/types";
