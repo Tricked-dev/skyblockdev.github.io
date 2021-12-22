@@ -11,6 +11,28 @@ body {
   font-family: -apple-system, Roboto, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3.75pt #323333;
+  background-color: #323333;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-teal-900;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-teal-600;
+}
+
 /* .posts table {
   padding: 6px, 6px, 6px, 6px;
 
