@@ -16,11 +16,14 @@ export function FadeInWhenVisible({ type, children, ...props }: any) {
   }, [controls, inView]);
   //@ts-ignore -
   let Component = motion[type];
-  if (delay > 0.1) {
-    delay += 0.01;
-  } else {
-    delay += 0.1;
+  if (delay < 1) {
+    if (delay > 0.1) {
+      delay += 0.01;
+    } else {
+      delay += 0.1;
+    }
   }
+
   return (
     <Component
       {...props}
