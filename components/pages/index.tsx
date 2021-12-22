@@ -38,7 +38,7 @@ function index({ lang }: any) {
           <Box></Box>
         </GridItem>
 
-        <GridItem paddingBottom="40px" as={comp("div")}>
+        <GridItem paddingBottom="40px">
           <Tools />
         </GridItem>
         <GridItem as={comp("div")}>

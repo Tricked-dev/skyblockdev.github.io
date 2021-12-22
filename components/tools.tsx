@@ -2,7 +2,7 @@
 import { Box, Text, Progress, SimpleGrid, Center, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import FadeInWhenVisible from "./FadeIn";
+import { comp } from "./fadeUtils";
 
 const skills = [
   {
@@ -352,7 +352,7 @@ type Input = {
 
 let ToolBox = ({ x, bgColor }: Input) => {
   return (
-    <Box>
+    <Box as={comp("div")}>
       <Box p={2} width="auto" height="8rem" className="focus:bg-green-700 hover:bg-green-700 duration-1000" backgroundColor={bgColor} border="2px" rounded="md" borderColor={bgColor} color={useColorModeValue("black", "telegram.100")}>
         <Box textAlign="center">
           <Text>{x.n}</Text>
@@ -376,11 +376,9 @@ export default function Tools() {
   const bgColor = useColorModeValue("darkgrey", "telegram.800");
   return (
     <>
-      <FadeInWhenVisible>
-        <Text variant="h2" fontSize="3xl">
-          Tools and media
-        </Text>
-      </FadeInWhenVisible>
+      <Text variant="h2" fontSize="3xl" as={comp("h2")}>
+        Tools and media
+      </Text>
 
       <SimpleGrid minChildWidth="120px" spacing={3}>
         {skills.map((x, y) => {
