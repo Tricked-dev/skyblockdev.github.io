@@ -8,45 +8,12 @@ import { basename, join } from "path";
 import type { NextJsData } from "^api/types";
 import { getAllLanguageSlugs, getLanguage } from "^api/lang";
 import i18next from "i18next";
+import Index from "^components/pages/index";
 
 export default function Home({ lang }: NextJsData) {
   return (
     <Container lang={lang} className="w-full">
-      <Box width="100%">
-        <Grid spacing={1} alignItems="center" wrap="wrap" justifyContent="center">
-          <GridItem minH="3.4rem" paddingBottom="40px" w="80rem" maxW={"100vw"}>
-            <Text fontSize="6xl" color="brand.100">
-              {i18next.t("hey_im")}
-            </Text>
-            <Text fontSize="larger">{i18next.t("developer")}</Text>
-            <Text color={useColorModeValue("graytext", "telegram.100")}>{i18next.t("maintaining")}</Text>
-            <Box paddingTop={"5px"}>
-              <Text paddingTop={"5px"}>
-                <Link passHref={true} href="/[lang]/services" as={`/${lang}/services`}>
-                  <ChakraLink>
-                    {"> "} {i18next.t("services")}
-                  </ChakraLink>
-                </Link>
-              </Text>
-              <Text paddingTop={"5px"}>
-                <Link passHref={true} href="/[lang]" as={`/${lang == "en" ? "nl" : "en"}`}>
-                  <ChakraLink color="green.600">
-                    {"> "} {i18next.t("change_lang")}
-                  </ChakraLink>
-                </Link>
-              </Text>
-            </Box>
-            <Box></Box>
-          </GridItem>
-
-          <GridItem paddingBottom="40px">
-            <Tools />
-          </GridItem>
-          <GridItem>
-            <Contacting />
-          </GridItem>
-        </Grid>
-      </Box>
+      <Index lang={lang} />
     </Container>
   );
 }

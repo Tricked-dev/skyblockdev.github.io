@@ -17,7 +17,7 @@ export default function FadeInWhenVisible({ children }: any) {
       ref={ref}
       animate={controls}
       initial="hidden"
-      transition={{ duration: 0.3, delay: 0.3 }}
+      transition={{ type: "spring", damping: 10, stiffness: 100, duration: 0.3, delay: 0.3 }}
       variants={{
         visible: { opacity: 1, scale: 1 },
         hidden: { opacity: 0, scale: 0 },
