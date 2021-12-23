@@ -18,7 +18,7 @@ const langMeta = {
 };
 
 export default function Container(props: any) {
-  const { children, Links, TextValue, DontforceWidth = false, lang, ...customMeta } = props;
+  const { children, Links, TextValue, lang, ...customMeta } = props;
   const router = useRouter();
 
   const meta = {
@@ -35,7 +35,7 @@ export default function Container(props: any) {
   };
 
   return (
-    <motion.div initial="initial" animate="animate" exit="exit">
+    <>
       <Head>
         <html lang={lang} />
         <title>{meta.title}</title>
@@ -59,29 +59,10 @@ export default function Container(props: any) {
       </Head>
 
       <Nav links={Links} lang={lang} TextValue={TextValue} />
-
-      <main>
-        <motion.div
-          variants={{
-            animate: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-            exit: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-        >
-          {" "}
-          <Box alignItems="stretch" maxW={!DontforceWidth ? "80rem" : "none"} margin="auto" padding={!DontforceWidth ? "4px 10px 40px" : "none"}>
-            {children}
-          </Box>
-        </motion.div>
-      </main>
+      <Box as="main" alignItems="stretch" maxW={"80rem"} margin="auto" padding={"4px 10px 40px"}>
+        {children}
+      </Box>
       <Footer lang={lang} />
-    </motion.div>
+    </>
   );
 }

@@ -1,26 +1,17 @@
 import NextLink from "next/link";
 import { Link as ChakraLink, Box, Center } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { motion } from "framer-motion";
-const Link = ({ children, href, currentPath, lang = "en", active, ...props }: any) => {
-  const [expended, setExpended] = useState(false);
-
+const Link = ({ children, href, currentPath, lang = "en", ...props }: any) => {
+  let router = useRouter();
+  let [path, des] = [router.asPath.endsWith("/") ? router.asPath : `${router.asPath}/`, `/${lang}${href}`.endsWith("/") ? `/${lang}${href}` : `/${lang}${href}/`];
+  let active = path === des;
   return (
     <NextLink passHref prefetch={false} href={`/[lang]${href}`} as={`/${lang}${href}`}>
-      <ChakraLink
-        bg={href === "gray.700"}
-        onMouseEnter={() => setExpended(true)}
-        onMouseLeave={() => setExpended(false)}
-        _hover={{
-          textDecoration: "none",
-          bg: "gray.700",
-        }}
-        {...props}
-      >
+      <ChakraLink fontSize={"larger"} p="3" rounded={"md"} borderBottom={"4px"} borderBottomColor={active ? "green.600" : "gray.600"} roundedBottom={"none"} borderRadius={"none"} className="hover:bg-gray-700" {...props}>
         {children}
-        <Center>
-          <Box width={expended ? "100%" : "2rem"} maxW="100%" borderBottomWidth="4px" borderRadius="10px" borderBottomColor={active ? "brand.700" : "brand.600"} />
-        </Center>
+
         {/* {!expended && <Box as={motion.div} data-isOpen={isOpen} initial={{ borderRadius: 50 }} borderBottomWidth="3px" borderBottomRadius="3px" borderBottomColor={active ? "brand.700" : "brand.600"}></Box>} */}
       </ChakraLink>
     </NextLink>
