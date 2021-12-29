@@ -13,6 +13,7 @@ import "tailwindcss/tailwind.css";
 import "@fontsource/roboto";
 import "nprogress/nprogress.css";
 
+///Adds a nice loading bar 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
