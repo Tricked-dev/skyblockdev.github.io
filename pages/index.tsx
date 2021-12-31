@@ -9,6 +9,9 @@ export default function Home() {
   useEffect(() => {
     const { pathname } = router;
     if (pathname == "/") {
+      if (i18next.language.substring(0, 2) !== "en" && i18next.language.substring(0, 2) !== "nl") {
+        router.push("/en");
+      }
       router.push("/" + i18next.language.substring(0, 2));
     }
   });
