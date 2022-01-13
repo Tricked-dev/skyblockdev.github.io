@@ -11,5 +11,4 @@ published: Wednesday, January 12, 2022
 - [malilbot.github.io](https://malilbot.github.io)
 - [aethor.floppa.info](https://aethor.floppa.info)
 - [aethorbot.github.io](https://aethorbot.github.io)
-- [dash.tricked.pro](https://dash.tricked.pro)
 - [dash.ascella.host](https://dash.ascella.host)
