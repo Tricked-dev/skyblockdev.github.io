@@ -11,3 +11,4 @@ This website is hosted on netlify
 - markdown parsing
 - pwa+offline
 - static deployment
+- coolness
