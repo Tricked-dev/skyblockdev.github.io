@@ -12,8 +12,9 @@ import "../i18n/init";
 import "tailwindcss/tailwind.css";
 import "@fontsource/roboto";
 import "nprogress/nprogress.css";
+import Script from "next/script";
 
-///Adds a nice loading bar 
+///Adds a nice loading bar
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
@@ -49,6 +50,7 @@ function TrickedAPP({ Component, pageProps }: AppProps) {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </Head>
+      <Script async defer data-website-id="02c44685-3f95-4628-bfff-6889769f2e60" src="https://analytics.tricked.pro/umami.js" />
       <Component {...pageProps} />
     </ChakraProvider>
   );
