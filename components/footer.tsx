@@ -21,6 +21,11 @@ let items = [
     h: "/donating",
     i: true,
   },
+  {
+    n: "Analytics",
+    h: "https://analytics.tricked.pro/share/95j8oPGF/tricked.pro",
+    i: false,
+  },
 ];
 
 export default function Footer({ lang = "en" }: any) {

@@ -3,7 +3,7 @@ import { Link as ChakraLink, Box, Center } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { motion } from "framer-motion";
-const Link = ({ children, href, currentPath, lang = "en", ...props }: any) => {
+const Link = ({ children, href, currentPath, lang = "en", active: _, ...props }: any) => {
   let router = useRouter();
   let [path, des] = [router.asPath.endsWith("/") ? router.asPath : `${router.asPath}/`, `/${lang}${href}`.endsWith("/") ? `/${lang}${href}` : `/${lang}${href}/`];
   let active = path === des;

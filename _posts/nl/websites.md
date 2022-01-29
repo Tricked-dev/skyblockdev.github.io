@@ -12,3 +12,4 @@ published: Wednesday, January 12, 2022
 - [aethor.floppa.info](https://aethor.floppa.info)
 - [aethorbot.github.io](https://aethorbot.github.io)
 - [dash.ascella.host](https://dash.ascella.host)
+- [rom.tricked.pro](https://rom.tricked.pro)
