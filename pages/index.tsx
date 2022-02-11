@@ -11,8 +11,9 @@ export default function Home() {
     if (pathname == "/") {
       if (i18next.language.substring(0, 2) !== "en" && i18next.language.substring(0, 2) !== "nl") {
         router.push("/en");
+      } else {
+        router.push("/" + i18next.language.substring(0, 2));
       }
-      router.push("/" + i18next.language.substring(0, 2));
     }
   });
 

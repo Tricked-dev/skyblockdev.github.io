@@ -21,13 +21,6 @@ function index({ lang }: any) {
           <Text color={color}>{i18next.t("maintaining")}</Text>
           <Box paddingTop={"5px"}>
             <Text paddingTop={"5px"}>
-              <Link passHref={true} href="/[lang]/services" as={`/${lang}/services`}>
-                <ChakraLink>
-                  {"> "} {i18next.t("services")}
-                </ChakraLink>
-              </Link>
-            </Text>
-            <Text paddingTop={"5px"}>
               <Link passHref={true} href="/[lang]" as={`/${lang == "en" ? "nl" : "en"}`}>
                 <ChakraLink color="green.600">
                   {"> "} {i18next.t("change_lang")}

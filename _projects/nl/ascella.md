@@ -6,7 +6,7 @@ description: Een super snellen foto uploader
 image: ascella.png
 ---
 
-Ascella is een van de snelte image uploaders die er is want het is gemaakt in rust en heefd een sveltekit frontend
+Ascella is een van de snelste image uploaders die er is want het is gemaakt in rust en heefd een sveltekit frontend
 
 backend: https://github.com/Tricked-dev/ascella-backend  
 frontend: https://github.com/Tricked-dev/ascella-frontend  
