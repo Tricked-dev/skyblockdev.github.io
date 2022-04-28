@@ -12,3 +12,4 @@ This website is hosted on netlify
 - pwa+offline
 - static deployment
 - coolness
+- nextjs
