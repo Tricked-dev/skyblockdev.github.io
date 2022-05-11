@@ -15,4 +15,4 @@ published: Saturday, Setptember 10, 2021
   - email: trickedcodes@tutanota.com
   - github: [Tricked-dev](https://github.com/Tricked-dev)
   - spotify: [tricked](https://open.spotify.com/user/emf4as0m7pc0i1mep1bn8ezad?si=35de8196e4054e6a)
-- Discord server: [discord.gg/mY8zTARu4g](https://discord.gg/mY8zTARu4g)
+- Discord server: [discord.gg/hkS3YDh](https://discord.gg/hkS3YDh)

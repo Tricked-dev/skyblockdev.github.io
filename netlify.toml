@@ -1,12 +1,11 @@
 redirects = [
-    { from = "/matrix", to = "https://matrix.to/#/#tricked-hangout=matrix.org", status = 301 },
-    { from = "/discord", to = "https://discord.gg/mY8zTARu4g", status = 301 },
-    { from = "/github", to = "https://github.com/Tricked-dev/Tricked-dev.github.io", status = 301 },
-    { from = "/aethor/invite", to = "https://discord.com/oauth2/authorize?client_id=870383692403593226&permissions=117824&scope=bot%20applications.commands", status = 301 },
-    { from = "/aethor/support", to = "https://discord.gg/zwUQGAG4cP", status = 301 },
-    { from = "/service-worker.js", to = "/_next/static/service-worker.js", status = 301 },
+  {from = "/matrix", to = "https://matrix.to/#/#tricked-hangout=matrix.org", status = 301},
+  {from = "/discord", to = "https://discord.gg/hkS3YDh", status = 301},
+  {from = "/github", to = "https://github.com/Tricked-dev/Tricked-dev.github.io", status = 301},
+  {from = "/aethor/invite", to = "https://discord.com/oauth2/authorize?client_id=870383692403593226&permissions=117824&scope=bot%20applications.commands", status = 301},
+  {from = "/aethor/support", to = "https://discord.gg/zwUQGAG4cP", status = 301},
+  {from = "/service-worker.js", to = "/_next/static/service-worker.js", status = 301},
 ]
-
 
 [[headers]]
 for = "/service-worker.js"

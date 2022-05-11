@@ -28,7 +28,7 @@ const config = {
       },
       {
         source: "/discord",
-        destination: "https://discord.gg/mY8zTARu4g",
+        destination: "https://discord.gg/hkS3YDh",
         permanent: true,
       },
       {

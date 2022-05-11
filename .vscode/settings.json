@@ -4,5 +4,8 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "deno.enable": false,
   "deno.lint": false,
-  "deno.unstable": false
+  "deno.unstable": false,
+  "i18n-ally.localesPaths": [
+    "i18n"
+  ]
 }
